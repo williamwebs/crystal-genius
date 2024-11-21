@@ -1,101 +1,174 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants/variant";
+import Hero from "../components/hero/Hero";
+import AboutUs from "../components/about-us/AboutUs";
+import Services from "../components/services/Services";
+import List from "../components/list/List";
+import Steps from "../components/card/Steps";
+import Expertise from "../components/expertise/Expertise";
+import Testimonial from "../components/testimonial/Testimonial";
+import OurTeam from "../components/team/OurTeam";
+import HeaderPageCard from "../components/card/HeaderPageCard";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="w-full">
+      <Hero />
+      <HeaderPageCard />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <AboutUs />
+      <Services row="lg:grid-cols-3" />
+
+      {/* why choose us */}
+      <motion.section
+        variants={fadeIn("down", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.4 }}
+        className="w-full bg-cover bg-center py-0 md:py-32"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), url(${"/images/bg-2.png"})`,
+        }}
+      >
+        <div className="container mx-auto flex flex-col md:flex-row items-start">
+          <motion.div
+            variants={fadeIn("right", 0.5)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
+            className="w-full md:w-1/2"
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={"/images/concrete-mixer.png"}
+              width={518}
+              height={189}
+              alt="concrete mixer"
+              className="select-none pointer-events-none w-full h-full object-cover rounded hidden md:block"
+              style={{ userSelect: "none" }}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </motion.div>
+          <div className="w-full md:w-1/2 bg-white px-4 md:px-12 py-10 md:-mt-14 md:-ml-14 rounded flex flex-col gap-4">
+            <motion.h2
+              variants={fadeIn("left", 0.3)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.5 }}
+              className="text-5xl text-dark font-impact font-normal"
+            >
+              Why Choose Us
+            </motion.h2>
+            <motion.p
+              variants={fadeIn("left", 0.3)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.5 }}
+              className="text-grey max-w-xl mx-auto"
+            >
+              At Crystal Genius International Limited, we stand out for our
+              commitment to excellence, innovation, and client satisfaction.
+              With a proven track record of delivering high-quality, sustainable
+              building solutions, we combine expertise, advanced technology, and
+              attention to detail to bring your vision to life.
+            </motion.p>
+
+            {/* mobile screen image */}
+            <Image
+              src={"/images/concrete-mixer.png"}
+              width={518}
+              height={189}
+              alt="concrete mixer"
+              className="select-none pointer-events-none w-full h-full object-cover rounded md:hidden"
+              style={{ userSelect: "none" }}
+            />
+
+            <p className="text-grey">Here is why:</p>
+
+            <div>
+              <List description="Cutting-Edge Technology" />
+              <List description="Smart Home Automation" />
+              <List description="Innovation and Visionary Design" />
+              <List description="Expert Team" />
+            </div>
+
+            <Link
+              href={"/"}
+              className="bg-red rounded h-10 w-28 flex items-center justify-center mt-7 shadow text-lightGrey text-sm font-nunito font-normal ml-auto"
+            >
+              Get started
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </motion.section>
+
+      {/* our usique processes */}
+      <section className="container mx-auto py-20 px-4 md:px-0">
+        <div className="text-left md:text-center">
+          <motion.span
+            variants={fadeIn("down", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
+          >
+            Steps by Steps
+          </motion.span>
+
+          <motion.h2
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
+            className="text-5xl text-dark font-impact font-normal my-3 max-w-2xl mx-auto"
+          >
+            Explore Our Unique Process and Approach
+          </motion.h2>
+          <motion.p
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
+            className="text-grey max-w-2xl mx-auto"
+          >
+            Our comprehensive suite of services spans various sectors, including
+            infrastructure, urban development, energy, research and development,
+            and project management.
+          </motion.p>
+        </div>
+
+        <Steps />
+      </section>
+      <Expertise />
+
+      {/* testimonial */}
+      <section className="container mx-auto py-20 mt-20">
+        <div className="text-center">
+          <motion.span
+            variants={fadeIn("down", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            className="capitalize"
+          >
+            testimonial
+          </motion.span>
+
+          <motion.h2
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            className="text-5xl text-dark font-impact font-normal my-3 max-w-2xl mx-auto"
+          >
+            What People Say About Us
+          </motion.h2>
+        </div>
+        {/* carousel */}
+        <Testimonial />
+      </section>
+      <OurTeam />
+    </main>
   );
 }
