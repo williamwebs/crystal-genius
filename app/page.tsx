@@ -143,7 +143,7 @@ export default function Home() {
       <Expertise />
 
       {/* testimonial */}
-      <section className="container mx-auto py-20 mt-20">
+      <section id="testimonial" className="container mx-auto py-20 px-4 md:px-0 mt-20">
         <div className="text-center">
           <motion.span
             variants={fadeIn("down", 0.2)}

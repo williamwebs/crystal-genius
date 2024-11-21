@@ -64,9 +64,12 @@ export const ThumbSlider = ({
           onSwiper={setThumbsSwiper}
           modules={[Thumbs]}
           spaceBetween={10}
-          slidesPerView={4} // 2 on mobile screens
+          slidesPerView={2} // 2 on mobile screens
           freeMode={true}
           watchSlidesProgress={true}
+          breakpoints={{
+            768: { slidesPerView: 4 }, 
+          }}
           className="thumbnail-slider w-full h-full"
         >
           {images.map((image, index) => (

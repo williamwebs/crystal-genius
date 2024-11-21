@@ -145,7 +145,7 @@ const AboutUsPage = () => {
             viewport={{ once: false, amount: 0.5 }}
           >
             <Link
-              href="/"
+              href="/about-us"
               className="sm:hidden bg-red rounded h-10 w-fit mx-auto px-16 flex items-center justify-center mt-5 shadow text-lightGrey text-sm font-nunito font-normal"
             >
               More About Us

@@ -77,7 +77,7 @@ export default function Hero() {
                 className="flex items-center justify-between md:justify-normal gap-1"
               >
                 <Link
-                  href={"/"}
+                  href={"/about-us"}
                   className="bg-transparent border border-red rounded w-full md:w-fit h-10 px-12 flex items-center justify-center mt-2 shadow text-lightGrey text-sm font-nunito font-normal"
                 >
                   Learn more

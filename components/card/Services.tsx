@@ -66,7 +66,7 @@ const ServiceCard = ({ image, heading, paragraph, lists }: Props) => {
           viewport={{ once: false, amount: 0.7 }}
         >
           <Link
-            href={"/"}
+            href={"/service"}
             className="bg-lightGrey rounded h-10 w-full md:w-2/3 mx-auto flex items-center justify-center mt-5 shadow text-dark text-sm font-nunito font-medium"
           >
             Explore service

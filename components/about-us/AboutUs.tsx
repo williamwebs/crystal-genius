@@ -122,7 +122,8 @@ const AboutUs = () => {
             management.
           </motion.p>
 
-          <motion.button
+          <motion.a
+            href="#testimonial"
             variants={fadeIn("up", 0.2)}
             initial="hidden"
             whileInView={"show"}
@@ -130,7 +131,7 @@ const AboutUs = () => {
             className="bg-red rounded h-10 px-16 flex items-center justify-center mt-7 shadow text-lightGrey text-sm font-nunito font-normal"
           >
             Hear From Clients
-          </motion.button>
+          </motion.a>
         </div>
       </div>
 
@@ -190,7 +191,8 @@ const AboutUs = () => {
                   residential and urban development to energy solutions,
                   research, and full project management.
                 </motion.p>
-                <motion.button
+                <motion.a
+                  href="#testimonial"
                   variants={fadeIn("right", 0.2)}
                   initial="hidden"
                   whileInView={"show"}
@@ -198,7 +200,7 @@ const AboutUs = () => {
                   className="bg-red rounded h-10 px-16 flex items-center justify-center mt-2 shadow text-lightGrey text-sm font-nunito font-normal"
                 >
                   Hear From Clients
-                </motion.button>
+                </motion.a>
               </div>
             </div>
           </motion.div>
