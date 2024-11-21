@@ -121,8 +121,8 @@ const Nav = () => {
         <div className="md:hidden">
           <Image
             src={"/menu-open.svg"}
-            width={45}
-            height={45}
+            width={55}
+            height={55}
             alt="open"
             onClick={() => toggleMenu()}
           />

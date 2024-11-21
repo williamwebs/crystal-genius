@@ -86,9 +86,9 @@ const HeaderPageCard = () => {
       </motion.div>
 
       {/* mobile */}
-      <div className="md:hidden container mx-auto px-4 my-4">
-        <div className="h-full rounded-lg shadow-lg">
-          <div className="flex flex-col gap-4 h-full">
+      <div className="md:hidden container mx-auto px-4 my-4 overflow-hidden">
+        <div className="h-full rounded-lg">
+          <div className="flex flex-col gap-4 h-full bg-background">
             <motion.div
               variants={fadeIn("right", 0.2)}
               initial="hidden"

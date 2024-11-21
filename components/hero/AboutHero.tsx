@@ -15,7 +15,7 @@ export default function AboutHero() {
       >
         {/* Static Text */}
         <div className="w-full h-full text-white">
-          <div className="container mx-auto  px-4 md:px-0 w-full h-full">
+          <div className="container mx-auto px-4 md:px-0 w-full h-full">
             <div className="flex flex-col justify-evenly w-full h-full">
               <div className="flex flex-col md:flex-row items-center w-full justify-between">
                 <div className="w-full md:w-2/3 mt-20">

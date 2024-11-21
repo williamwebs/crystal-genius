@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="relative">
+      <body className="relative w-full overflow-x-hidden">
         <Nav />
         <main className="">{children}</main>
         <Contact />
