@@ -96,7 +96,7 @@ const Nav = () => {
         {/* cta */}
         <div className="hidden md:flex items-center gap-8">
           <Link
-            href={"tel:"}
+            href={"tel:+2348069452707"}
             className="flex items-center gap-1 text-black font-semibold"
           >
             <Image src={"/call.svg"} width={20} height={20} alt="" />

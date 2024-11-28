@@ -33,7 +33,6 @@ const Testimonial = () => {
         spaceBetween={30}
         slidesPerView={1}
         breakpoints={{
-          // Responsive settings
           768: { slidesPerView: 3 }, // Show 3 slides on desktop
         }}
         autoplay={{

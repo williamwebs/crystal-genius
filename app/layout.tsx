@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "../components/nav/Nav";
 import Contact from "../components/form/Contact";
 import Footer from "../components/footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Crystal Genius International Limited",
@@ -22,6 +23,8 @@ export default function RootLayout({
         <main className="">{children}</main>
         <Contact />
         <Footer />
+
+        <Toaster position="bottom-right" />
       </body>
     </html>
   );
