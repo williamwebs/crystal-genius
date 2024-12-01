@@ -86,16 +86,16 @@ const OurTeam = () => {
           role="Artisan Coordinator"
         />
         <Teams
-          image="/images/lateef.png"
-          name="Oyebiyi Lateef Abefe"
+          image="/images/atiso.png"
+          name="Atiso Kehinde Joy"
           qualification="B.sc"
-          role="Artisan Coordinator"
+          role="Building Envelop Specialist"
         />
         <Teams
-          image="/images/lateef.png"
-          name="Oyebiyi Lateef Abefe"
+          image="/images/stephen.png"
+          name="Dairo Stephen Ayomide"
           qualification="B.sc"
-          role="Artisan Coordinator"
+          role="Site Engineer"
         />
       </div>
     </section>

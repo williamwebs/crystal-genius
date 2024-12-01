@@ -108,8 +108,7 @@ const Footer = () => {
                   viewport={{ once: false, amount: 0.2 }}
                   className="text-base text-dark italic font-bold"
                 >
-                  Suit 6, First Floor, left wing, NUJ LIGHTHOUSE, 3/5 Adeyemo
-                  Alakija,street, Victoria Island, Lagos
+                  25, Malada Cresent, Ejigbo
                 </motion.p>
                 <motion.span
                   variants={fadeIn("right", 0.4)}
