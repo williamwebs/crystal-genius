@@ -338,7 +338,7 @@ const AboutUsPage = () => {
               project, making your dreams a reality
             </motion.p>
           </div>
-          <div className="w-full md:w-4/5 flex flex-col md:flex-row gap-5 justify-evenly">
+          <div className="w-full md:w-4/5 grid gird-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-evenly">
             <Teams
               image="/images/vincent-2.png"
               name="Engr Vincent Satowaku"
@@ -356,6 +356,18 @@ const AboutUsPage = () => {
               name="Oyebiyi Lateef Abefe"
               qualification="B.sc"
               role="Artisan Coordinator"
+            />
+            <Teams
+              image="/images/atiso.png"
+              name="Atiso Kehinde Joy"
+              qualification="B.sc"
+              role="Building Envelop Specialist"
+            />
+            <Teams
+              image="/images/stephen.png"
+              name="Dairo Stephen Ayomide"
+              qualification="B.sc"
+              role="Site Engineer"
             />
           </div>
         </div>
