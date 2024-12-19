@@ -79,6 +79,7 @@ const PortfolioPage = () => {
                     location={b.location}
                     type="Building"
                     isCompleted={b.isCompleted}
+                    id={index}
                   />
                 </motion.div>
               ))}
@@ -120,6 +121,7 @@ const PortfolioPage = () => {
                     location={b.location}
                     type="Building"
                     isCompleted={b.isCompleted}
+                    id={index}
                   />
                 </div>
               ))}

@@ -42,7 +42,7 @@ const HeaderPageCard = () => {
                   <h5 className="text-lg text- font-bold text-yellow">
                     Crystal Genius International Limited
                   </h5>
-                  <p className="my-2">
+                  <p className="my-2 text-white">
                     leads the way in transformative building solutions, setting
                     benchmarks in quality, innovation, and reliability across
                     all construction projects.
@@ -114,7 +114,7 @@ const HeaderPageCard = () => {
                   <h5 className="text-lg text- font-bold text-yellow">
                     Crystal Genius International Limited
                   </h5>
-                  <p className="my-2">
+                  <p className="my-2 text-white">
                     leads the way in transformative building solutions, setting
                     benchmarks in quality, innovation, and reliability across
                     all construction projects.

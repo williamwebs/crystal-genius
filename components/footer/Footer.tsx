@@ -234,7 +234,7 @@ const Footer = () => {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.2 }}
-          className="text-xs md:text-sm text-white"
+          className="text-[10px] md:text-xs text-white"
         >
           All rights reserved. Copyright 2024 | Crystal Genius International
           Ltd.

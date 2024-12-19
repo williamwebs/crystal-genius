@@ -11,6 +11,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 interface Props {
+  id: number;
   images: string[];
   title: string;
   description: string;
@@ -26,6 +27,7 @@ export const ThumbSlider = ({
   location,
   type,
   isCompleted,
+  id,
 }: Props) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
@@ -35,8 +37,8 @@ export const ThumbSlider = ({
         modules={[Navigation, Thumbs]}
         spaceBetween={10}
         navigation={{
-          nextEl: ".custom-next",
-          prevEl: ".custom-prev",
+          nextEl: `.custom-next-${id}`,
+          prevEl: `.custom-prev-${id}`,
         }}
         thumbs={{ swiper: thumbsSwiper }}
         className="main-slider mt-1 rounded-lg max-h-[150px] md:max-h-[300px] h-full"
@@ -55,7 +57,9 @@ export const ThumbSlider = ({
       {/* Thumbnail Slider with Arrows */}
       <div className="relative mt-4 flex items-center">
         {/* Left Arrow */}
-        <button className="custom-prev absolute left-1 z-10 text-red text-lg bg-white px-2 py-1 mb-1 rounded">
+        <button
+          className={`custom-prev-${id} absolute left-1 z-10 text-red text-lg bg-white px-2 py-1 mb-1 rounded`}
+        >
           &#8249;
         </button>
 
@@ -68,7 +72,7 @@ export const ThumbSlider = ({
           freeMode={true}
           watchSlidesProgress={true}
           breakpoints={{
-            768: { slidesPerView: 4 }, 
+            768: { slidesPerView: 4 },
           }}
           className="thumbnail-slider w-full h-full"
         >
@@ -84,7 +88,9 @@ export const ThumbSlider = ({
         </Swiper>
 
         {/* Right Arrow */}
-        <button className="custom-next absolute right-1 mb-1 z-10  text-red text-lg bg-white px-2 py-1 rounded">
+        <button
+          className={`custom-next-${id} absolute right-1 mb-1 z-10  text-red text-lg bg-white px-2 py-1 rounded`}
+        >
           &#8250;
         </button>
       </div>

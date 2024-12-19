@@ -25,7 +25,7 @@ const Steps = () => {
             goals. Our consultation process focuses on aligning our expertise
             with your needs, ensuring a clear path forward.
           </p>
-          <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12">
+          <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12 number_">
             01
           </h6>
         </motion.div>
@@ -58,7 +58,7 @@ const Steps = () => {
             into detailed and efficient designs. Our technology-driven approach
             enhances accuracy and adaptability from the start.
           </p>
-          <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12">
+          <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12 number_">
             02
           </h6>
         </motion.div>
@@ -91,7 +91,7 @@ const Steps = () => {
             precise, data-rich insights essential for informed decision-making
             and project planning.
           </p>
-          <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12">
+          <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12 number_">
             03
           </h6>
         </motion.div>
@@ -125,7 +125,7 @@ const Steps = () => {
             every stage, ensuring lasting value and compliance with
             environmental and safety standards.
           </p>
-          <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12">
+          <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12 number_">
             04
           </h6>
         </motion.div>
@@ -159,7 +159,7 @@ const Steps = () => {
           skills, knowledge, and competencies needed to thrive in today’s
           dynamic environment.
         </p>
-        <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12">
+        <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12 number_">
           05
         </h6>
       </motion.div>

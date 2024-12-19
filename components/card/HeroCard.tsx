@@ -14,7 +14,7 @@ const HeroCard = ({ src, title, content, className }: Props) => {
     >
       <Image src={src} width={40} height={40} alt="" />
       <h5 className="text-lg font-bold text-grey">{title}</h5>
-      <p className="font-medium text-paragraphGrey">{content}</p>
+      <p className="font-medium text-[#999999] text-[13px]">{content}</p>
     </div>
   );
 };
