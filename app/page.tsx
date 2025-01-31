@@ -31,7 +31,7 @@ export default function Home() {
         viewport={{ once: false, amount: 0.4 }}
         className="w-full bg-cover bg-center py-0 md:py-32"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), url(${"/images/bg-2.png"})`,
+          backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), url(${"/images/crystal-bg-3.jpg"})`,
         }}
       >
         <div className="container mx-auto flex flex-col md:flex-row items-start">
@@ -143,7 +143,10 @@ export default function Home() {
       <Expertise />
 
       {/* testimonial */}
-      <section id="testimonial" className="container mx-auto py-20 px-4 md:px-0 mt-20">
+      <section
+        id="testimonial"
+        className="container mx-auto py-20 px-4 md:px-0 mt-20"
+      >
         <div className="text-center">
           <motion.span
             variants={fadeIn("down", 0.2)}
