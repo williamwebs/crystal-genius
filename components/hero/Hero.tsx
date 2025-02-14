@@ -15,7 +15,7 @@ export default function Hero() {
     "/images/hero-2.png",
     "/images/hero-3.png",
     "/images/hero-4.png",
-    "/images/hero-5.png",
+    "/images/hero-5.png", // replace this with video
   ];
 
   return (
@@ -30,12 +30,25 @@ export default function Hero() {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <div
-              className="w-full h-full bg-cover bg-center"
-              style={{
-                backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url(${image})`,
-              }}
-            />
+            {image.endsWith(".mp4") || image.endsWith(".webm") ? (
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src={image} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <div
+                className="w-full h-full bg-cover bg-center"
+                style={{
+                  backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url(${image})`,
+                }}
+              />
+            )}
           </SwiperSlide>
         ))}
       </Swiper>

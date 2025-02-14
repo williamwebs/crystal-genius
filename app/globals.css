@@ -22,6 +22,7 @@ body {
   color: var(--paragraph-grey);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  opacity: 0.03;
 }
 
 p {
