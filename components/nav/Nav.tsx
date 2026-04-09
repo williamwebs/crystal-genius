@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { DrawingsIcon } from "../../constants/images";
 
 const menuList = [
   {
@@ -83,9 +84,9 @@ const Nav = () => {
             <Link
               href={menu.path}
               key={menu.title}
-              className={`relative pb-1 ${
+              className={`relative pb-1 px-1 ${
                 pathname === menu.path
-                  ? 'after:content-[""] after:w-full after:h-[2px] after:bg-blue-600 after:absolute after:bottom-0 after:left-0'
+                  ? 'after:content-[""] after:w-full after:h-[1px] after:bg-red after:absolute after:bottom-0 after:left-0'
                   : "after:content-none"
               }`}
             >
@@ -104,16 +105,11 @@ const Nav = () => {
           </Link>
 
           <Link
-            href={"#contact"}
-            className="flex items-center gap-1 text-red-500"
+            href={"/drawings"}
+            className="flex items-center gap-1 px-2 bg-red dark-shadow rounded text-white min-w-[163px] h-[44px]"
           >
-            <Image
-              src={"/book-appointment.svg"}
-              width={20}
-              height={20}
-              alt=""
-            />
-            Book Appointment
+            <DrawingsIcon />
+            Purchase Drawings
           </Link>
         </div>
 

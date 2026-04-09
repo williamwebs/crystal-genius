@@ -45,7 +45,7 @@ export default function Hero() {
               <div
                 className="w-full h-full bg-cover bg-center"
                 style={{
-                  backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url(${image})`,
+                  backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(${image})`,
                 }}
               />
             )}

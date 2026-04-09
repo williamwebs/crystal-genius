@@ -154,6 +154,10 @@ section .swiper-pagination-bullet-active {
   animation: slide-out 0.5s ease-in forwards;
 }
 
+.dark-shadow {
+  box-shadow: -4px 4px 4.2px 0px rgba(0, 0, 0, 0.4);
+}
+
 @layer base {
   :root {
     --background: 0 25% 98%;
