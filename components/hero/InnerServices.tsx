@@ -1,16 +1,25 @@
 "use client";
 
-import Image from "next/image";
 import {motion } from 'framer-motion'
-import {fadeIn} from '../../variants/variant'
+import { fadeIn } from '../../variants/variant'
 
-export default function ServicePageHero() {
+interface InnerServicesHeroProps {
+  title: string;
+  description: string;
+  backgroundImage: string;
+}
+
+export default function InnerServicesHero({
+  title,
+  description,
+  backgroundImage = "/images/service-hero.png",
+}: InnerServicesHeroProps) {
   return (
     <header className="relative h-[700px] md:h-[600px] -mt-20 sm:-mt-0">
       <div
         className="w-full h-full bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(0, 35, 61, 1), rgba(112, 199, 218, 0.24)), url(${"/images/service-hero.png"})`,
+          backgroundImage: `linear-gradient(to right, rgba(0, 35, 61, 1), rgba(112, 199, 218, 0.24)), url(${backgroundImage})`,
         }}
       >
         {/* Static Text */}
@@ -32,44 +41,32 @@ export default function ServicePageHero() {
                     // initial="hidden"
                     // whileInView={"show"}
                     // viewport={{ once: true, amount: 0.5 }}
-                    className="text-5xl text-white font-impact capitalize mt-7"
+                    className="text-5xl text-white font-impact capitalize mt-5"
                   >
-                    Explore our service offerings
+                    {title}
                   </h2>
                   <p
                     // variants={fadeIn("right", 0.2)}
                     // initial="hidden"
                     // whileInView={"show"}
                     // viewport={{ once: true, amount: 0.5 }}
-                    className="text-base text-gray-300 font-nunito my-5 max-w-2xl"
+                    className="text-base text-[#EFEFEF] font-nunito font-medium my-5 max-w-[650px]"
                   >
-                    Our comprehensive suite of services spans various sectors,
-                    including infrastructure, urban development, energy,
-                    research and development, and project management.
+                    {description}
                   </p>
 
-                  {/* button */}
+                  <a
+                    href="/contact"
+                    // variants={fadeIn("right", 0.2)}
+                    // initial="hidden"
+                    // whileInView={"show"}
+                    // viewport={{ once: true, amount: 0.5 }}
+                    className="bg-red text-white text-sm hover:bg-red/85 font-nunito font-medium w-[130px] h-10 rounded-[4px] inline-flex items-center justify-center mt-5"
+                  >
+                    Get in touch
+                  </a>
                 </div>
                 <div className="w-full md:w-1/3"></div>
-              </div>
-
-              <div
-                // variants={fadeIn("up", 0.3)}
-                // initial="hidden"
-                // whileInView={"show"}
-                // viewport={{ once: true, amount: 0.5 }}
-                className="w-full text-center"
-              >
-                <Image
-                  src={"/play-icon.svg"}
-                  width={74}
-                  height={74}
-                  alt="play icon"
-                  className="mx-auto cursor-pointer"
-                />
-                <span className="font-nunito text-xs text-white font-bold text-center my-2 block">
-                  See Video reviews
-                </span>
               </div>
             </div>
           </div>

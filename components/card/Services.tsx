@@ -11,15 +11,16 @@ interface Props {
   heading: string;
   paragraph: string;
   lists: string[];
+  href: string;
 }
 
-const ServiceCard = ({ image, heading, paragraph, lists }: Props) => {
+const ServiceCard = ({ image, heading, paragraph, lists, href }: Props) => {
   return (
     <motion.div
       variants={fadeIn("down", 0.2)}
       initial="hidden"
       whileInView={"show"}
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
       className="bg-white h-fit p-3 md:p-4 rounded-md shadow"
     >
       {/* image */}
@@ -35,43 +36,33 @@ const ServiceCard = ({ image, heading, paragraph, lists }: Props) => {
       </div>
 
       <div className="w-[97%] mx-auto h-full flex flex-col gap-4 -mt-4 font-nunito">
-        <motion.div
-          variants={fadeIn("right", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
+        <div
+         
           className="py-2 bg-accentBlue rounded-tr-3xl rounded-bl-3xl text-md text-white text-center font-medium"
         >
           {heading}
-        </motion.div>
-        <motion.p
-          variants={fadeIn("right", 0.3)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
+        </div>
+        <p
           className="text-grey"
         >
           {paragraph}
-        </motion.p>
+        </p>
         <div className="">
           {lists.map((list, index) => (
             <List key={index} description={list} />
           ))}
         </div>
 
-        <motion.div
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
+        <div
+          
         >
           <Link
-            href={"/service"}
+            href={href}
             className="bg-lightGrey rounded h-10 w-full md:w-2/3 mx-auto flex items-center justify-center mt-5 shadow text-dark text-sm font-nunito font-medium"
           >
             Explore service
           </Link>
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );

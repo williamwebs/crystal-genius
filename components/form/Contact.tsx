@@ -80,42 +80,42 @@ const Contact = () => {
     >
       <div className="container mx-auto">
         <div className="text-center">
-          <motion.span
-            variants={fadeIn("down", 0.2)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.2 }}
+          <span
+            // variants={fadeIn("down", 0.2)}
+            // initial="hidden"
+            // whileInView={"show"}
+            // viewport={{ once: false, amount: 0.2 }}
           >
             Contact us
-          </motion.span>
+          </span>
 
-          <motion.h2
-            variants={fadeIn("right", 0.3)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.2 }}
+          <h2
+            // variants={fadeIn("right", 0.3)}
+            // initial="hidden"
+            // whileInView={"show"}
+            // viewport={{ once: false, amount: 0.2 }}
             className="text-2xl md:text-3xl text-dark font-nunito max-w-5xl mx-auto font-bold my-1 md:px-4"
           >
             For more information about our services, training programs or to
             discuss your project needs, please contact us
-          </motion.h2>
-          <motion.p
-            variants={fadeIn("right", 0.4)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.2 }}
+          </h2>
+          <p
+            // variants={fadeIn("right", 0.4)}
+            // initial="hidden"
+            // whileInView={"show"}
+            // viewport={{ once: false, amount: 0.2 }}
             className="text-grey max-w-2xl mx-auto mt-2 md:mt-0"
           >
             Reach out to us for more information on how we can assist you:
-          </motion.p>
+          </p>
         </div>
 
         {/* form */}
-        <motion.div
-          variants={fadeIn("right", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.2 }}
+        <div
+          // variants={fadeIn("right", 0.2)}
+          // initial="hidden"
+          // whileInView={"show"}
+          // viewport={{ once: false, amount: 0.2 }}
           className="bg-white rounded my-10 px-4 py-5 md:p-10"
         >
           <form
@@ -227,7 +227,7 @@ const Contact = () => {
               {submitting ? "Sending..." : "Send message"}
             </button>
           </form>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

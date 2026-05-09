@@ -12,11 +12,11 @@ const HeaderPageCard = () => {
   return (
     <>
       {/* desktop and laptop */}
-      <motion.div
-        variants={fadeIn("up", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.5 }}
+      <div
+        // variants={fadeIn("up", 0.2)}
+        // initial="hidden"
+        // whileInView={"show"}
+        // viewport={{ once: false, amount: 0.5 }}
         className="hidden md:block container mx-auto h-[230px] relative z-30 bg-background"
       >
         <div className="absolute -top-[30%] w-full h-full rounded-lg shadow-lg">
@@ -83,17 +83,17 @@ const HeaderPageCard = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* mobile */}
       <div className="md:hidden container mx-auto px-4 my-4 overflow-hidden">
         <div className="h-full rounded-lg">
           <div className="flex flex-col gap-4 h-full bg-background">
-            <motion.div
-              variants={fadeIn("right", 0.2)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.5 }}
+            <div
+              // variants={fadeIn("right", 0.2)}
+              // initial="hidden"
+              // whileInView={"show"}
+              // viewport={{ once: false, amount: 0.5 }}
               className="px-2 py-5 bg-cover bg-center rounded-lg"
               style={{
                 backgroundImage: `linear-gradient(to right, rgba(0, 119, 204, 1), rgba(0, 119, 204, 1)), url(${"/images/header-card-bg.png"})`,
@@ -128,12 +128,12 @@ const HeaderPageCard = () => {
                   </Link>
                 </div>
               </div>
-            </motion.div>
-            <motion.div
-              variants={fadeIn("right", 0.3)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.5 }}
+            </div>
+            <div
+              // variants={fadeIn("right", 0.3)}
+              // initial="hidden"
+              // whileInView={"show"}
+              // viewport={{ once: false, amount: 0.5 }}
               className="font-nunito"
             >
               <Swiper
@@ -173,7 +173,7 @@ const HeaderPageCard = () => {
                   />
                 </SwiperSlide>
               </Swiper>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

@@ -4,12 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { DrawingsIcon } from "../../constants/images";
+import { supabase } from "../../lib/supabase";
 
 const menuList = [
-  {
-    title: "Home",
-    path: "/",
-  },
+  // {
+  //   title: "Home",
+  //   path: "/",
+  // },
   {
     title: "About Us",
     path: "/about-us",
@@ -23,8 +25,12 @@ const menuList = [
     path: "/article",
   },
   {
-    title: "Portfolio",
+    title: "Projects",
     path: "/portfolio",
+  },
+  {
+    title: "Contact Us",
+    path: "/contact-us",
   },
 ];
 
@@ -32,6 +38,7 @@ const Nav = () => {
   const pathname = usePathname();
   const [bg, setBg] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   useEffect(() => {
     const changeBg = () => {
@@ -46,6 +53,28 @@ const Nav = () => {
 
     return () => {
       window.removeEventListener("scroll", changeBg);
+    };
+  }, []);
+
+  useEffect(() => {
+    const loadSession = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      setIsLoggedIn(Boolean(user));
+    };
+
+    void loadSession();
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(() => {
+      void loadSession();
+    });
+
+    return () => {
+      subscription.unsubscribe();
     };
   }, []);
 
@@ -78,14 +107,14 @@ const Nav = () => {
           />
         </Link>
         {/* menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-5">
           {menuList.map((menu) => (
             <Link
               href={menu.path}
               key={menu.title}
-              className={`relative pb-1 ${
+              className={`relative pb-1 px-1 ${
                 pathname === menu.path
-                  ? 'after:content-[""] after:w-full after:h-[2px] after:bg-blue-600 after:absolute after:bottom-0 after:left-0'
+                  ? 'after:content-[""] after:w-full after:h-[1px] after:bg-red after:absolute after:bottom-0 after:left-0'
                   : "after:content-none"
               }`}
             >
@@ -95,25 +124,28 @@ const Nav = () => {
         </div>
         {/* cta */}
         <div className="hidden md:flex items-center gap-8">
-          <Link
+          {isLoggedIn ? (
+            <Link
+              href="/cg-admin"
+              className="font-semibold text-black transition-colors hover:text-red"
+            >
+              Dashboard
+            </Link>
+          ) : null}
+          {/* <Link
             href={"tel:+2348069452707"}
             className="flex items-center gap-1 text-black font-semibold"
           >
             <Image src={"/call.svg"} width={20} height={20} alt="" />
             08069452707
-          </Link>
+          </Link> */}
 
           <Link
-            href={"#contact"}
-            className="flex items-center gap-1 text-red-500"
+            href={"/drawings"}
+            className="flex items-center gap-1 px-2 bg-red dark-shadow rounded text-white min-w-[163px] h-[44px]"
           >
-            <Image
-              src={"/book-appointment.svg"}
-              width={20}
-              height={20}
-              alt=""
-            />
-            Book Appointment
+            <DrawingsIcon />
+            Purchase Drawings
           </Link>
         </div>
 
@@ -163,6 +195,24 @@ const Nav = () => {
                 {menu.title}
               </Link>
             ))}
+
+            {isLoggedIn ? (
+              <Link
+                href="/cg-admin"
+                className="font-nunito font-medium text-base pb-1"
+                onClick={() => toggleMenu()}
+              >
+                Dashboard
+              </Link>
+            ) : null}
+
+            <Link
+              href="/drawings"
+              className="font-nunito font-medium text-base pb-1"
+              onClick={() => toggleMenu()}
+            >
+              Purchase Drawings
+            </Link>
           </div>
 
           <div className="absolute bottom-0 left-0 w-full">
