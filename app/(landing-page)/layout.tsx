@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Nav from "../components/nav/Nav";
-import Contact from "../components/form/Contact";
-import Footer from "../components/footer/Footer";
+import "../globals.css";
 import { Toaster } from "react-hot-toast";
+import Nav from "../../components/nav/Nav";
+// import Contact from "../../components/form/Contact";
+import Footer from "../../components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Crystal Genius International Limited",
@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className="relative w-full overflow-x-hidden">
         <Nav />
         <main className="">{children}</main>
-        <Contact />
+        {/* <Contact /> */}
         <Footer />
 
         <Toaster position="bottom-right" />

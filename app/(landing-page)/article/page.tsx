@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeIn } from "../../variants/variant";
-import ArticlePageHero from "../../components/hero/ArticlePageHero";
-import { activityList } from "../../constants/constants";
-import ActivityCard from "../../components/card/Activities";
+import { fadeIn } from "../../../variants/variant";
+import ArticlePageHero from "../../../components/hero/ArticlePageHero";
+import { activityList } from "../../../constants/constants";
+import ActivityCard from "../../../components/card/Activities";
 
 const ArticlePage = () => {
   return (
