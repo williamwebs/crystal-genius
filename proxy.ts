@@ -30,7 +30,7 @@ function isProtectedPath(pathname: string): boolean {
   );
 }
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const accessToken = req.cookies.get(ACCESS_TOKEN_COOKIE)?.value;
   const refreshToken = req.cookies.get(REFRESH_TOKEN_COOKIE)?.value;
@@ -43,17 +43,15 @@ export async function middleware(req: NextRequest) {
         persistSession: false,
         autoRefreshToken: false,
       },
-    }
+    },
   );
 
   let isLoggedIn = false;
-  let refreshedSession:
-    | {
-        access_token: string;
-        refresh_token: string;
-        expires_at?: number;
-      }
-    | null = null;
+  let refreshedSession: {
+    access_token: string;
+    refresh_token: string;
+    expires_at?: number;
+  } | null = null;
 
   if (accessToken) {
     const {
@@ -91,12 +89,12 @@ export async function middleware(req: NextRequest) {
       response.cookies.set(
         ACCESS_TOKEN_COOKIE,
         refreshedSession.access_token,
-        getAccessTokenCookieOptions(refreshedSession.expires_at)
+        getAccessTokenCookieOptions(refreshedSession.expires_at),
       );
       response.cookies.set(
         REFRESH_TOKEN_COOKIE,
         refreshedSession.refresh_token,
-        getRefreshTokenCookieOptions()
+        getRefreshTokenCookieOptions(),
       );
     }
 
@@ -120,12 +118,12 @@ export async function middleware(req: NextRequest) {
     response.cookies.set(
       ACCESS_TOKEN_COOKIE,
       refreshedSession.access_token,
-      getAccessTokenCookieOptions(refreshedSession.expires_at)
+      getAccessTokenCookieOptions(refreshedSession.expires_at),
     );
     response.cookies.set(
       REFRESH_TOKEN_COOKIE,
       refreshedSession.refresh_token,
-      getRefreshTokenCookieOptions()
+      getRefreshTokenCookieOptions(),
     );
   }
 
