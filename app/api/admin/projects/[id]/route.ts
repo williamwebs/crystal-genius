@@ -109,7 +109,7 @@ export async function PATCH(
   const area = formData.get("area");
   const year = formData.get("year");
   const category = formData.get("category");
-  const status = formData.get("status");
+  const type = formData.get("type");
   const description = formData.get("description");
 
   if (
@@ -118,7 +118,7 @@ export async function PATCH(
     typeof area !== "string" ||
     typeof year !== "string" ||
     typeof category !== "string" ||
-    typeof status !== "string" ||
+    typeof type !== "string" ||
     typeof description !== "string"
   ) {
     return NextResponse.json(
@@ -174,8 +174,8 @@ export async function PATCH(
         location,
         area,
         completion_year: Number(year),
-        category,
-        status,
+        category: category || null,
+        type,
         description,
         images: nextImages,
       })

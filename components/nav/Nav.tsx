@@ -26,7 +26,7 @@ const menuList = [
   },
   {
     title: "Projects",
-    path: "/portfolio",
+    path: "/projects",
   },
   {
     title: "Contact Us",

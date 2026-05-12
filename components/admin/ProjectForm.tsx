@@ -8,6 +8,7 @@ import { CloseXIcon, InfoIcon, UploadIcon } from "../../constants/images";
 import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
 import FormTextarea from "./FormTextarea";
+import { ProjectCategory } from "../../types/database";
 
 export type ProjectFormData = {
   title: string;
@@ -15,7 +16,7 @@ export type ProjectFormData = {
   area: string;
   year: string;
   category: string;
-  status: string;
+  type: string;
   description: string;
 };
 
@@ -58,23 +59,14 @@ const defaultFormData: ProjectFormData = {
   location: "",
   area: "",
   year: "",
-  category: "residential",
-  status: "active",
+  category: "",
+  type: "building",
   description: "",
 };
 
-const categoryOptions = [
-  { value: "residential", label: "Residential" },
-  { value: "commercial", label: "Commercial" },
-  { value: "industrial", label: "Industrial" },
-  { value: "mixed-use", label: "Mixed-Use" },
-  { value: "interior-design", label: "Interior Design" },
-  { value: "urban-planning", label: "Urban Planning" },
-];
-
-const statusOptions = [
-  { value: "active", label: "Active (Visible)" },
-  { value: "inactive", label: "Inactive (Hidden)" },
+const typeOptions = [
+  { value: "building", label: "Building" },
+  { value: "land", label: "Land" },
 ];
 
 function getFileNameFromUrl(url: string) {
@@ -119,6 +111,8 @@ const ProjectForm = ({
   const [imageItems, setImageItems] = useState<ProjectImageItem[]>(
     createImageItems(initialAssets?.images ?? [])
   );
+  const [categories, setCategories] = useState<ProjectCategory[]>([]);
+  const [loadingCategories, setLoadingCategories] = useState(true);
 
   const imageInputRef = useRef<HTMLInputElement>(null);
   const imageItemsRef = useRef<ProjectImageItem[]>(imageItems);
@@ -141,6 +135,38 @@ const ProjectForm = ({
     });
     setImageItems(createImageItems(initialAssets?.images ?? []));
   }, [initialAssets, initialData]);
+
+  // Fetch categories from the database
+  useEffect(() => {
+    const fetchCategories = async () => {
+      setLoadingCategories(true);
+      try {
+        const response = await fetch("/api/admin/categories", {
+          method: "GET",
+          cache: "no-store",
+        });
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.error || "Failed to fetch categories");
+        }
+
+        setCategories(result.categories ?? []);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+        setCategories([]);
+      } finally {
+        setLoadingCategories(false);
+      }
+    };
+
+    void fetchCategories();
+  }, []);
+
+  const categoryOptions = categories.map((cat) => ({
+    value: cat.id,
+    label: cat.name,
+  }));
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -261,15 +287,21 @@ const ProjectForm = ({
               name="category"
               value={formData.category}
               onChange={handleChange}
-              options={categoryOptions}
+              options={
+                loadingCategories
+                  ? [{ value: "", label: "Loading categories..." }]
+                  : categoryOptions.length > 0
+                    ? [{ value: "", label: "Select a category" }, ...categoryOptions]
+                    : [{ value: "", label: "No categories available" }]
+              }
             />
 
             <FormSelect
-              label="Status"
-              name="status"
-              value={formData.status}
+              label="Type"
+              name="type"
+              value={formData.type}
               onChange={handleChange}
-              options={statusOptions}
+              options={typeOptions}
             />
 
             <div className="col-span-2">

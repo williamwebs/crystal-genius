@@ -23,7 +23,7 @@ const AddNewProject = () => {
       payload.set("area", data.area);
       payload.set("year", data.year);
       payload.set("category", data.category);
-      payload.set("status", data.status);
+      payload.set("type", data.type);
       payload.set("description", data.description);
 
       newImageFiles.forEach((file) => {

@@ -34,14 +34,22 @@ export interface Drawing {
   created_at: string;
 }
 
+export type ProjectType = "building" | "land";
+
+export interface ProjectCategory {
+  id: string;
+  name: string;
+  created_at: string;
+}
+
 export interface Project {
   id: string;
   title: string;
   location: string | null;
   area: string | null;
   completion_year: number | null;
-  category: DrawingType | null;
-  status: DrawingStatus;
+  category: string | null;
+  type: ProjectType;
   description: string | null;
   images: string[] | null;
   created_at: string;

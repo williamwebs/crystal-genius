@@ -4,15 +4,23 @@ import {motion } from 'framer-motion'
 import { fadeIn } from '../../variants/variant'
 
 interface InnerServicesHeroProps {
+  routeText?: string;
   title: string;
   description: string;
   backgroundImage: string;
+  showButton?: boolean;
+  buttonText?: string;
+  buttonHref?: string;
 }
 
 export default function InnerServicesHero({
+  routeText = "Service",
   title,
   description,
   backgroundImage = "/images/service-hero.png",
+  showButton = true,
+  buttonText = "Get in touch",
+  buttonHref = "/contact-us"
 }: InnerServicesHeroProps) {
   return (
     <header className="relative h-[700px] md:h-[600px] -mt-20 sm:-mt-0">
@@ -29,12 +37,12 @@ export default function InnerServicesHero({
               <div className="flex flex-col md:flex-row items-center w-full justify-between">
                 <div className="w-full md:w-2/3 mt-20">
                   <span
-                    // variants={fadeIn("right", 0.2)}
-                    // initial="hidden"
-                    // whileInView={"show"}
-                    // viewport={{ once: true, amount: 0.5 }}
+                  // variants={fadeIn("right", 0.2)}
+                  // initial="hidden"
+                  // whileInView={"show"}
+                  // viewport={{ once: true, amount: 0.5 }}
                   >
-                    Service
+                    {routeText}
                   </span>
                   <h2
                     // variants={fadeIn("right", 0.3)}
@@ -55,16 +63,18 @@ export default function InnerServicesHero({
                     {description}
                   </p>
 
-                  <a
-                    href="/contact"
-                    // variants={fadeIn("right", 0.2)}
-                    // initial="hidden"
-                    // whileInView={"show"}
-                    // viewport={{ once: true, amount: 0.5 }}
-                    className="bg-red text-white text-sm hover:bg-red/85 font-nunito font-medium w-[130px] h-10 rounded-[4px] inline-flex items-center justify-center mt-5"
-                  >
-                    Get in touch
-                  </a>
+                  {
+                    showButton &&
+                    <a
+                      href={buttonHref}
+                      // variants={fadeIn("right", 0.2)}
+                      // initial="hidden"
+                      // whileInView={"show"}
+                      // viewport={{ once: true, amount: 0.5 }}
+                      className="bg-red text-white text-sm hover:bg-red/85 font-nunito font-medium w-[130px] h-10 rounded-[4px] inline-flex items-center justify-center mt-5"
+                    >
+                      {buttonText}
+                    </a>}
                 </div>
                 <div className="w-full md:w-1/3"></div>
               </div>

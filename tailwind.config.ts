@@ -21,6 +21,8 @@ export default {
         white: "#fefefe",
         dark: "#333333",
         accentBlue: "#0077cc",
+        D6D6D6: "#D6D6D6",
+        FCFAFA: "#FCFAFA",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

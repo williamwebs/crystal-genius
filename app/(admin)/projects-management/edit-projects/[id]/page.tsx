@@ -15,8 +15,8 @@ function toFormData(project: Project): ProjectFormData {
     location: project.location ?? "",
     area: project.area ?? "",
     year: project.completion_year ? String(project.completion_year) : "",
-    category: project.category ?? "residential",
-    status: project.status,
+    category: project.category ?? "",
+    type: project.type,
     description: project.description ?? "",
   };
 }
@@ -83,7 +83,7 @@ const EditProject = () => {
       payload.set("area", data.area);
       payload.set("year", data.year);
       payload.set("category", data.category);
-      payload.set("status", data.status);
+      payload.set("type", data.type);
       payload.set("description", data.description);
 
       existingImages.forEach((image) => {
