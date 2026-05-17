@@ -9,11 +9,11 @@ const Steps = () => {
     <div className="grid grid-cols-2 md:grid-cols-5 gap-5 mt-14">
       {/* 01 */}
       <div className="relative">
-        <motion.div
-          variants={fadeIn("down", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.5 }}
+        <div
+          // variants={fadeIn("down", 0.2)}
+          // initial="hidden"
+          // whileInView={"show"}
+          // viewport={{ once: false, amount: 0.5 }}
           className="flex flex-col gap-3 mx-2"
         >
           <Image src={"/step-1.svg"} width={80} height={80} alt="" />
@@ -28,25 +28,25 @@ const Steps = () => {
           <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12 number_">
             01
           </h6>
-        </motion.div>
-        <motion.div
-          variants={fadeIn("up", 0.3)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
+        </div>
+        <div
+          // variants={fadeIn("up", 0.3)}
+          // initial="hidden"
+          // whileInView={"show"}
+          // viewport={{ once: false, amount: 0.7 }}
           className="hidden md:block absolute top-[20%] -right-6"
         >
           <Image src={"/arrow-1.svg"} width={80} height={80} alt="" />
-        </motion.div>
+        </div>
       </div>
 
       {/* 02 */}
       <div className="relative">
-        <motion.div
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.5 }}
+        <div
+          // variants={fadeIn("up", 0.2)}
+          // initial="hidden"
+          // whileInView={"show"}
+          // viewport={{ once: false, amount: 0.5 }}
           className="flex flex-col gap-3 mx-2 mt-40"
         >
           <Image src={"/step-2.svg"} width={80} height={80} alt="" />
@@ -61,25 +61,25 @@ const Steps = () => {
           <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12 number_">
             02
           </h6>
-        </motion.div>
-        <motion.div
-          variants={fadeIn("down", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
+        </div>
+        <div
+          // variants={fadeIn("down", 0.2)}
+          // initial="hidden"
+          // whileInView={"show"}
+          // viewport={{ once: false, amount: 0.7 }}
           className="hidden md:block absolute top-[25%] right-0"
         >
           <Image src={"/arrow-2.svg"} width={80} height={80} alt="" />
-        </motion.div>
+        </div>
       </div>
 
       {/* 03 */}
       <div className="relative">
-        <motion.div
-          variants={fadeIn("down", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.5 }}
+        <div
+          // variants={fadeIn("down", 0.2)}
+          // initial="hidden"
+          // whileInView={"show"}
+          // viewport={{ once: false, amount: 0.5 }}
           className="flex flex-col gap-3 mx-2 -mt-52 md:mt-0"
         >
           <Image src={"/step-3.svg"} width={80} height={80} alt="" />
@@ -94,26 +94,26 @@ const Steps = () => {
           <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12 number_">
             03
           </h6>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
+        <div
+          // variants={fadeIn("up", 0.2)}
+          // initial="hidden"
+          // whileInView={"show"}
+          // viewport={{ once: false, amount: 0.7 }}
           className="hidden md:block absolute top-[15%] -right-10"
         >
           <Image src={"/arrow-3.svg"} width={80} height={80} alt="" />
-        </motion.div>
+        </div>
       </div>
 
       {/* 04 */}
       <div className="relative">
-        <motion.div
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.5 }}
+        <div
+          // variants={fadeIn("up", 0.2)}
+          // initial="hidden"
+          // whileInView={"show"}
+          // viewport={{ once: false, amount: 0.5 }}
           className="flex flex-col gap-3 mx-2 md:mt-40"
         >
           <Image src={"/step-4.svg"} width={80} height={80} alt="" />
@@ -128,25 +128,25 @@ const Steps = () => {
           <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12 number_">
             04
           </h6>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={fadeIn("down", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
+        <div
+          // variants={fadeIn("down", 0.2)}
+          // initial="hidden"
+          // whileInView={"show"}
+          // viewport={{ once: false, amount: 0.7 }}
           className="hidden md:block absolute top-[25%] right-0"
         >
           <Image src={"/arrow-4.svg"} width={80} height={80} alt="" />
-        </motion.div>
+        </div>
       </div>
 
       {/* 05 */}
-      <motion.div
-        variants={fadeIn("down", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.5 }}
+      <div
+        // variants={fadeIn("down", 0.2)}
+        // initial="hidden"
+        // whileInView={"show"}
+        // viewport={{ once: false, amount: 0.5 }}
         className="flex flex-col gap-3 mx-2 -mt-52 md:mt-0"
       >
         <Image src={"/step-5.svg"} width={80} height={80} alt="" />
@@ -162,7 +162,7 @@ const Steps = () => {
         <h6 className="font-impact font-normal text-[90px] text-yellow text-clip -mt-12 number_">
           05
         </h6>
-      </motion.div>
+      </div>
     </div>
   );
 };

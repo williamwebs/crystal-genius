@@ -15,7 +15,7 @@ export default function Hero() {
     "/images/hero-2.png",
     "/images/hero-3.png",
     "/images/hero-4.png",
-    "/images/hero-5.png", // replace this with video
+    "/images/hero-5.png",
   ];
 
   return (
@@ -45,7 +45,7 @@ export default function Hero() {
               <div
                 className="w-full h-full bg-cover bg-center"
                 style={{
-                  backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url(${image})`,
+                  backgroundImage: `linear-gradient(to right, rgba(0, 35, 61, 1), rgba(112, 199, 218, 0.24)), url(${image})`,
                 }}
               />
             )}
@@ -58,35 +58,35 @@ export default function Hero() {
         <div className="container mx-auto px-4 md:px-0 w-full">
           <div className="flex flex-col md:flex-row items-center w-full h-full justify-between">
             <div className="w-full md:w-2/3">
-              <motion.h1
-                variants={fadeIn("right", 0.2)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: false, amount: 0.7 }}
+              <h1
+                // variants={fadeIn("right", 0.2)}
+                // initial="hidden"
+                // whileInView={"show"}
+                // viewport={{ once: false, amount: 0.7 }}
                 className="text-5xl text-white font-impact max-w-2xl mt-10 sm:mt-0"
               >
                 Pioneering innovation and setting new standards of excellence in
                 building construction.
-              </motion.h1>
-              <motion.p
-                variants={fadeIn("left", 0.3)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: false, amount: 0.7 }}
+              </h1>
+              <p
+                // variants={fadeIn("left", 0.3)}
+                // initial="hidden"
+                // whileInView={"show"}
+                // viewport={{ once: false, amount: 0.7 }}
                 className="text-base text-gray-300 font-nunito my-5 max-w-xl"
               >
                 Crystal Genius International Limited leads the way in
                 transformative building solutions, setting benchmarks in
                 quality, innovation, and reliability across all construction
                 projects.
-              </motion.p>
+              </p>
 
               {/* cta */}
-              <motion.div
-                variants={fadeIn("up", 0.3)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: false, amount: 0.5 }}
+              <div
+                // variants={fadeIn("up", 0.3)}
+                // initial="hidden"
+                // whileInView={"show"}
+                // viewport={{ once: false, amount: 0.5 }}
                 className="flex items-center justify-between md:justify-normal gap-1"
               >
                 <Link
@@ -111,7 +111,7 @@ export default function Hero() {
                     See video reviews
                   </span>
                 </Link>
-              </motion.div>
+              </div>
             </div>
             <div className="w-full md:w-1/3"></div>
           </div>
