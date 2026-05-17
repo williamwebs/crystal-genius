@@ -47,9 +47,7 @@ const CheckoutForm = ({ drawingId }: CheckoutFormProps) => {
   };
 
   return (
-    <form onSubmit={handleCheckout} className="space-y-4 mt-6 border-t border-gray-200 pt-6">
-      <h3 className="text-lg font-bold text-gray-900 font-nunito">Purchase Drawing</h3>
-      
+    <form onSubmit={handleCheckout} className="space-y-3">      
       <div className="space-y-2">
         <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
         <input

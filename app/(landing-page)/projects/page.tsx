@@ -35,13 +35,13 @@ const PortfolioPage = async () => {
         showButton={false}
       />
 
-      <div className="max-w-[1000px] w-full mx-auto pt-[100px] pb-[50px]">
-        <h3 className="text-4xl md:text-5xl text-dark text-center font-impact font-normal">
+      <div className="max-w-[1000px] w-full mx-auto pt-[100px] pb-[50px] px-4">
+        <h3 className="text-3xl md:text-5xl text-dark text-left md:text-center font-impact font-normal">
           Explore Our Projects
         </h3>
 
         <div className="space-y-2 mt-[30px] max-w-[720px] mx-auto">
-          <p className="text-grey font-nunito font-medium">
+          <p className="text-grey font-nunito font-medium text-left md:text-center">
             Since 1898, Bechtel has helped customers complete more than 25,000
             projects in 160 countries on all seven continents
           </p>
@@ -60,7 +60,7 @@ const PortfolioPage = async () => {
 
       <div className="relative pb-20">
         {error ? (
-          <div className="rounded-[20px] border border-[#E5E7EB] bg-white px-6 py-20 text-center font-nunito text-[#555555] shadow-sm">
+          <div className="rounded-[20px] border border-[#E5E7EB] bg-white px-4 py-20 text-center font-nunito text-[#555555] shadow-sm">
             Failed to load projects. Please try again shortly.
           </div>
         ) : (

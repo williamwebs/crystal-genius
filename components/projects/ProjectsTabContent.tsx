@@ -260,7 +260,7 @@ const ProjectsTabContent = ({
 
   if (filtered.length === 0) {
     return (
-      <div className="bg-white px-6 py-20 text-center font-nunito text-[#555555] shadow-sm my-10 max-h-[400px] h-full flex items-center justify-center gap-[20px] ">
+      <div className="bg-white px-6 py-20 text-center font-nunito text-[#555555] shadow-sm my-10 max-h-[400px] h-full flex flex-col md:flex-row items-center justify-center gap-[20px] ">
         <NoPropertyImage />
         <div className="max-w-[300px] w-full space-y-[8px] ">
           <h3 className="font-nunito font-bold text-[#333333] text-[20px] ">

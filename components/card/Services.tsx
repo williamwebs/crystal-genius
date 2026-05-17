@@ -16,11 +16,11 @@ interface Props {
 
 const ServiceCard = ({ image, heading, paragraph, lists, href }: Props) => {
   return (
-    <motion.div
-      variants={fadeIn("down", 0.2)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: true, amount: 0.2 }}
+    <div
+      // variants={fadeIn("down", 0.2)}
+      // initial="hidden"
+      // whileInView={"show"}
+      // viewport={{ once: true, amount: 0.2 }}
       className="bg-white h-fit p-3 md:p-4 rounded-md shadow"
     >
       {/* image */}
@@ -64,7 +64,7 @@ const ServiceCard = ({ image, heading, paragraph, lists, href }: Props) => {
           </Link>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

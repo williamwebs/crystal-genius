@@ -20,18 +20,18 @@ export const activityList: Activities[] = [
     description:
       "As part of our commitment to environmental responsibility, we integrate sustainable building practices into all our construction projects. From using eco-friendly materials to implementing energy-efficient designs, our firm works to minimize the environmental impact of our developments.",
   },
-  {
-    image: "/images/workforce-development.png",
-    title: "Workforce and Skill Development",
-    description:
-      "We are committed to empowering local talent by providing training and development opportunities for the workforce in Lagos. Through partnerships with local communities and vocational institutions, we offer skill-building programs in construction, project management, and engineering.",
-  },
-  {
-    image: "/images/housing-solution.png",
-    title: "Affordable Housing Solutions",
-    description:
-      "Understanding that access to affordable housing goes beyond construction, we provide tailored financing solutions to help individuals and families in Lagos achieve homeownership. By partnering with financial institutions and offering flexible payment plans, we make it easier forresidents to invest in their future.",
-  },
+  // {
+  //   image: "/images/workforce-development.png",
+  //   title: "Workforce and Skill Development",
+  //   description:
+  //     "We are committed to empowering local talent by providing training and development opportunities for the workforce in Lagos. Through partnerships with local communities and vocational institutions, we offer skill-building programs in construction, project management, and engineering.",
+  // },
+  // {
+  //   image: "/images/housing-solution.png",
+  //   title: "Affordable Housing Solutions",
+  //   description:
+  //     "Understanding that access to affordable housing goes beyond construction, we provide tailored financing solutions to help individuals and families in Lagos achieve homeownership. By partnering with financial institutions and offering flexible payment plans, we make it easier forresidents to invest in their future.",
+  // },
 ];
 
 export const building = [

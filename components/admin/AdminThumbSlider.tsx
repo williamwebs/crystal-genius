@@ -160,14 +160,17 @@ export const AdminThumbSlider = ({
             </span>
           )}
         </div>
-         <div className="bg-yellow rounded h-10 w-28 flex items-center justify-center gap-2 shadow text-[#555555] text-sm font-nunito font-normal ml-auto mr-2">
+         <div className="bg-yellow rounded h-10 min-w-28 flex items-center justify-center gap-1 shadow text-[#555555] text-sm font-nunito font-normal ml-auto mr-2 px-2">
                      <Image
                        src={"/location.svg"}
                        width={13}
                        height={13}
                        alt="location icon"
-                     />
+          />
+          <span className="truncate text-[#555555] text-[13px] md:text-[14px] font-nunito font-medium ">
+
                      {location}
+          </span>
                    </div>
       </div>
     </div>

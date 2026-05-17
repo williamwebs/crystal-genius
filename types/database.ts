@@ -101,16 +101,22 @@ export type OrderInsert = Omit<Order, "id" | "created_at" | "order_ref">;
 // ---------- Helpers ----------
 
 /** Format a naira value with the local currency symbol and separators */
-export function formatNairaAmount(naira: number): string {
-  return `₦${naira.toLocaleString("en-NG", {
+export function formatNairaAmount(
+  naira: number,
+  showSymbol: boolean = true,
+): string {
+  const formattedNumber = naira.toLocaleString("en-NG", {
     minimumFractionDigits: 0,
     maximumFractionDigits: 2,
-  })}`;
+  });
+
+  // If showSymbol is true, add the ₦; otherwise, just return the number
+  return showSymbol ? `₦${formattedNumber}` : formattedNumber;
 }
 
 /** Convert kobo value to formatted naira string */
-export function koboToNaira(kobo: number): string {
-  return formatNairaAmount(kobo / 100);
+export function koboToNaira(kobo: number, showSymbol: boolean = true): string {
+  return formatNairaAmount(kobo / 100, showSymbol);
 }
 
 /** Convert naira to kobo */

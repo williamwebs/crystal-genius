@@ -76,7 +76,8 @@ const DrawingLightbox = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="max-w-[min(96vw,1100px)] h-screen overflow-hidden rounded-none bg-[#333333] py-5 px-8 text-white sm:max-w-[1300px]"
+        // max-w-[min(96vw,1100px)]
+        className="max-w-screen h-screen overflow-hidden rounded-none bg-[#333333] py-5 px-2 md:px-8 text-white md:max-w-[1300px]"
       >
         <DialogTitle className="sr-only">{title} gallery</DialogTitle>
 
@@ -123,7 +124,7 @@ const DrawingLightbox = ({
             </button>
           </div>
 
-          <div className="relative aspect-[16/10] w-full h-full mx-auto max-h-[500px] max-w-[1300px] rounded-md overflow-hidden my-8">
+          <div className="relative md:aspect-[16/10] w-full h-full mx-auto max-h-[500px] md:max-w-[1300px] rounded-md overflow-hidden my-8">
             <Image
               src={currentImage}
               alt={`${title} preview ${currentIndex + 1}`}
@@ -205,7 +206,7 @@ const DrawingLightbox = ({
                   </div>
                   <Link
                     href={actionHref}
-                    className="inline-flex w-[360px] h-[47px] items-center justify-center rounded-[8px] bg-red font-nunito text-sm font-semibold text-white transition-colors hover:bg-red/85"
+                    className="inline-flex max-w-[360px] w-full h-[47px] items-center justify-center rounded-[8px] bg-red font-nunito text-sm font-semibold text-white transition-colors hover:bg-red/85"
                   >
                     {actionLabel}
                   </Link>
@@ -214,13 +215,13 @@ const DrawingLightbox = ({
             )}
           </div>
 
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-2 overflow-x-auto z-20">
+          <div className="absolute bottom-5 md:bottom-0 left-1/2 -translate-x-1/2 flex gap-2 overflow-x-auto z-20">
             {images.map((image, index) => (
               <button
                 key={`${image}-${index}`}
                 type="button"
                 onClick={() => setCurrentIndex(index)}
-                className={`relative h-[60px] w-[60px] shrink-0 overflow-hidden rounded-[8px] border transition-all ${
+                className={`relative h-[60px] w-[60px] shadow shrink-0 overflow-hidden rounded-[8px] border transition-all ${
                   currentIndex === index
                     ? "border-red ring-2 ring-red/30"
                     : "border-white/10 hover:border-white/35"

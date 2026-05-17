@@ -23,7 +23,7 @@ const ProjectsPageTabs = ({ projects }: ProjectsPageTabsProps) => {
   return (
     <div className="w-full flex flex-col relative">
       {/* Tab bar */}
-      <div className="w-full bg-[#EFEFEF] h-[70px] flex items-center mb-0">
+      <div className="w-full bg-[#EFEFEF] h-[70px] flex items-center mb-0 px-4">
         <div className="container mx-auto flex items-center gap-0">
           {TABS.map((tab) => {
             const isActive = activeTab === tab.key;
@@ -32,7 +32,7 @@ const ProjectsPageTabs = ({ projects }: ProjectsPageTabsProps) => {
               <button
                 key={tab.key}
                 onClick={() => setActiveTab(tab.key)}
-                className={`relative font-nunito font-light text-base px-4 py-2 transition-colors ${
+                className={`relative font-nunito font-light text-[15px] px-4 py-2 transition-colors ${
                   isActive
                     ? "text-red font-medium"
                     : "text-[#555555] hover:text-red"
@@ -50,7 +50,7 @@ const ProjectsPageTabs = ({ projects }: ProjectsPageTabsProps) => {
       </div>
 
       {/* Tab content */}
-      <div className="container mx-auto relative mt-8">
+      <div className="container mx-auto relative mt-8 px-4">
         {activeTab === "all" && (
           <ProjectsTabContent projects={projects} />
         )}

@@ -2,9 +2,15 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { createServerSupabaseClient } from "../../../../lib/server-supabase";
 import { koboToNaira } from "../../../../types/database";
-import { AreaIcon, FloorIcon, TypeIcon } from "../../../../constants/images";
+import {
+  AreaIcon,
+  FloorIcon,
+  LockImage,
+  TypeIcon,
+} from "../../../../constants/images";
 import CheckoutForm from "../../../../components/checkout/CheckoutForm";
 import DrawingDetailGallery from "../../../../components/drawings/DrawingDetailGallery";
+import Image from "next/image";
 
 interface DrawingDetailPageProps {
   params: Promise<{ id: string }>;
@@ -12,7 +18,9 @@ interface DrawingDetailPageProps {
 
 export const revalidate = 60; // revalidate every 60 seconds
 
-export default async function DrawingDetailPage({ params }: DrawingDetailPageProps) {
+export default async function DrawingDetailPage({
+  params,
+}: DrawingDetailPageProps) {
   const supabase = await createServerSupabaseClient();
   const { id } = await params;
 
@@ -28,57 +36,58 @@ export default async function DrawingDetailPage({ params }: DrawingDetailPagePro
   }
 
   return (
-    <main className="bg-white min-h-screen py-20 mt-[80px]">
-      <div className="container mx-auto px-4 md:px-0 max-w-6xl">
+    <main className="bg-white min-h-screen py-10 mt-[40px]">
+      <div className="container mx-auto px-4 md:px-0 max-w-[1000px] ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column: Images */}
-          <DrawingDetailGallery
-            title={drawing.title}
-            images={drawing.preview_images ?? []}
-          />
+          <div className="w-full min-h-[400px] h-full bg-[#EFEFEF] p-6 rounded-t-[500px] relative overflow-hidden ">
+            <Image
+              src={drawing.preview_images?.[0] ?? ""}
+              alt={drawing.title}
+              fill
+              className="object-cover object-top cursor-not-allowed select-none pointer-events-none"
+            />
+          </div>
 
           {/* Right Column: Details & Checkout */}
-          <div className="flex flex-col">
-            <h1 className="text-3xl md:text-4xl font-extrabold font-nunito text-gray-900 mb-2">
-              {drawing.title}
-            </h1>
-            <p className="text-red font-extrabold font-nunito text-2xl mb-6">
-              {koboToNaira(drawing.price)}
-            </p>
-
-            <div className="prose prose-sm max-w-none text-gray-600 mb-8 font-nunito">
-              <p className="whitespace-pre-wrap">{drawing.description}</p>
-            </div>
-
-            <div className="grid grid-cols-3 gap-4 mb-8 bg-gray-50 p-6 rounded-lg border border-gray-100">
-              <div className="flex flex-col items-center justify-center text-center">
-                <AreaIcon />
-                <span className="text-gray-500 text-xs font-nunito font-bold mt-2 uppercase tracking-wider">Area</span>
-                <span className="text-gray-900 text-sm font-nunito font-extrabold mt-1">{drawing.area || 'N/A'}</span>
+          <div className="flex flex-col gap-[30px] ">
+            <div className="flex flex-col gap-[30px] ">
+              <div className="flex flex-col gap-[10px] max-w-[400px] ">
+                <LockImage />
+                <h4 className="font-nunito font-bold text-[#333333] text-[28px] uppercase line-clamp-2 ">
+                  Purchase {drawing.title}
+                </h4>
               </div>
-              <div className="flex flex-col items-center justify-center text-center">
-                <FloorIcon />
-                <span className="text-gray-500 text-xs font-nunito font-bold mt-2 uppercase tracking-wider">Floors</span>
-                <span className="text-gray-900 text-sm font-nunito font-extrabold mt-1">
-                  {drawing.number_of_floors ? `${drawing.number_of_floors} Stories` : 'N/A'}
-                </span>
-              </div>
-              <div className="flex flex-col items-center justify-center text-center">
-                <TypeIcon />
-                <span className="text-gray-500 text-xs font-nunito font-bold mt-2 uppercase tracking-wider">Type</span>
-                <span className="text-gray-900 text-sm font-nunito font-extrabold mt-1 capitalize">{drawing.type}</span>
-              </div>
-            </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-              <div className="mb-4 text-sm text-gray-600 font-nunito">
-                <span className="font-bold block mb-1">What&apos;s included:</span>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Full Architectural Floor Plans</li>
-                  <li>Structural Details & Reinforcement Plans</li>
-                  <li>Elevations & Sections</li>
-                  <li>High-resolution PDF Format</li>
-                </ul>
+              <div className="flex flex-col gap-[20px] max-w-[400px] ">
+                <div className="flex flex-col gap-[2px] font-nunito ">
+                  <h5 className="font-bold text-[18px] text-[#777777] ">
+                    Unlock Full Images
+                  </h5>
+                  <p className="font-normal text-[#777777] text-[15px]">
+                    You are purchasing the full structural Renderings for{" "}
+                    <span className="font-bold capitalize text-[#777777]">
+                      {drawing.title}
+                    </span>
+                  </p>
+                </div>
+                <div className="flex flex-col gap-[5px] font-nunito ">
+                  <div className="min-w-[340px] ">
+                    <p className="font-bold text-dark text-[20px]">
+                      NGN
+                      <span className="text-red text-[40px]">
+                        {koboToNaira(drawing.price, false)}.00
+                      </span>
+                      <span className="font-medium text-[#777777] text-sm">
+                        /One Time Purchase
+                      </span>
+                    </p>
+                  </div>
+                  <p className="font-bold text-dark text-xs ">
+                    Upon the completion of your payment you'll receive this
+                    drawing Doc via provided email below
+                  </p>
+                </div>
               </div>
 
               <CheckoutForm drawingId={drawing.id} />

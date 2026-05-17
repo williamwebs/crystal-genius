@@ -199,19 +199,24 @@ const Footer = () => {
                   <RenderSocialMedia />
                 </div>
               </div>
-              <Link
-                href="/cg-login"
-                className="text-sm text-yellow font-bold capitalize hover:text-yellow/90 mt-10"
-              >
-                Login
-              </Link>
+              <div className="mt-5 space-y-2">
+                <h6 className="uppercase text-sm text-yellow font-bold">
+                  Admin
+                </h6>
+                <Link
+                  href="/cg-login"
+                  className="text-sm text-white font-bold capitalize hover:text-yellow/90 hover:underline"
+                >
+                  Login
+                </Link>
+              </div>
             </div>
             <div
               // variants={fadeIn("left", 0.2)}
               // initial="hidden"
               // whileInView={"show"}
               // viewport={{ once: false, amount: 0.2 }}
-              className="w-full md:w-1/3 -mr-10 -mb-10 md:-mb-20"
+              className="w-full md:w-1/3 -mr-10 -mb-10 md:-mb-10"
             >
               <FooterHouseImage />
             </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import AboutHero from "../../../components/hero/AboutHero";
 import AboutUs from "../../../components/about-us/AboutUs";
 import { activityList, teams } from "../../../constants/constants";
@@ -16,15 +17,45 @@ import { fadeIn } from "../../../variants/variant";
 import { Card, CardContent } from "../../../@/components/ui/card";
 import Testimonial from "@/components/testimonial/Testimonial";
 import Contact from "@/components/form/Contact";
+import { type SanityDocument } from "next-sanity";
+import { client } from "@/sanity/client";
+import { createImageUrlBuilder, type SanityImageSource } from "@sanity/image-url";
+
+const { projectId, dataset } = client.config();
+const urlFor = (source: SanityImageSource) =>
+  projectId && dataset
+    ? createImageUrlBuilder({ projectId, dataset }).image(source)
+    : null;
+
+const BLOGS_QUERY = `*[
+  _type == "blog"
+  && defined(slug.current)
+]|order(publishedAt desc)[0...10]{_id, title, slug, publishedAt, image, "excerpt": pt::text(body)}`;
 
 const AboutUsPage = () => {
+  const [blogs, setBlogs] = useState<SanityDocument[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const fetchedBlogs = await client.fetch<SanityDocument[]>(BLOGS_QUERY);
+        setBlogs(fetchedBlogs);
+      } catch (err) {
+        console.error("Error fetching blogs:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchBlogs();
+  }, []);
   return (
     <main>
       <AboutHero />
       {/* <AboutUs /> */}
 
       {/* misson and vision */}
-      <section className="container mx-auto px-4 md:px-0 mb-5 mt-10 py-[150px] md:mt-2 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10">
+      <section className="container mx-auto px-4 md:px-0 mb-5 mt-0 py-[50px] md:py-[150px] md:mt-2 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10">
         <div
         // variants={fadeIn("down", 0.2)}
         // initial="hidden"
@@ -123,7 +154,7 @@ const AboutUsPage = () => {
             // initial="hidden"
             // whileInView={"show"}
             // viewport={{ once: false, amount: 0.5 }}
-            className="text-5xl text-dark font-impact max-w-md font-normal my-5"
+            className="text-4xl md:text-5xl text-dark font-impact max-w-md font-normal my-5"
           >
             We Build everything you can need
           </h2>
@@ -239,8 +270,8 @@ const AboutUsPage = () => {
       </section>
 
       {/* activities section */}
-      <section className="container mx-auto py-10 px-4 md:px-0">
-        <div className="text-center">
+      <section className="container mx-auto py-10 px-4 md:px-0 mt-10">
+        <div className="text-left md:text-center">
           <span
           // variants={fadeIn("down", 0.2)}
           // initial="hidden"
@@ -275,44 +306,52 @@ const AboutUsPage = () => {
         </div>
 
         {/* activity carousel */}
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={1}
-          breakpoints={{
-            // Responsive settings
-            768: { slidesPerView: 2.3 }, // Show 3 slides on desktop
-          }}
-          autoplay={{
-            delay: 1,
-            disableOnInteraction: false,
-          }}
-          speed={5000} // Smooth continuous scrolling speed
-          loop={true}
-          modules={[Autoplay, Pagination]}
-          pagination={{ clickable: true }}
-          allowTouchMove={true}
-          className="mt-10"
-        >
-          {activityList.map((activity, index) => (
-            <SwiperSlide key={index} className="bg-white rounded-lg shadow p-6">
-              <ActivityCard
-                image={activity.image}
-                title={activity.title}
-                description={activity.description}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {isLoading ? (
+          <p className="text-center text-grey mt-10">Loading activities...</p>
+        ) : blogs.length === 0 ? (
+          <p className="text-center text-grey mt-10">No activities posted yet.</p>
+        ) : (
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={1}
+            breakpoints={{
+              // Responsive settings
+              768: { slidesPerView: 2.3 }, // Show 3 slides on desktop
+            }}
+            autoplay={{
+              delay: 1,
+              disableOnInteraction: false,
+            }}
+            speed={5000} // Smooth continuous scrolling speed
+            loop={true}
+            modules={[Autoplay, Pagination]}
+            pagination={{ clickable: true }}
+            allowTouchMove={true}
+            className="mt-10"
+          >
+            {blogs.map((activity: any) => (
+              <SwiperSlide key={activity._id} className="bg-white rounded-lg shadow p-6">
+                <ActivityCard
+                  image={activity.image ? urlFor(activity.image)?.url() || "" : ""}
+                  title={activity.title}
+                  description={activity.excerpt || "Read more..."}
+                  slug={activity.slug.current}
+                  date={activity.publishedAt}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </section>
 
       {/* team section */}
       <section className="container mx-auto py-20 px-4 md:px-0">
         <div className="flex flex-col gap-[50px]">
           <div className="flex flex-col max-w-[700px] mx-auto ">
-            <h2 className="text-5xl text-dark text-center font-impact font-normal my-5">
+            <h2 className="text-4xl md:text-5xl text-dark text-left md:text-center font-impact font-normal my-5">
               Meet Our Team
             </h2>
-            <p className="text-grey text-center pr-5">
+            <p className="text-grey text-left md:text-center pr-5">
               Get to know the passionate experts behind our success. Our
               dedicated team brings vision, innovation, and expertise to every
               project, making your dreams a reality
@@ -335,12 +374,12 @@ const AboutUsPage = () => {
       {/* testimonial */}
       <section
         id="testimonial"
-        className="container mx-auto py-20 px-4 md:px-0 mt-20"
+        className="container mx-auto py-10 md:py-20 px-4 md:px-0 mt-0 md:mt-20"
       >
-        <div className="text-center">
+        <div className="text-left md:text-center">
           <span className="capitalize">testimonial</span>
 
-          <h2 className="text-5xl text-dark font-impact font-normal my-3 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl text-dark font-impact font-normal my-3 max-w-[200px] md:max-w-2xl md:mx-auto">
             What People Say About Us
           </h2>
         </div>

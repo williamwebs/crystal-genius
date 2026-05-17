@@ -180,16 +180,18 @@ const Nav = () => {
           </div>
 
           {/* menu list */}
-          <div className="flex flex-col items-start gap-8">
+          <div className="flex flex-col items-start gap-4 mt-5">
             {menuList.map((menu) => (
               <Link
                 href={menu.path}
                 key={menu.title}
-                className={`relative font-nunito font-medium text-base pb-1 ${
-                  pathname === menu.path
-                    ? 'after:content-[""] after:w-full after:h-[2px] after:bg-blue-600 after:absolute after:bottom-0 after:left-0'
-                    : "after:content-none"
-                }`}
+                // className={`relative font-nunito font-medium text-base pb-1 ${
+                //   pathname === menu.path
+                //     ? 'after:content-[""] after:w-full after:h-[2px] after:bg-red after:absolute after:bottom-0 after:left-0'
+                //     : "after:content-none"
+                // }`}
+
+                className={`font-nunito font-medium text-sm uppercase shadow w-full py-2 px-3 hover:bg-red hover:text-white rounded ${pathname === menu.path ? "bg-red text-white" : ""}`}
                 onClick={() => toggleMenu()}
               >
                 {menu.title}
@@ -199,7 +201,7 @@ const Nav = () => {
             {isLoggedIn ? (
               <Link
                 href="/cg-admin"
-                className="font-nunito font-medium text-base pb-1"
+                className="font-nunito font-medium text-sm uppercase shadow w-full py-2 px-3 hover:bg-red hover:text-white rounded"
                 onClick={() => toggleMenu()}
               >
                 Dashboard
@@ -208,7 +210,9 @@ const Nav = () => {
 
             <Link
               href="/drawings"
-              className="font-nunito font-medium text-base pb-1"
+              className={`font-nunito font-medium text-sm uppercase shadow w-full py-2 px-3 hover:bg-red hover:text-white rounded ${
+                pathname === "/drawings" ? "bg-red text-white" : ""
+              }`}
               onClick={() => toggleMenu()}
             >
               Purchase Drawings

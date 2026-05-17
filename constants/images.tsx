@@ -1418,5 +1418,12 @@ export const NoPropertyImage = () => <svg width="392" height="214" viewBox="0 0 
 </defs>
 </svg>
 
+export const LockImage = () => <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z" fill="#FFE5E5"/>
+<path d="M31 23H17C15.8954 23 15 23.8954 15 25V32C15 33.1046 15.8954 34 17 34H31C32.1046 34 33 33.1046 33 32V25C33 23.8954 32.1046 23 31 23Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19 23V19C19 17.6739 19.5268 16.4021 20.4645 15.4645C21.4021 14.5268 22.6739 14 24 14C25.3261 14 26.5979 14.5268 27.5355 15.4645C28.4732 16.4021 29 17.6739 29 19V23" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
 
 

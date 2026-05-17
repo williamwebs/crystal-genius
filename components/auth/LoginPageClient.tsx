@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { RestrictionLockIcon } from "@/constants/images";
 import { supabase } from "@/lib/supabase";
+import toast from "react-hot-toast";
 
 const LoginPageClient = () => {
   const router = useRouter();
@@ -59,16 +60,18 @@ const LoginPageClient = () => {
       return;
     }
 
+    toast.success("Login successful!")
+
     router.replace(redirectTarget);
     router.refresh();
     setLoading(false);
   };
 
   return (
-    <div className="flex items-center justify-center bg-[#555555] rounded-[10px]">
+    <div className="flex items-center justify-center bg-transparent md:bg-[#555555] rounded-[10px]">
       <div className="w-full max-w-[508px] h-full max-h-[591px]">
         {/* Card */}
-        <div className="bg-[#555555] rounded-[10px] px-8 pt-10 pb-8 shadow-2xl flex flex-col items-center gap-10">
+        <div className="md:bg-[#555555] rounded-[10px] px-8 pt-10 pb-8 shadow-2xl flex flex-col items-center gap-10">
           {/* Lock Icon */}
           <div>
             <div className="mx-auto w-fit">
