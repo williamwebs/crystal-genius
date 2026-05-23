@@ -12,10 +12,10 @@ const AboutUs = () => {
       <div className="hidden md:flex flex-col md:flex-row items-end justify-between gap-10">
         <div className="w-full md:w-3/5">
           <span
-            // variants={fadeIn("left", 0.3)}
-            // initial="hidden"
-            // whileInView={"show"}
-            // viewport={{ once: false, amount: 0.7 }}
+          // variants={fadeIn("left", 0.3)}
+          // initial="hidden"
+          // whileInView={"show"}
+          // viewport={{ once: false, amount: 0.7 }}
           >
             About us
           </span>
@@ -25,9 +25,9 @@ const AboutUs = () => {
             // initial="hidden"
             // whileInView={"show"}
             // viewport={{ once: false, amount: 0.7 }}
-            className="text-5xl text-dark font-impact max-w-lg font-normal my-5"
+            className="text-5xl text-dark font-impact max-w-xl font-normal my-5"
           >
-            We Build everything you can need
+            From Visionary Blueprint to Structural Reality.
           </h2>
           <p
             // variants={fadeIn("right", 0.3)}
@@ -36,9 +36,9 @@ const AboutUs = () => {
             // viewport={{ once: false, amount: 0.7 }}
             className="my-2 text-grey max-w-2xl md:pr-10"
           >
-            Our comprehensive suite of services spans various sectors, including
-            infrastructure, urban development, energy, research and development,
-            and project management.
+            Our current operations drive project certainty through precision
+            Architectural Drawing, heavy Structural/Infrastructural Design, &
+            professional Soil Testing & Subsurface Analysis.
           </p>
           <div className="my-8">
             <List description="Quality construction tailored to your vision and lifestyle." />
@@ -51,10 +51,10 @@ const AboutUs = () => {
             // initial="hidden"
             // whileInView={"show"}
             // viewport={{ once: false, amount: 0.7 }}
-            className="flex items-start justify-between gap-5 max-w-lg"
+            className="flex items-start justify-between gap-3 max-w-[420px]"
           >
             <div className="w-full md:w-1/2">
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-2">
                 <Image src={"/call-frame.svg"} width={44} height={44} alt="" />
                 <div className="flex flex-col items-start justify-between gap-1">
                   <p className="text-dark text-base font-bold">
@@ -65,8 +65,13 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="w-full md:w-1/2">
-              <div className="flex items-center gap-5">
-                <Image src={"/vincent.svg"} width={44} height={44} alt="" />
+              <div className="flex items-center gap-2">
+                <Image
+                  src={"/vincent-small.svg"}
+                  width={44}
+                  height={44}
+                  alt=""
+                />
                 <div className="flex flex-col items-start justify-between gap-1">
                   <p className="text-dark text-base font-bold">Engr Vincent</p>
                   <p className="text-paragraphGrey text-xs">Respondent</p>
@@ -84,7 +89,7 @@ const AboutUs = () => {
             className="w-full mt-10"
           >
             <Image
-              src={"/images/video-playback.png"}
+              src={"/images/video-playback.svg"}
               width={734}
               height={429}
               alt="video playback"
@@ -95,10 +100,10 @@ const AboutUs = () => {
         </div>
         <div className="w-full md:w-2/5">
           <div
-            // variants={fadeIn("right", 0.2)}
-            // initial="hidden"
-            // whileInView={"show"}
-            // viewport={{ once: false, amount: 0.7 }}
+          // variants={fadeIn("right", 0.2)}
+          // initial="hidden"
+          // whileInView={"show"}
+          // viewport={{ once: false, amount: 0.7 }}
           >
             <Image
               src={"/images/engineer.png"}
@@ -115,22 +120,23 @@ const AboutUs = () => {
             // initial="hidden"
             // whileInView={"show"}
             // viewport={{ once: false, amount: 0.7 }}
-            className="my-10 text-grey max-w-lg pr-24"
+            className="my-5 text-grey max-w-lg pr-24"
           >
-            Our services cover all aspects of construction, from residential and
-            urban development to energy solutions, research, and full project
-            management.
+            Our expertise encompasses the full construction lifecycle, spanning
+            high-precision Architectural Strategy, Structural and
+            Infrastructural Engineering, and data-driven Geotechnical
+            Intelligence. all anchored by world-class project management.
           </p>
 
           <a
-            href="#testimonial"
+            href="/service"
             // variants={fadeIn("up", 0.2)}
             // initial="hidden"
             // whileInView={"show"}
             // viewport={{ once: false, amount: 0.7 }}
-            className="bg-red rounded h-10 px-16 flex items-center justify-center mt-7 shadow text-lightGrey text-sm font-nunito font-normal"
+            className="bg-red rounded h-10 flex items-center justify-center mt-4 shadow text-lightGrey text-sm font-nunito font-normal max-w-[200px]"
           >
-            Hear From Clients
+            Learn About Our Services
           </a>
         </div>
       </div>
@@ -139,10 +145,10 @@ const AboutUs = () => {
       <div className="md:hidden flex flex-col items-end justify-between gap-10">
         <div className="w-full">
           <span
-            // variants={fadeIn("right", 0.2)}
-            // initial="hidden"
-            // whileInView={"show"}
-            // viewport={{ once: false, amount: 0.7 }}
+          // variants={fadeIn("right", 0.2)}
+          // initial="hidden"
+          // whileInView={"show"}
+          // viewport={{ once: false, amount: 0.7 }}
           >
             About us
           </span>
@@ -154,7 +160,7 @@ const AboutUs = () => {
             // viewport={{ once: false, amount: 0.7 }}
             className="text-5xl text-dark font-impact max-w-lg font-normal my-5"
           >
-            We Build everything you can need
+            From Visionary Blueprint to Structural Reality.
           </h2>
           <p
             // variants={fadeIn("right", 0.2)}
@@ -163,9 +169,9 @@ const AboutUs = () => {
             // viewport={{ once: false, amount: 0.7 }}
             className="my-2 text-grey max-w-2xl md:pr-10"
           >
-            Our comprehensive suite of services spans various sectors, including
-            infrastructure, urban development, energy, research and development,
-            and project management.
+            Our current operations drive project certainty through precision
+            Architectural Drawing, heavy Structural/Infrastructural Design, &
+            professional Soil Testing & Subsurface Analysis.
           </p>
 
           <div
@@ -187,9 +193,10 @@ const AboutUs = () => {
                   // viewport={{ once: false, amount: 0.7 }}
                   className="my-5 text-white text-base"
                 >
-                  Our services cover all aspects of construction, from
-                  residential and urban development to energy solutions,
-                  research, and full project management.
+                  Our expertise encompasses the full construction lifecycle,
+                  spanning high-precision Architectural Strategy, Structural and
+                  Infrastructural Engineering, and data-driven Geotechnical
+                  Intelligence. all anchored by world-class project management.
                 </p>
                 <a
                   href="#testimonial"
@@ -197,9 +204,9 @@ const AboutUs = () => {
                   // initial="hidden"
                   // whileInView={"show"}
                   // viewport={{ once: false, amount: 0.7 }}
-                  className="bg-red rounded h-10 px-16 flex items-center justify-center mt-2 shadow text-lightGrey text-sm font-nunito font-normal"
+                  className="bg-red rounded h-10 flex items-center justify-center mt-2 shadow text-lightGrey text-sm font-nunito font-normal max-w-[200px]"
                 >
-                  Hear From Clients
+                  Learn About Our Services
                 </a>
               </div>
             </div>
@@ -220,7 +227,7 @@ const AboutUs = () => {
                   // initial="hidden"
                   // whileInView={"show"}
                   // viewport={{ once: false, amount: 0.5 }}
-                  className="flex items-center gap-5 my-3 shadow rounded p-1"
+                  className="flex items-center gap-3 my-3 shadow rounded p-1"
                 >
                   <Image
                     src={"/call-frame.svg"}
@@ -240,9 +247,9 @@ const AboutUs = () => {
                   // initial="hidden"
                   // whileInView={"show"}
                   // viewport={{ once: false, amount: 0.5 }}
-                  className="flex items-center gap-5 my-3 shadow rounded p-1"
+                  className="flex items-center gap-3 my-3 shadow rounded p-1"
                 >
-                  <Image src={"/vincent.svg"} width={44} height={44} alt="" />
+                  <Image src={"/vincent-small.svg"} width={44} height={44} alt="" />
                   <div className="flex flex-col items-start justify-between gap-1">
                     <p className="text-dark text-base font-bold">
                       Engr Vincent
@@ -254,13 +261,13 @@ const AboutUs = () => {
             </div>
 
             <div
-              // variants={fadeIn("right", 0.2)}
-              // initial="hidden"
-              // whileInView={"show"}
-              // viewport={{ once: false, amount: 0.5 }}
+            // variants={fadeIn("right", 0.2)}
+            // initial="hidden"
+            // whileInView={"show"}
+            // viewport={{ once: false, amount: 0.5 }}
             >
               <Image
-                src={"/images/video-playback.png"}
+                src={"/images/video-playback.svg"}
                 width={734}
                 height={429}
                 alt="video playback"

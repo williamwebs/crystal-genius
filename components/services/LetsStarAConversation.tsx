@@ -10,10 +10,10 @@ const LetsStarAConversation = () => {
             Let's Start a Conversation
           </h2>
           <p className="text-[#777777] text-left md:text-center font-nunito font-medium max-w-2xl">
-            We’d enjoy exploring your design questions or sharing examples of
-            how our architectural solutions have helped other clients move from
-            rough concepts to approved, GTM (Go-To-Market) products. Reach out
-            to our design team to discuss your specific needs.
+            We invite you to explore our end-to-end delivery models or review
+            how our turnkey solutions have simplified complex builds for other
+            organizations. Connect with our leadership team to discuss a
+            stress-free path to your next project.
           </p>
         </div>
 

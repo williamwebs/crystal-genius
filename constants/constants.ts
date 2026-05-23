@@ -216,44 +216,44 @@ export const services = [
 
 export const conversationStarters = [
   {
-    title: "Custom Blueprint Development",
+    title: "Total Lifecycle Coordination",
     description:
-      "Tailored layouts that reflect your personal style and organizational goals.",
+      "Managing every phase from land acquisition and soil testing to final interior finishing under a single contract.",
     cta: "Talk to Us",
     href: "/contact-us",
   },
   {
-    title: "3D Visualization & Virtual Insights",
+    title: "Consolidated Financial Oversight",
     description:
-      "Make critical decisions earlier with high-fidelity renders, avoiding the cost of downstream changes.",
+      "Streamlining budgets and vendor payments to ensure total transparency and eliminate hidden costs.",
     cta: "Talk to Us",
     href: "/contact-us",
   },
   {
-    title: "Regulatory & Approval Guidance",
+    title: "Vendor & Procurement Management",
     description:
-      "Critical oversight to align your drawings with government stakeholders and safety standards.",
+      "Leveraging our network to secure materials and specialized labor without the client needing to manage individual contracts.",
     cta: "Talk to Us",
     href: "/contact-us",
   },
   {
-    title: "Eco-Friendly & Sustainable Design",
+    title: "Expedited Regulatory Approval",
     description:
-      "High-performing buildings that optimize energy efficiency and environmental impact.",
+      "Handling all government permits and safety certifications as a core part of the delivery process.",
     cta: "Talk to Us",
     href: "/contact-us",
   },
   {
-    title: "Space Optimization & Functionality Analysis",
+    title: "Design-Build Synchronization",
     description:
-      "In-depth reviews of floor plans to maximize square footage and improve user flow, ensuring every inch of your building serves a purpose.",
+      "Ensuring the architectural vision and engineering realities are perfectly aligned to prevent site-level changes.",
     cta: "Talk to Us",
     href: "/contact-us",
   },
   {
-    title: "Legacy Brand Integration",
+    title: "Final Handover & Facility Readiness",
     description:
-      "Translating your organization’s history and brand identity into physical form, creating structures that tell a story while meeting modern needs.",
+      `Providing a move-in-ready asset, including all testing, commissions, and "as-built" documentation for immediate use.`,
     cta: "Talk to Us",
     href: "/contact-us",
   },
@@ -261,7 +261,7 @@ export const conversationStarters = [
 
 export const teams = [
   {
-    image: "/images/vincent-1.svg", // abimbola
+    image: "/images/vincent-2.svg", // abimbola
     name: "Engr Vincent Satowaku",
     qualification: "M.NSE., M.COREN., M.NICE",
     role: "Snr Engr, President / CEO",
@@ -295,14 +295,14 @@ export const projectExecutionStats = [
   },
   {
     percentage: "100%",
-    title: "Transparency",
-    description: "Directly reaching community projects and beneficiaries",
+    title: "Margin Precision",
+    description: "Leveraging load Simulations and Geotechnical Intelligence",
     borderColor: "border-t-[#0077CC]",
   },
   {
     percentage: "100%",
-    title: "Transparency",
-    description: "Directly reaching community projects and beneficiaries",
+    title: "Collaboration",
+    description: "We solve complex problems before they reach the Site",
     borderColor: "border-t-[#ffd554]",
   },
 ];

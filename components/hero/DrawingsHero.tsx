@@ -7,7 +7,7 @@ import { DrawingsSpanIcon, RightArrowIcon } from "../../constants/images";
 
 export default function DrawingsHero() {
   return (
-    <header className="relative h-[700px] md:h-[600px] -mt-20 sm:-mt-0">
+    <header className="relative h-[700px] md:h-[650px] -mt-20 sm:-mt-20">
       <div
         className="w-full h-full bg-cover bg-center"
         style={{

@@ -49,10 +49,10 @@ const HeaderPageCard = () => {
                   </p>
 
                   <Link
-                    href={"/"}
+                    href={"#contact-us"}
                     className="bg-red rounded h-10 w-28 flex items-center justify-center mt-7 shadow text-lightGrey text-sm font-nunito font-normal"
                   >
-                    Get started
+                    Get in touch
                   </Link>
                 </div>
               </div>

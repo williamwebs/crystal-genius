@@ -137,8 +137,8 @@ const AboutUsPage = () => {
       </section>
 
       {/* about us expertise */}
-      <section className="container mx-auto py-0 md:pb-20 px-4 md:px-0 flex flex-col md:flex-row items-start justify-between gap-5 md:gap-20">
-        <div className="w-full md:w-1/2 md:py-10">
+      <section className="container mx-auto py-0 md:pb-20 px-4 md:px-0 flex flex-col md:flex-row items-start justify-between gap-5 md:gap-10">
+        <div className="w-full md:max-w-[500px] md:py-10">
           <span
             // variants={fadeIn("right", 0.2)}
             // initial="hidden"
@@ -154,9 +154,9 @@ const AboutUsPage = () => {
             // initial="hidden"
             // whileInView={"show"}
             // viewport={{ once: false, amount: 0.5 }}
-            className="text-4xl md:text-5xl text-dark font-impact max-w-md font-normal my-5"
+            className="text-4xl md:text-5xl tracking-wide text-dark font-impact max-w-lg font-normal my-5"
           >
-            We Build everything you can need
+            We Engineer every Structural Solution your Vision requires
           </h2>
           <p
             // variants={fadeIn("right", 0.3)}
@@ -165,12 +165,14 @@ const AboutUsPage = () => {
             // viewport={{ once: false, amount: 0.5 }}
             className="hidden md:block my-2 text-grey max-w-xl md:pr-10"
           >
-            We specialize in delivering comprehensive construction services,
-            crafting innovative solutions that cater to residential, commercial,
-            and industrial needs. From designing modern homes to executing
-            large-scale projects, we ensure excellence in every detail. Our team
-            combines expertise and advanced methods to bring your vision to life
-            efficiently and reliably.
+            We specialize in high-precision. Architectural, structural,
+            Geo-technical and infrastructural delivery, engineering innovative
+            solutions across the residential, commercial, and industrial
+            sectors. From the architectural skeletons of modern estates to the
+            execution of complex civil works, we ensure unshakeable integrity in
+            every detail. Our team integrates advanced load-simulation methods
+            with professional oversight to bring your vision to life with
+            absolute reliability.
           </p>
 
           <div
@@ -180,14 +182,14 @@ const AboutUsPage = () => {
           // viewport={{ once: false, amount: 0.5 }}
           >
             <Link
-              href="/"
-              className="hidden bg-red rounded h-10 w-fit px-16 md:flex items-center justify-center mt-10 shadow text-lightGrey text-sm font-nunito font-normal"
+              href="/service"
+              className="hidden bg-red rounded h-10 w-fit px-16 md:flex items-center justify-center mt-10 shadow text-lightGrey text-sm font-nunito font-normal capitalize"
             >
-              More About Us
+              Learn aboout our services
             </Link>
           </div>
         </div>
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:flex-1 rounded overflow-hidden">
           {/* desktop screen */}
           <div
           // variants={fadeIn("left", 0.2)}
@@ -196,7 +198,7 @@ const AboutUsPage = () => {
           // viewport={{ once: false, amount: 0.5 }}
           >
             <Image
-              src={"/images/about-us-expertise.png"}
+              src={"/images/about-us-expertise.svg"}
               width={770}
               height={640}
               alt="model of a building"
@@ -213,27 +215,12 @@ const AboutUsPage = () => {
           // viewport={{ once: false, amount: 0.5 }}
           >
             <Image
-              src={"/images/about-us-exp-1.png"}
+              src={"/images/about-us-expertise.svg"}
               width={770}
               height={640}
               alt="model of a building"
+              quality={100}
               className="select-none pointer-events-none md:hidden"
-              style={{ userSelect: "none" }}
-            />
-          </div>
-
-          <div
-          // variants={fadeIn("left", 0.3)}
-          // initial="hidden"
-          // whileInView={"show"}
-          // viewport={{ once: false, amount: 0.5 }}
-          >
-            <Image
-              src={"/images/about-us-exp-2.png"}
-              width={770}
-              height={640}
-              alt="model of a building"
-              className="select-none pointer-events-none md:hidden my-4"
               style={{ userSelect: "none" }}
             />
           </div>
@@ -245,12 +232,14 @@ const AboutUsPage = () => {
             // viewport={{ once: false, amount: 0.5 }}
             className="md:hidden block my-2 text-grey"
           >
-            We specialize in delivering comprehensive construction services,
-            crafting innovative solutions that cater to residential, commercial,
-            and industrial needs. From designing modern homes to executing
-            large-scale projects, we ensure excellence in every detail. Our team
-            combines expertise and advanced methods to bring your vision to life
-            efficiently and reliably.
+            We specialize in high-precision. Architectural, structural,
+            Geo-technical and infrastructural delivery, engineering innovative
+            solutions across the residential, commercial, and industrial
+            sectors. From the architectural skeletons of modern estates to the
+            execution of complex civil works, we ensure unshakeable integrity in
+            every detail. Our team integrates advanced load-simulation methods
+            with professional oversight to bring your vision to life with
+            absolute reliability.
           </p>
 
           <div
@@ -260,10 +249,10 @@ const AboutUsPage = () => {
           // viewport={{ once: false, amount: 0.5 }}
           >
             <Link
-              href="/about-us"
-              className="sm:hidden bg-red rounded h-10 w-fit mx-auto px-16 flex items-center justify-center mt-5 shadow text-lightGrey text-sm font-nunito font-normal"
+              href="/service"
+              className="sm:hidden bg-red rounded h-10 w-fit mx-auto px-16 flex items-center justify-center mt-5 shadow text-lightGrey text-sm font-nunito font-normal capitalize"
             >
-              More About Us
+              Learn aboout our services
             </Link>
           </div>
         </div>
@@ -309,7 +298,9 @@ const AboutUsPage = () => {
         {isLoading ? (
           <p className="text-center text-grey mt-10">Loading activities...</p>
         ) : blogs.length === 0 ? (
-          <p className="text-center text-grey mt-10">No activities posted yet.</p>
+          <p className="text-center text-grey mt-10">
+            No activities posted yet.
+          </p>
         ) : (
           <Swiper
             spaceBetween={20}
@@ -330,9 +321,14 @@ const AboutUsPage = () => {
             className="mt-10"
           >
             {blogs.map((activity: any) => (
-              <SwiperSlide key={activity._id} className="bg-white rounded-lg shadow p-6">
+              <SwiperSlide
+                key={activity._id}
+                className="bg-white rounded-lg shadow p-6"
+              >
                 <ActivityCard
-                  image={activity.image ? urlFor(activity.image)?.url() || "" : ""}
+                  image={
+                    activity.image ? urlFor(activity.image)?.url() || "" : ""
+                  }
                   title={activity.title}
                   description={activity.excerpt || "Read more..."}
                   slug={activity.slug.current}
