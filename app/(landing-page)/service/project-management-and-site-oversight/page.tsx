@@ -12,7 +12,7 @@ const ProjectManagementPage = () => {
       <InnerServicesHero
         title="Project Management & Site Oversight"
         backgroundImage="/images/project-management.svg"
-        description="When you are managing a capital project, the distance between the boardroom and the job site can lead to a dangerous loss of control. You know that a lack of supervision results in misinterpreted plans and compromised quality."
+        description="Ensuring rigorous quality control and timeline adherence through dedicated on-site supervision, bridging the gap between design intent and physical execution for error-free results."
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">
         <ShowcaseSection
