@@ -18,7 +18,7 @@ const TrunkeyPage = () => {
         <ShowcaseSection
           mainHeading="A Seamless Journey from Concept to Key"
           mainDescription="You need a partner who can shoulder that entire burden with absolute competence. Crystal Genius International acts as your single point of accountability, ensuring that your project moves from an empty plot to a finished asset with total professional alignment."
-          columnHeading="The Cure For Common Unprofessionalism in Construction"
+          columnHeading="Eliminating Mediocrity. Engineering Project Certainty"
           columnDescriptions={[
             "We specialize in delivering comprehensive construction services, crafting innovative solutions that cater to residential, commercial, and industrial needs. From designing modern homes to executing large-scale projects, we ensure excellence in every detail. Our team combines expertise and advanced methods to bring your vision to life efficiently and reliably.",
           ]}
@@ -39,11 +39,14 @@ const TrunkeyPage = () => {
       <LetsTalk />
       <LetsStarAConversation />
       <OurPeople
-        role="Senior Engineer"
-        name="Engr Vincent Satowaku"
-        image="/images/vincent.png"
-        title="Executive Vice President, 
-CEO"
+        role="Practicing Jnr. Engineer"
+        name="Engr. Ogunjimi Olamide Felix"
+        image="/images/felix.svg"
+        title="Consulting Engineer, MNSE."
+        text={[
+          "Operating directly on the front lines of site oversight, our focus is the rigorous monitoring of material ratios, structural reinforcement placements, and technical blueprint compliance.",
+          "By maintaining a continuous, data-backed feedback loop with senior project managers, we guarantee that field data from soil tests and load-bearing structures is fully integrated into daily operations.",
+        ]}
       />
     </main>
   );

@@ -68,11 +68,22 @@ export default function Home() {
               // viewport={{ once: false, amount: 0.5 }}
               className="text-grey max-w-xl mx-auto"
             >
-              At Crystal Genius International Limited, we stand out for our
-              commitment to excellence, innovation, and client satisfaction.
-              With a proven track record of delivering high-quality, sustainable
-              building solutions, we combine expertise, advanced technology, and
-              attention to detail to bring your vision to life.
+              At Crystal Genius International Limited, Our team comprises of the
+              Best-brains Nationwide coming together to bring Quality &
+              Affordable solutions in the Building Industry
+            </p>
+            <p
+              // variants={fadeIn("left", 0.3)}
+              // initial="hidden"
+              // whileInView={"show"}
+              // viewport={{ once: false, amount: 0.5 }}
+              className="text-grey max-w-xl mx-auto"
+            >
+              We stand out for our commitment to Excellence, Innovation, and
+              Client Satisfaction. With a proven Track Record of delivering
+              High-quality, Sustainable building solutions, We combine
+              Expertise, Advanced Technology, and attention to Detail to bring
+              your Vision to life.
             </p>
 
             {/* mobile screen image */}
@@ -95,10 +106,10 @@ export default function Home() {
             </div>
 
             <Link
-              href={"/"}
+              href={"/contact-us"}
               className="bg-red rounded h-10 w-28 flex items-center justify-center mt-7 shadow text-lightGrey text-sm font-nunito font-normal ml-auto"
             >
-              Get started
+              Get in touch
             </Link>
           </div>
         </div>
@@ -159,7 +170,7 @@ export default function Home() {
             {projectExecutionStats.map((item, index) => (
               <div
                 key={index}
-                className={`h-[300px] rounded-[8px] border-t-[15px] ${item.borderColor} bg-[#FCFAFA] px-[10px] py-[40px] flex flex-col items-center justify-center gap-2`}
+                className={`h-[300px] rounded-[8px] border-t-[15px] ${index !== 1 ? "border-t-[#ffd554]" : "border-t-[#0077CC]"} bg-[#FCFAFA] px-[10px] py-[40px] flex flex-col items-center justify-center gap-2`}
               >
                 <span className="text-[#999999] text-[70px] font-impact font-normal">
                   {item.percentage}
@@ -180,7 +191,7 @@ export default function Home() {
 
       <section className="w-full h-[400px] md:h-[700px] overflow-hidden relative">
         <Image
-          src={"/images/strategic-transparency.svg"}
+          src={"/images/strategic-transparency2.svg"}
           fill
           alt="crystal bg"
           quality={100}
@@ -188,7 +199,9 @@ export default function Home() {
         />
       </section>
 
-      <Contact />
+      <div id="contact-us">
+        <Contact />
+      </div>
     </main>
   );
 }

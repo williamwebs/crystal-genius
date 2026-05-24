@@ -35,7 +35,8 @@ p {
 
 .number_ {
   -webkit-text-fill-color: transparent;
-  -webkit-text-strokewidth: 2px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ffd554;
 }
 
 span {
@@ -168,6 +169,10 @@ section .swiper-pagination-bullet-active {
 
 .dark-shadow {
   box-shadow: -4px 4px 4.2px 0px rgba(0, 0, 0, 0.4);
+}
+
+.btn-dark-shadow {
+  box-shadow: 7px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .dashboard-scrollbar-hidden {

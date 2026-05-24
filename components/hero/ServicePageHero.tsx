@@ -6,11 +6,11 @@ import {fadeIn} from '../../variants/variant'
 
 export default function ServicePageHero() {
   return (
-    <header className="relative h-[700px] md:h-[600px] -mt-20 sm:-mt-0">
+    <header className="relative h-[700px] md:h-[650px] -mt-20 sm:-mt-20">
       <div
         className="w-full h-full bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(0, 35, 61, 1), rgba(112, 199, 218, 0.24)), url(${"/images/service-hero.png"})`,
+          backgroundImage: `linear-gradient(to right, rgba(0, 35, 61, 1), rgba(112, 199, 218, 0.24)), url(${"/images/service-hero.svg"})`,
         }}
       >
         {/* Static Text */}

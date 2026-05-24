@@ -18,7 +18,7 @@ const CivilEngineeringPage = () => {
         <ShowcaseSection
           mainHeading="Building the Framework for Progress."
           mainDescription="When you are tasked with developing a site’s infrastructure, you are creating the lifelines that will support every person and structure within that perimeter. You recognize that the quality of your civil works determines the long-term safety and accessibility of the entire development."
-          columnHeading="The Cure For Common Unprofessionalism in Construction"
+          columnHeading="Setting the Standard for Professional Accountability in Construction."
           columnDescriptions={[
             "The most sophisticated site plan is only successful if it can withstand the elements and the test of time. At Crystal Genius International, we bridge the gap between abstract civil blueprints and the heavy machinery on the ground. We have seen how professionalism often dips during 'unseen' works like drainage and foundation grading, leading to surface-level failures later.",
           ]}
@@ -39,11 +39,16 @@ const CivilEngineeringPage = () => {
       <LetsTalk />
       <LetsStarAConversation />
       <OurPeople
-        role="Senior Engineer"
+        role="Lead/Principal Engineer"
         name="Engr Vincent Satowaku"
-        image="/images/vincent.png"
-        title="Executive Vice President, 
-CEO"
+        image="/images/vincent-2.svg"
+        title="Executive Vice President, CEO"
+        text={[
+          "Civil engineering is the backbone of national development, yet the local industry often suffers from erratic project execution and a lack of data-driven planning. Across Nigeria, we routinely see public and private infrastructure projects fail or stall due to poor materials, weak oversight, and a failure to anticipate environmental stress.",
+          "Our blueprint for infrastructure relies on rigorous multi-site supervision and advanced material science to eliminate structural vulnerabilities. From drainage networks and access roads to large-scale site preparation, we ensure that our civil engineering projects are flawlessly integrated with their surrounding urban ecosystems. ",
+
+"We are redefining project execution by proving that with the right technical mastery and unyielding professional standards, infrastructure in Nigeria can be built to global benchmarks."
+        ]}
       />
     </main>
   );

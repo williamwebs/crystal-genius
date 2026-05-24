@@ -84,8 +84,8 @@ const Nav = () => {
 
   return (
     <nav
-      className={`w-full mt-0 md:mt-1 sticky__navbar relative z-50 backdrop-blur ${
-        bg ? "bg-transparent sm:bg-white" : "bg-transparent sm:bg-white"
+      className={`w-full mt-0 md:mt-1 sticky__navbar relative z-50 ${
+        bg ? "bg-transparent " : "bg-transparent "
       }`}
     >
       <div className="container mx-auto px-4 md:px-0 flex items-center justify-between py-2 text-sm font-nunito">
@@ -112,7 +112,8 @@ const Nav = () => {
             <Link
               href={menu.path}
               key={menu.title}
-              className={`relative pb-1 px-1 ${
+              // backdrop-blur at 100px scroll view 
+              className={`relative pb-1 px-1 text-white ${
                 pathname === menu.path
                   ? 'after:content-[""] after:w-full after:h-[1px] after:bg-red after:absolute after:bottom-0 after:left-0'
                   : "after:content-none"

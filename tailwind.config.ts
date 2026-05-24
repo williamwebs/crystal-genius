@@ -19,6 +19,7 @@ export default {
         paragraphGrey: "#999999",
         grey: "#777777",
         white: "#fefefe",
+        blue: "#0077CC",
         dark: "#333333",
         accentBlue: "#0077cc",
         D6D6D6: "#D6D6D6",
