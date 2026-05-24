@@ -42,11 +42,14 @@ const StrategicConstructionDesignsPage = () => {
         conversationStarters={strategicConstructionConversationStarters}
       />
       <OurPeople
-        role="Senior Engineer"
-        name="Engr Vincent Satowaku"
-        image="/images/vincent.png"
-        title="Executive Vice President, 
-CEO"
+        role="Administrative & Operational Officer"
+        name="Anishere Mary"
+        image="/images/anishere.svg"
+        title="Front Desk Representative Secretary"
+        text={[
+          "Being the Administrative & Operational officer for clients, developers, and diaspora investors tracking their project timelines. What I consistently observe is that the most stressful part of construction for any client is uncertainty & not knowing where their funds are going or when milestones will be hit. Our strategic consulting services are designed to eliminate that anxiety right from the initial consultation, transforming complex, technical engineering jargon into clear, transparent roadmaps that clients can easily understand and follow.",
+          "By coordinating seamless communication between our technical teams and our clients, we ensure that project onboarding, legal documentation, and escrow setups are handled with absolute professionalism.",
+        ]}
       />
     </main>
   );

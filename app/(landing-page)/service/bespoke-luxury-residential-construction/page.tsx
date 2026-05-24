@@ -39,14 +39,17 @@ const BespokeLuxuryResidentialConstructionPage = () => {
       </div>
       <LetsTalk />
       <LetsStarAConversation
-        conversationStarters={bespokeLuxuryConversationStarters }
+        conversationStarters={bespokeLuxuryConversationStarters}
       />
       <OurPeople
-        role="Senior Engineer"
-        name="Engr Vincent Satowaku"
-        image="/images/vincent.png"
-        title="Executive Vice President, 
-CEO"
+        role="Social Media Manager"
+        name="Gbemisola Adelani"
+        image="/images/gbemisola.svg"
+        title="Content Creator Social Media Manager"
+        text={[
+          "From foundational soil testing to the final architectural finishes, I document the precise milestones that define a true Crystal Genius estate.",
+          "By showcasing our technical rigor and craftsmanship across our digital platforms, I ensure our audience witnesses the exact execution, data, and premium quality driving their investments forward.",
+        ]}
       />
     </main>
   );

@@ -42,11 +42,14 @@ const ProfessionalSoilAnalysisDesignsPage = () => {
         conversationStarters={professionalSoilAnalysisConversationStarters}
       />
       <OurPeople
-        role="Senior Engineer"
-        name="Engr Vincent Satowaku"
-        image="/images/vincent.png"
-        title="Executive Vice President, 
-CEO"
+        role="Senior Geologist"
+        name="Olukoju John Ayomide"
+        image="/images/olukoju.svg"
+        title="Geotechnical Specialist COMEG., NMGS., NAEGE."
+        text={[
+          "We don't just provide data; we oversee the technical lifecycle to ensure that your building’s foundation is fundamentally sound and safe for generations",
+          "Beyond the laboratory report, our leadership is committed to a culture of technical integrity. By providing rigorous oversight of field testing and peer-reviewing every soil profile, we ensure that Crystal Genius International's standards for quality control and safety are met before the first foundation is poured.",
+        ]}
       />
     </main>
   );

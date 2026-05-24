@@ -39,13 +39,18 @@ const ProjectManagementPage = () => {
         />
       </div>
       <LetsTalk />
-      <LetsStarAConversation conversationStarters={projectManagementConversationStarters} />
+      <LetsStarAConversation
+        conversationStarters={projectManagementConversationStarters}
+      />
       <OurPeople
-        role="Senior Engineer"
-        name="Engr Vincent Satowaku"
-        image="/images/vincent.png"
-        title="Executive Vice President, 
-CEO"
+        role="Senior Project Manager"
+        name="Ayodele Agbaje"
+        image="/images/ayodele-1.svg"
+        title="Project Manager, (APM)UK"
+        text={[
+          "From coordinating geotechnical subsurface analysis to commanding daily site workflows, we ensure that every engineering specification is executed with absolute structural precision. Our framework focuses on maintaining strict timeline control, material quality assurance, and zero-compromise safety protocols across the entire build lifecycle.",
+          "Every milestone is governed by rigorous data-driven oversight, translating complex construction phases into a transparent, predictable roadmap of project delivery.",
+        ]}
       />
     </main>
   );

@@ -42,11 +42,14 @@ const InfrastructureDesignsPage = () => {
         conversationStarters={infrastructuralDesignConversationStarters}
       />
       <OurPeople
-        role="Senior Engineer"
+        role="Lead/Principal Engineer"
         name="Engr Vincent Satowaku"
-        image="/images/vincent.png"
-        title="Executive Vice President, 
-CEO"
+        image="/images/vincent-2.svg"
+        title="CEO & Executive President. (M.NSE., M.COREN., M.NSE.)"
+        text={[
+          "In my years of engineering, I have observed that a building's true value isn't determined by its facade, but by the integrity of its skeletal framework. Unfortunately, a major failure in our industry is the cutting of corners on sub-surface analysis and load calculations, which compromises long-term safety. At Crystal Genius, we combat this by ensuring our structural and infrastructural designs are treated as exact sciences, backed by rigorous geotechnical testing and precision engineering before any construction begins",
+          "Our approach focuses on delivering unshakeable structural assets that protect both lives and investments. Whether we are developing the foundation for a premium residential development or executing complex civil infrastructure, our team applies advanced simulation methods to guarantee project certainty.",
+        ]}
       />
     </main>
   );
