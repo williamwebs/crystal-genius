@@ -4,6 +4,7 @@ import LetsStarAConversation from "@/components/services/LetsStarAConversation";
 import LetsTalk from "@/components/services/LetsTalk";
 import OurPeople from "@/components/services/OurPeople";
 import ShowcaseSection from "@/components/services/ShowcaseSection";
+import { turnkeyProjectConversationStarters } from "@/constants/constants";
 import React from "react";
 
 const TrunkeyPage = () => {
@@ -37,7 +38,9 @@ const TrunkeyPage = () => {
         />
       </div>
       <LetsTalk />
-      <LetsStarAConversation />
+      <LetsStarAConversation
+        conversationStarters={turnkeyProjectConversationStarters}
+      />
       <OurPeople
         role="Practicing Jnr. Engineer"
         name="Engr. Ogunjimi Olamide Felix"

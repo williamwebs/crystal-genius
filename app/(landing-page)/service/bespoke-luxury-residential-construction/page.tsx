@@ -4,6 +4,7 @@ import LetsStarAConversation from "@/components/services/LetsStarAConversation";
 import LetsTalk from "@/components/services/LetsTalk";
 import OurPeople from "@/components/services/OurPeople";
 import ShowcaseSection from "@/components/services/ShowcaseSection";
+import { bespokeLuxuryConversationStarters } from "@/constants/constants";
 import React from "react";
 
 const BespokeLuxuryResidentialConstructionPage = () => {
@@ -37,7 +38,9 @@ const BespokeLuxuryResidentialConstructionPage = () => {
         />
       </div>
       <LetsTalk />
-      <LetsStarAConversation />
+      <LetsStarAConversation
+        conversationStarters={bespokeLuxuryConversationStarters }
+      />
       <OurPeople
         role="Senior Engineer"
         name="Engr Vincent Satowaku"

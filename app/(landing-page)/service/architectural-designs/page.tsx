@@ -4,6 +4,7 @@ import LetsStarAConversation from "@/components/services/LetsStarAConversation";
 import LetsTalk from "@/components/services/LetsTalk";
 import OurPeople from "@/components/services/OurPeople";
 import ShowcaseSection from "@/components/services/ShowcaseSection";
+import { architecturalDesignsConversationStarters } from "@/constants/constants";
 import React from "react";
 
 const ArchitecturalDesignsPage = () => {
@@ -37,13 +38,15 @@ const ArchitecturalDesignsPage = () => {
         />
       </div>
       <LetsTalk />
-      <LetsStarAConversation />
+      <LetsStarAConversation
+        conversationStarters={architecturalDesignsConversationStarters}
+      />
       <OurPeople
         role="Senior Engineer"
         name="Engr Vincent Satowaku"
         image="/images/vincent.png"
-        title="Executive Vice President, 
-CEO"
+        title="Executive Vice President, CEO"
+        
       />
     </main>
   );

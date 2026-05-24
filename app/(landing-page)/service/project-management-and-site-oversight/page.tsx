@@ -4,6 +4,7 @@ import LetsStarAConversation from "@/components/services/LetsStarAConversation";
 import LetsTalk from "@/components/services/LetsTalk";
 import OurPeople from "@/components/services/OurPeople";
 import ShowcaseSection from "@/components/services/ShowcaseSection";
+import { projectManagementConversationStarters } from "@/constants/constants";
 import React from "react";
 
 const ProjectManagementPage = () => {
@@ -38,7 +39,7 @@ const ProjectManagementPage = () => {
         />
       </div>
       <LetsTalk />
-      <LetsStarAConversation />
+      <LetsStarAConversation conversationStarters={projectManagementConversationStarters} />
       <OurPeople
         role="Senior Engineer"
         name="Engr Vincent Satowaku"

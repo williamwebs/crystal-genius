@@ -214,7 +214,7 @@ export const services = [
   },
 ];
 
-export const conversationStarters = [
+export const turnkeyProjectConversationStarters = [
   {
     title: "Total Lifecycle Coordination",
     description:
@@ -254,6 +254,326 @@ export const conversationStarters = [
     title: "Final Handover & Facility Readiness",
     description:
       `Providing a move-in-ready asset, including all testing, commissions, and "as-built" documentation for immediate use.`,
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+];
+
+export const projectManagementConversationStarters = [
+  {
+    title: "Rigorous Quality Control Audits",
+    description:
+      "Frequent, detailed inspections of materials and workmanship to ensure alignment with the original technical specs.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Daily Site Supervision & Reporting",
+    description:
+      "A constant technical presence on the ground to provide real-time updates and immediate error correction.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Contractor & Vendor Alignment",
+    description:
+      "Managing site-level communication between all stakeholders to prevent delays caused by fragmented coordination.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Timeline & Milestone Management",
+    description:
+      "Strategic scheduling and tracking to ensure the project remains on course without compromising on structural standards.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Safety & Regulatory Enforcement",
+    description:
+      "Strict oversight of on-site labor and engineering practices to ensure full compliance with national safety codes.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Material Verification & Logisitics",
+    description:
+      "Ensuring that only approved, high-grade materials are used and that site deliveries are optimized for workflow.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+];
+
+export const civilEngineeringConversationStarters = [
+  {
+    title: "Road Network & Traffic Management",
+    description:
+      "Designing durable internal roads and strategic speed-calming measures to ensure safe, efficient vehicle flow.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Structural Fortification & Fencing",
+    description:
+      "Engineering high-security perimeter walls and barriers that offer both aesthetic appeal and maximum structural defense.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Stormwater & Drainage Systems",
+    description:
+      "Developing advanced water-diversion frameworks to prevent erosion, flooding, and subsurface water damage.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Site Grading & Land Preparation",
+    description:
+      "Precision earthworks and leveling to ensure optimal building pads and efficient land utilization.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Utility & Power Integration",
+    description:
+      "Master-planning the subterranean systems for electricity, water, and fiber-optics to ensure future-proof connectivity.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Erosion Control & Land Stabilization",
+    description:
+      "Implementing biological and structural solutions to maintain terrain integrity in challenging environmental conditions.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+];
+
+export const bespokeLuxuryConversationStarters = [
+  {
+    title: "Smart Home & IoT Technology",
+    description:
+      "Equipping your residence with automated climate, security, and lighting systems for a future-ready living experience.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Exclusive Material Sourcing",
+    description:
+      "Leveraging our global network to secure premium stones, hardwoods, and finishes that define high-end aesthetics.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Acoustic & Privacy Engineering",
+    description:
+      "Advanced structural methods designed to ensure total serenity and soundproofing within your private sanctuary.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Artisanal Finishing & Fit-outs",
+    description:
+      "Meticulous attention to detail in carpentry, masonry, and interior surfaces for a polished, museum-quality result.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Artisan Finishes & Craftsmanship",
+    description:
+      "Meticulous attention to detail in carpentry, masonry, and interior surfaces for a polished, museum-quality result.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Climate-Responsive Design",
+    description:
+      "Engineering homes that remain naturally cool and energy-efficient, tailored specifically to the local environment.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Landscape & External Integration",
+    description:
+      "Seamlessly blending your interior luxury with outdoor amenities, from infinity pools to structural garden fortifications.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+];
+
+export const strategicConstructionConversationStarters = [
+  {
+    title: "Project Feasibility & ROI Analysis",
+    description:
+      "In-depth studies to determine the economic and technical viability of your project before capital is committed.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Resource & Procurement Strategy",
+    description:
+      "Optimizing the supply chain and material sourcing to ensure quality without unnecessary budget inflation.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Regulatory & Permitting Navigation",
+    description:
+      "Strategic guidance through the complex landscape of government approvals and national building standards.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Vendor & Contractor Vetting",
+    description:
+      "Independent technical reviews of third-party partners to ensure they meet the high standards of your organization.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Risk Mitigation & Crisis Recovery",
+    description: `Identifying potential engineering or financial bottlenecks and creating "Safety Net" protocols to keep projects moving.`,
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Sustainability & Lifecycle Planning",
+    description: "Advising on green building certifications and long-term maintenance strategies to lower the total cost of ownership.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+];
+
+export const professionalSoilAnalysisConversationStarters = [
+  {
+    title: "Precision Soil Boring & Sampling",
+    description:
+      "Direct subsurface exploration to determine load-bearing capacity and soil stratification.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Geotechnical Risk Assessment",
+    description:
+      "Identifying potential hazards such as soil liquefaction, expansion, or settlement before construction.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Topographical & Land Surveys",
+    description:
+      "High-accuracy terrain mapping to optimize building placement and ensure efficient site drainage.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Groundwater & Hydrogeological Testing",
+    description:
+      "Analyzing water table levels and drainage conditions to prevent future basement flooding or foundation rot.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Compaction & Earthwork Testing",
+    description:
+      "Ensuring that site preparation and soil density meet the rigorous standards required for heavy structural loads.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Environmental Site Assessments",
+    description:
+      "Evaluating soil and groundwater for contaminants to ensure the health and safety of the final project.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+];
+
+export const infrastructuralDesignConversationStarters = [
+  {
+    title: "Advanced Load-Bearing Analysis",
+    description:
+      "Strategic engineering to ensure maximum safety and stability for high-density and multi-story structures.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Foundation & Subsurface Engineering",
+    description:
+      "Designing robust foundation systems tailored to specific soil conditions and groundwater levels.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Infrastructure Optimization",
+    description:
+      "Streamlining Drainage, Road Networks, And Site-Wide Utilities For Maximum Efficiency And Longevity.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Material Strength & Specification",
+    description:
+      "Expert Selection And Testing Of Structural Materials To Balance Cost-Efficiency With Uncompromising Durability.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Civil Fortification Design",
+    description:
+      "Engineering Of Secure Perimeter Fencing And Protective Barriers For Estates And High-Security Zones.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Seismic & Environmental Resilience",
+    description:
+      "Developing structures engineered to withstand local environmental stresses, from high winds to shifting terrain.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+];
+
+export const architecturalDesignsConversationStarters = [
+  {
+    title: "Custom Blueprint Development",
+    description:
+      "Tailored layouts that reflect your personal style and organizational goals.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "3D Visualization & Virtual Insights",
+    description:
+      "Make critical decisions earlier with high-fidelity renders, avoiding the cost of downstream changes.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Regulatory & Approval Guidance",
+    description:
+      "Critical oversight to align your drawings with government stakeholders and safety standards.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Eco-Friendly & Sustainable Design",
+    description:
+      "High-Performing Buildings That Optimize Energy Efficiency And Environmental Impact.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Space Optimization & Functionality Analysis",
+    description:
+      "n-depth reviews of floor plans to maximize square footage and improve user flow, ensuring every inch of your building serves a purpose.",
+    cta: "Talk to Us",
+    href: "/contact-us",
+  },
+  {
+    title: "Legacy Brand Integration",
+    description:
+      "Ranslating Your Organization's History And Brand Identity Into Physical Form, Creating Structures That Tell A Story While Meeting Modern Needs.",
     cta: "Talk to Us",
     href: "/contact-us",
   },

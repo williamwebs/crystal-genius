@@ -1,7 +1,15 @@
-import { conversationStarters } from "@/constants/constants";
-import React from "react";
 
-const LetsStarAConversation = () => {
+
+interface ConversationProps {
+  conversationStarters: {
+    title: string;
+    description: string;
+    cta: string;
+    href: string;
+  }[];
+}
+
+const LetsStarAConversation = ({ conversationStarters }: ConversationProps) => {
   return (
     <section className="bg-[#F3F6F8] py-[150px]">
       <div className="container mx-auto px-4 flex flex-col items-center gap-14">
