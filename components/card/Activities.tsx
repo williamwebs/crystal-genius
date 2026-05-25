@@ -22,7 +22,7 @@ const ActivityCard = ({ image, title, description, slug, date }: Props) => {
     // viewport={{ once: false, amount: 0.5 }}
     >
       <Link href={slug ? `/article/${slug}` : "/article"} className="">
-        <div className="relative w-full max-h-[150px] md:h-[200px] overflow-hidden rounded">
+        <div className="relative w-full h-[150px] md:h-[200px] overflow-hidden rounded">
           <Image
             src={image || "/images/placeholder.png"}
             fill
