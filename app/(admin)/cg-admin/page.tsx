@@ -52,7 +52,7 @@ const DashboardOverview = async () => {
   const recentActivityOrders = (recentOrders ?? []) as Order[];
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 pb-20">
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <StatCard

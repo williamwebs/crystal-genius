@@ -91,7 +91,7 @@ export default function Hero() {
               >
                 <Link
                   href={"/"}
-                  className="bg-white border border-white rounded w-full md:w-fit h-10 px-12 flex items-center justify-center gap-3 mt-2 shadow text-blue text-sm font-nunito font-medium btn-dark-shadow"
+                  className="bg-white border border-white rounded w-full md:w-fit h-10 px-12 flex items-center justify-center gap-3 mt-2 shadow text-blue text-xs sm:text-sm font-nunito font-medium btn-dark-shadow"
                 >
                   Join Our Verified Housing Cluster
                   <svg
