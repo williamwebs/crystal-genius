@@ -14,6 +14,7 @@ const TrunkeyPage = () => {
         title="Turnkey Project Management"
         backgroundImage="/images/turnkey.svg"
         description="Providing a seamless ground-to-key experience by managing the entire construction lifecycle, allowing clients to handover a plot and receive a fully polished, ready-to-use property."
+      
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">
         <ShowcaseSection

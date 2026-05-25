@@ -2,6 +2,7 @@
 
 import {motion } from 'framer-motion'
 import { fadeIn } from '../../variants/variant'
+import { HouseImage } from '@/constants/images';
 
 interface InnerServicesHeroProps {
   routeText?: string;
@@ -11,6 +12,7 @@ interface InnerServicesHeroProps {
   showButton?: boolean;
   buttonText?: string;
   buttonHref?: string;
+  isServicePage?: boolean;
 }
 
 export default function InnerServicesHero({
@@ -20,7 +22,8 @@ export default function InnerServicesHero({
   backgroundImage = "/images/service-hero.png",
   showButton = true,
   buttonText = "Get in touch",
-  buttonHref = "/contact-us"
+  buttonHref = "/",
+  isServicePage=false
 }: InnerServicesHeroProps) {
   return (
     <header className="relative h-[700px] md:h-[650px] -mt-20 sm:-mt-20">
@@ -71,8 +74,11 @@ export default function InnerServicesHero({
                       // initial="hidden"
                       // whileInView={"show"}
                       // viewport={{ once: true, amount: 0.5 }}
-                      className="bg-red text-white text-sm hover:bg-red/85 font-nunito font-medium w-[130px] h-10 rounded-[4px] inline-flex items-center justify-center mt-5"
-                    >
+                      className="bg-red text-white text-sm hover:bg-red/85 font-nunito font-medium w-[130px] h-10 rounded-[4px] inline-flex items-center justify-center gap-2 mt-5"
+                      >
+                        {
+                          isServicePage &&
+                          <HouseImage />}
                       {buttonText}
                     </a>}
                 </div>
