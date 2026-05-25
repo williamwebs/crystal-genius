@@ -74,7 +74,7 @@ const AboutUsPage = () => {
                 />
 
                 <h5 className="font-extrabold text-3xl text-red">Vision</h5>
-                <p>
+                <p className="text-[#777777] text-base">
                   Increased access to digital opportunities for improved
                   livelihood.
                 </p>
@@ -103,7 +103,7 @@ const AboutUsPage = () => {
                 <h5 className="font-extrabold text-3xl text-accentBlue">
                   Mission
                 </h5>
-                <p>
+                <p className="text-[#777777] text-base">
                   Helping people leverage technology for improved livelihood.
                 </p>
               </div>
@@ -129,7 +129,9 @@ const AboutUsPage = () => {
                 />
 
                 <h5 className="font-extrabold text-3xl text-yellow">Values</h5>
-                <p>People - Productivity - Teamwork - Innovation- Quality</p>
+                <p className="text-[#777777] text-base">
+                  People - Productivity - Teamwork - Innovation- Quality
+                </p>
               </div>
             </CardContent>
           </Card>

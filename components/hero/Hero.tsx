@@ -87,7 +87,7 @@ export default function Hero() {
                 // initial="hidden"
                 // whileInView={"show"}
                 // viewport={{ once: false, amount: 0.5 }}
-                className="flex items-center justify-between md:justify-normal gap-1"
+                className="flex flex-col md:flex-row items-center justify-between md:justify-normal gap-3 md:gap-1"
               >
                 <Link
                   href={"/"}

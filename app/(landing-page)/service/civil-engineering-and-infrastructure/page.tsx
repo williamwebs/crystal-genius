@@ -14,6 +14,8 @@ const CivilEngineeringPage = () => {
         title="Civil Engineering & Infrastructure"
         backgroundImage="/images/civil-engineering.svg"
         description="Developing the vital framework of modern environments, including road management, advanced drainage systems, and structural fortifications that enhance site accessibility and security."
+        buttonText="Become a Landlord Today"
+        isServicePage={true}
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">
         <ShowcaseSection
@@ -38,7 +40,9 @@ const CivilEngineeringPage = () => {
         />
       </div>
       <LetsTalk />
-      <LetsStarAConversation conversationStarters={civilEngineeringConversationStarters} />
+      <LetsStarAConversation
+        conversationStarters={civilEngineeringConversationStarters}
+      />
 
       <OurPeople
         role="Lead/Principal Engineer"
@@ -49,7 +53,7 @@ const CivilEngineeringPage = () => {
           "Civil engineering is the backbone of national development, yet the local industry often suffers from erratic project execution and a lack of data-driven planning. Across Nigeria, we routinely see public and private infrastructure projects fail or stall due to poor materials, weak oversight, and a failure to anticipate environmental stress.",
           "Our blueprint for infrastructure relies on rigorous multi-site supervision and advanced material science to eliminate structural vulnerabilities. From drainage networks and access roads to large-scale site preparation, we ensure that our civil engineering projects are flawlessly integrated with their surrounding urban ecosystems. ",
 
-"We are redefining project execution by proving that with the right technical mastery and unyielding professional standards, infrastructure in Nigeria can be built to global benchmarks."
+          "We are redefining project execution by proving that with the right technical mastery and unyielding professional standards, infrastructure in Nigeria can be built to global benchmarks.",
         ]}
       />
     </main>
