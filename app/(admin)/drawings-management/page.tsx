@@ -96,7 +96,7 @@ const DrawingsManagement = () => {
   };
 
   return (
-    <div className="space-y-8 mt-4 relative">
+    <div className="space-y-8 pb-20 mt-4 relative">
       <div className="flex justify-end">
         <button
           onClick={() => router.push("/drawings-management/add-new-drawing")}

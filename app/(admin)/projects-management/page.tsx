@@ -240,7 +240,7 @@ const ProjectsManagement = () => {
   };
 
   return (
-    <div className="space-y-8 mt-4 relative">
+    <div className="space-y-8 pb-20 mt-4 relative">
       <div className="flex justify-end gap-3">
         <button
           onClick={handleOpenCategories}

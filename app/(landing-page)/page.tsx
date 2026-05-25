@@ -156,7 +156,7 @@ export default function Home() {
       <section className="bg-white py-20">
         <div className="container mx-auto px-4 flex flex-col space-y-10">
           <div className="flex flex-col gap-7">
-            <h2 className="text-5xl text-dark text-center font-impact font-normal max-w-[800px] mx-auto uppercase">
+            <h2 className="text-3xl md:text-5xl text-dark text-center font-impact font-normal md:max-w-[800px] mx-auto uppercase">
               Strategic AND Transparency in Project Execution
             </h2>
             <p className="text-grey text-center max-w-2xl mx-auto">

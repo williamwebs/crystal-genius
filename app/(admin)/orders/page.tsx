@@ -96,7 +96,7 @@ const OrdersManagement = () => {
   const rejectedCount = orders.filter(o => o.status === "declined").length;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 pb-20">
       <div className="font-nunito font-medium">
         {/* tabs */}
         <div className="max-w-[500px] w-full h-[59px] grid grid-cols-4 gap-10 mb-[30px] overflow-auto hide-scrollbar ">

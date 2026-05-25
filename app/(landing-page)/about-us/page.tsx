@@ -1,32 +1,18 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import AboutHero from "../../../components/hero/AboutHero";
-import AboutUs from "../../../components/about-us/AboutUs";
-import { activityList, teams } from "../../../constants/constants";
-import ActivityCard from "../../../components/card/Activities";
+import { teams } from "../../../constants/constants";
+
 import Teams from "../../../components/card/Teams";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/autoplay";
-import { Autoplay, Pagination } from "swiper/modules";
+
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../variants/variant";
 import { Card, CardContent } from "../../../@/components/ui/card";
 import Testimonial from "@/components/testimonial/Testimonial";
 import Contact from "@/components/form/Contact";
 
-import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
-import { createImageUrlBuilder, type SanityImageSource } from "@sanity/image-url";
-    
-const { projectId, dataset } = client.config();
-    const urlFor = (source: SanityImageSource) =>
-      projectId && dataset
-        ? createImageUrlBuilder({ projectId, dataset }).image(source)
-        : null;
+import AboutusBlog, {
+  type AboutusBlogItem,
+} from "../../../components/about-us/AboutusBlog";
 
 const BLOGS_QUERY = `*[
   _type == "blog"
@@ -36,38 +22,16 @@ const BLOGS_QUERY = `*[
 const options = { next: { revalidate: 300 } };
 
 const AboutUsPage = async () => {
-  // const [blogs, setBlogs] = useState<SanityDocument[]>([]);
-  // const [isLoading, setIsLoading] = useState(true);
+  let blogs: AboutusBlogItem[] = [];
+  let error = null;
 
-  let blogs: SanityDocument[] = [];
-    let articles: SanityDocument[] = [];
-    let error = null;
-  
-    try {
-      blogs = await client.fetch<SanityDocument[]>(BLOGS_QUERY, {}, options);
-    } catch (err) {
-      console.error("Error fetching from Sanity:", err);
-      error = "Failed to load content. Please try again later.";
-    }
+  try {
+    blogs = await client.fetch<AboutusBlogItem[]>(BLOGS_QUERY, {}, options);
+  } catch (err) {
+    console.error("Error fetching from Sanity:", err);
+    error = "Failed to load activities. Please try again later.";
+  }
 
-
-  // useEffect(() => {
-  //   const fetchBlogs = async () => {
-  //     try {
-  //       const fetchedBlogs = await client.fetch<SanityDocument[]>(
-  //         BLOGS_QUERY,
-  //         {},
-  //         options,
-  //       );
-  //       setBlogs(fetchedBlogs);
-  //     } catch (err) {
-  //       console.error("Error fetching blogs:", err);
-  //     } finally {
-  //       setIsLoading(false);
-  //     }
-  //   };
-  //   fetchBlogs();
-  // }, []);
   return (
     <main>
       <AboutHero />
@@ -280,88 +244,7 @@ const AboutUsPage = async () => {
       </section>
 
       {/* activities section */}
-      <section className="container mx-auto py-10 px-4 md:px-0 mt-10">
-        <div className="text-left md:text-center">
-          <span
-          // variants={fadeIn("down", 0.2)}
-          // initial="hidden"
-          // whileInView={"show"}
-          // viewport={{ once: false, amount: 0.5 }}
-          >
-            Activities
-          </span>
-
-          <h2
-            // variants={fadeIn("right", 0.3)}
-            // initial="hidden"
-            // whileInView={"show"}
-            // viewport={{ once: false, amount: 0.5 }}
-            className="text-4xl md:text-5xl text-dark font-impact font-normal my-3"
-          >
-            Our Activities
-          </h2>
-          <p
-            // variants={fadeIn("right", 0.3)}
-            // initial="hidden"
-            // whileInView={"show"}
-            // viewport={{ once: false, amount: 0.5 }}
-            className="text-grey max-w-3xl mx-auto"
-          >
-            At the heart of our organization, our activities are driven by a
-            commitment to creating meaningful impact and fostering positive
-            change. We engage in a wide range of initiatives that span across
-            various sectors, from community development and educational outreach
-            to research, innovation, and capacity building.
-          </p>
-        </div>
-
-        {/* activity carousel */}
-        {blogs.length === 0 ? (
-          <p className="text-center text-grey mt-10">
-            No activities posted yet.
-          </p>
-        ) : (
-          <Swiper
-            spaceBetween={20}
-            slidesPerView={1}
-            breakpoints={{
-              // Responsive settings
-              768: { slidesPerView: 2.3 }, // Show 3 slides on desktop
-            }}
-            autoplay={{
-              delay: 1,
-              disableOnInteraction: false,
-            }}
-            speed={5000} // Smooth continuous scrolling speed
-            loop={true}
-            modules={[Autoplay, Pagination]}
-            pagination={{ clickable: true }}
-            allowTouchMove={true}
-            className="mt-10"
-          >
-            {blogs.map((activity: any) => (
-              <SwiperSlide
-                key={activity._id}
-                className="bg-white rounded-lg shadow p-6"
-              >
-                <ActivityCard
-                  image={
-                    activity.image
-                      ? urlFor(activity.image)?.url() ||
-                        "/images/placeholder.png"
-                      : "/images/placeholder.png"
-                  }
-                 
-                  title={activity.title}
-                  description={activity.excerpt || "Read more..."}
-                  slug={activity.slug.current}
-                  date={activity.publishedAt}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        )}
-      </section>
+      <AboutusBlog blogs={blogs} error={error} />
 
       {/* team section */}
       <section className="container mx-auto py-20 px-4 md:px-0">

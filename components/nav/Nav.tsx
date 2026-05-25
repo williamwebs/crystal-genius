@@ -42,14 +42,14 @@ const Nav = () => {
 
   useEffect(() => {
     const changeBg = () => {
-      if (window.scrollY >= 100) {
+      if (window.scrollY >= 90) {
         setBg(true);
       } else {
         setBg(false);
       }
     };
 
-    changeBg();
+    // changeBg();
     window.addEventListener("scroll", changeBg);
 
     return () => {
