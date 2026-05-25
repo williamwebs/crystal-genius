@@ -17,38 +17,57 @@ import { fadeIn } from "../../../variants/variant";
 import { Card, CardContent } from "../../../@/components/ui/card";
 import Testimonial from "@/components/testimonial/Testimonial";
 import Contact from "@/components/form/Contact";
+
 import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
 import { createImageUrlBuilder, type SanityImageSource } from "@sanity/image-url";
-
+    
 const { projectId, dataset } = client.config();
-const urlFor = (source: SanityImageSource) =>
-  projectId && dataset
-    ? createImageUrlBuilder({ projectId, dataset }).image(source)
-    : null;
+    const urlFor = (source: SanityImageSource) =>
+      projectId && dataset
+        ? createImageUrlBuilder({ projectId, dataset }).image(source)
+        : null;
 
 const BLOGS_QUERY = `*[
   _type == "blog"
   && defined(slug.current)
-]|order(publishedAt desc)[0...10]{_id, title, slug, publishedAt, image, "excerpt": pt::text(body)}`;
+]|order(publishedAt desc)[0...5]{_id, title, slug, publishedAt, image, "excerpt": pt::text(body)}`;
 
-const AboutUsPage = () => {
-  const [blogs, setBlogs] = useState<SanityDocument[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+const options = { next: { revalidate: 300 } };
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const fetchedBlogs = await client.fetch<SanityDocument[]>(BLOGS_QUERY);
-        setBlogs(fetchedBlogs);
-      } catch (err) {
-        console.error("Error fetching blogs:", err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchBlogs();
-  }, []);
+const AboutUsPage = async () => {
+  // const [blogs, setBlogs] = useState<SanityDocument[]>([]);
+  // const [isLoading, setIsLoading] = useState(true);
+
+  let blogs: SanityDocument[] = [];
+    let articles: SanityDocument[] = [];
+    let error = null;
+  
+    try {
+      blogs = await client.fetch<SanityDocument[]>(BLOGS_QUERY, {}, options);
+    } catch (err) {
+      console.error("Error fetching from Sanity:", err);
+      error = "Failed to load content. Please try again later.";
+    }
+
+
+  // useEffect(() => {
+  //   const fetchBlogs = async () => {
+  //     try {
+  //       const fetchedBlogs = await client.fetch<SanityDocument[]>(
+  //         BLOGS_QUERY,
+  //         {},
+  //         options,
+  //       );
+  //       setBlogs(fetchedBlogs);
+  //     } catch (err) {
+  //       console.error("Error fetching blogs:", err);
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
+  //   fetchBlogs();
+  // }, []);
   return (
     <main>
       <AboutHero />
@@ -297,9 +316,7 @@ const AboutUsPage = () => {
         </div>
 
         {/* activity carousel */}
-        {isLoading ? (
-          <p className="text-center text-grey mt-10">Loading activities...</p>
-        ) : blogs.length === 0 ? (
+        {blogs.length === 0 ? (
           <p className="text-center text-grey mt-10">
             No activities posted yet.
           </p>
@@ -329,8 +346,12 @@ const AboutUsPage = () => {
               >
                 <ActivityCard
                   image={
-                    activity.image ? urlFor(activity.image)?.url() || "" : ""
+                    activity.image
+                      ? urlFor(activity.image)?.url() ||
+                        "/images/placeholder.png"
+                      : "/images/placeholder.png"
                   }
+                 
                   title={activity.title}
                   description={activity.excerpt || "Read more..."}
                   slug={activity.slug.current}
