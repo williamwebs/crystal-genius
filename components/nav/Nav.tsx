@@ -42,13 +42,14 @@ const Nav = () => {
 
   useEffect(() => {
     const changeBg = () => {
-      if (window.scrollY >= 90) {
+      if (window.scrollY >= 100) {
         setBg(true);
       } else {
         setBg(false);
       }
     };
 
+    changeBg();
     window.addEventListener("scroll", changeBg);
 
     return () => {
@@ -84,8 +85,8 @@ const Nav = () => {
 
   return (
     <nav
-      className={`w-full mt-0 md:mt-1 sticky__navbar relative z-50 ${
-        bg ? "bg-transparent " : "bg-transparent "
+      className={`w-full mt-0 md:mt-1 sticky__navbar relative z-50 transition-colors duration-300 ${
+        bg ? "bg-black/20 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 md:px-0 flex items-center justify-between py-2 text-sm font-nunito">
@@ -112,7 +113,6 @@ const Nav = () => {
             <Link
               href={menu.path}
               key={menu.title}
-              // backdrop-blur at 100px scroll view 
               className={`relative pb-1 px-1 text-white ${
                 pathname === menu.path
                   ? 'after:content-[""] after:w-full after:h-[1px] after:bg-red after:absolute after:bottom-0 after:left-0'
