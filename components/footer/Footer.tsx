@@ -73,7 +73,7 @@ const Footer = () => {
                 // initial="hidden"
                 // whileInView={"show"}
                 // viewport={{ once: false, amount: 0.2 }}
-                className="text-white max-w-xl my-2 md:pr-10 mt-2 sm:mt-5"
+                className="text-white text-[15px] font-medium max-w-xl my-2 md:pr-10 mt-2 sm:mt-5 capitalize"
               >
                 Crystal Genius International Limited leads the way in
                 transformative building solutions, setting benchmarks in
@@ -103,22 +103,36 @@ const Footer = () => {
                 >
                   call
                 </h6>
-                <a
-                  // variants={fadeIn("right", 0.3)}
-                  // initial="hidden"
-                  // whileInView={"show"}
-                  // viewport={{ once: false, amount: 0.2 }}
-                  href="tel:+2348069452707"
-                  className="text-base text-white italic font-bold"
-                >
-                  +234 806 945 2707
-                </a>
+                <div className="flex items-center justify-center gap-x-2 flex-wrap">
+                  <a
+                    // variants={fadeIn("right", 0.3)}
+                    // initial="hidden"
+                    // whileInView={"show"}
+                    // viewport={{ once: false, amount: 0.2 }}
+                    href="tel:+2348088951100"
+                    className="text-base text-white italic font-bold"
+                  >
+                    +234 808 895 1100
+                  </a>
+                  <a
+                    href="tel:+2348142702816"
+                    className="text-base text-white italic font-bold"
+                  >
+                    +234 8142702816
+                  </a>
+                  <a
+                    href="tel:+2348069452707"
+                    className="text-base text-white italic font-bold"
+                  >
+                    +234 806 945 2707
+                  </a>
+                </div>
                 <span
                   // variants={fadeIn("right", 0.4)}
                   // initial="hidden"
                   // whileInView={"show"}
                   // viewport={{ once: false, amount: 0.2 }}
-                  className="text-sm text-white italic font-normal block"
+                  className="text-sm text-[#BBBBBB] italic font-normal block"
                 >
                   Get instant response 24/7
                 </span>
@@ -138,16 +152,16 @@ const Footer = () => {
                   // initial="hidden"
                   // whileInView={"show"}
                   // viewport={{ once: false, amount: 0.2 }}
-                  className="text-base text-white italic font-bold"
+                  className="text-[15px] text-white italic font-bold"
                 >
-                  25, Malada Cresent, Ejigbo
+                  152, Akowonjo/Egbeda Road Ikeja, Akowonjo Rd, Lagos
                 </p>
                 <span
                   // variants={fadeIn("right", 0.4)}
                   // initial="hidden"
                   // whileInView={"show"}
                   // viewport={{ once: false, amount: 0.2 }}
-                  className="text-sm text-white italic font-medium block"
+                  className="text-sm text-[#BBBBBB] italic font-medium block"
                 >
                   8AM-5PM (MON-FRI)
                 </span>
@@ -167,17 +181,17 @@ const Footer = () => {
                   // initial="hidden"
                   // whileInView={"show"}
                   // viewport={{ once: false, amount: 0.2 }}
-                  href="mailto:vincentsatowaku@gmail.com"
+                  href="mailto:crystalgeniusinternational@gmail.com"
                   className="text-base text-white italic font-bold"
                 >
-                  vincentsatowaku@gmail.com
+                  crystalgeniusinternational@gmail.com
                 </a>
                 <span
                   // variants={fadeIn("right", 0.4)}
                   // initial="hidden"
                   // whileInView={"show"}
                   // viewport={{ once: false, amount: 0.2 }}
-                  className="text-sm text-white italic font-medium block"
+                  className="text-sm text-[#BBBBBB] italic font-medium block"
                 >
                   Get response within 24 hours
                 </span>

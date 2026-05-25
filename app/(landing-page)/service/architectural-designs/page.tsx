@@ -4,6 +4,7 @@ import LetsStarAConversation from "@/components/services/LetsStarAConversation";
 import LetsTalk from "@/components/services/LetsTalk";
 import OurPeople from "@/components/services/OurPeople";
 import ShowcaseSection from "@/components/services/ShowcaseSection";
+import { architecturalDesignsConversationStarters } from "@/constants/constants";
 import React from "react";
 
 const ArchitecturalDesignsPage = () => {
@@ -37,13 +38,18 @@ const ArchitecturalDesignsPage = () => {
         />
       </div>
       <LetsTalk />
-      <LetsStarAConversation />
+      <LetsStarAConversation
+        conversationStarters={architecturalDesignsConversationStarters}
+      />
       <OurPeople
-        role="Senior Engineer"
-        name="Engr Vincent Satowaku"
-        image="/images/vincent.png"
-        title="Executive Vice President, 
-CEO"
+        role="Senior Architect"
+        name="Arc. Onayemi Olusola"
+        image="/images/olusola.svg"
+        title="Chief Architect. (M.NIA., PMP)"
+        text={[
+          "Crystal Genius approaches architectural drawings as binding technical contracts, where every line and partition is strictly cross-referenced with load-bearing logic and professional soil analysis from day one",
+          "Our vision centers on total transparency and digital evolution, moving client reviews away from flat 2D lines that require guesswork. By anchoring our review pipeline in data-rich, immersive BIM (Building Information Modeling) workflows, we allow local and diaspora investors to experience a simulated environment that matches strict international structural standards. We don't just design spaces; we engineer absolute project certainty and investment protection before the first brick is laid",
+        ]}
       />
     </main>
   );

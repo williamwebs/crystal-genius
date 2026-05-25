@@ -4,6 +4,7 @@ import LetsStarAConversation from "@/components/services/LetsStarAConversation";
 import LetsTalk from "@/components/services/LetsTalk";
 import OurPeople from "@/components/services/OurPeople";
 import ShowcaseSection from "@/components/services/ShowcaseSection";
+import { strategicConstructionConversationStarters } from "@/constants/constants";
 import React from "react";
 
 const StrategicConstructionDesignsPage = () => {
@@ -13,6 +14,7 @@ const StrategicConstructionDesignsPage = () => {
         title="Strategic Construction Consulting"
         backgroundImage="/images/strategic-consulting.svg"
         description="Providing expert technical advisory and feasibility studies that streamline project workflows, optimize resource allocation, and mitigate financial and engineering risks before ground is broken."
+      
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">
         <ShowcaseSection
@@ -37,13 +39,18 @@ const StrategicConstructionDesignsPage = () => {
         />
       </div>
       <LetsTalk />
-      <LetsStarAConversation />
+      <LetsStarAConversation
+        conversationStarters={strategicConstructionConversationStarters}
+      />
       <OurPeople
-        role="Senior Engineer"
-        name="Engr Vincent Satowaku"
-        image="/images/vincent.png"
-        title="Executive Vice President, 
-CEO"
+        role="Administrative & Operational Officer"
+        name="Anishere Mary"
+        image="/images/anishere.svg"
+        title="Front Desk Representative Secretary"
+        text={[
+          "Being the Administrative & Operational officer for clients, developers, and diaspora investors tracking their project timelines. What I consistently observe is that the most stressful part of construction for any client is uncertainty & not knowing where their funds are going or when milestones will be hit. Our strategic consulting services are designed to eliminate that anxiety right from the initial consultation, transforming complex, technical engineering jargon into clear, transparent roadmaps that clients can easily understand and follow.",
+          "By coordinating seamless communication between our technical teams and our clients, we ensure that project onboarding, legal documentation, and escrow setups are handled with absolute professionalism.",
+        ]}
       />
     </main>
   );

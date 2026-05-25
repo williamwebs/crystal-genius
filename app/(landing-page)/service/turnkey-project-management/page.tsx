@@ -4,6 +4,7 @@ import LetsStarAConversation from "@/components/services/LetsStarAConversation";
 import LetsTalk from "@/components/services/LetsTalk";
 import OurPeople from "@/components/services/OurPeople";
 import ShowcaseSection from "@/components/services/ShowcaseSection";
+import { turnkeyProjectConversationStarters } from "@/constants/constants";
 import React from "react";
 
 const TrunkeyPage = () => {
@@ -13,6 +14,7 @@ const TrunkeyPage = () => {
         title="Turnkey Project Management"
         backgroundImage="/images/turnkey.svg"
         description="Providing a seamless ground-to-key experience by managing the entire construction lifecycle, allowing clients to handover a plot and receive a fully polished, ready-to-use property."
+      
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">
         <ShowcaseSection
@@ -37,7 +39,9 @@ const TrunkeyPage = () => {
         />
       </div>
       <LetsTalk />
-      <LetsStarAConversation />
+      <LetsStarAConversation
+        conversationStarters={turnkeyProjectConversationStarters}
+      />
       <OurPeople
         role="Practicing Jnr. Engineer"
         name="Engr. Ogunjimi Olamide Felix"

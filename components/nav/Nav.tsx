@@ -92,7 +92,7 @@ const Nav = () => {
         {/* logo */}
         <Link href={"/"}>
           <Image
-            src={"/images/crystal-logo.png"}
+            src={"/images/crystal-logo.svg"}
             width={75}
             height={75}
             alt="Crystal company logo"

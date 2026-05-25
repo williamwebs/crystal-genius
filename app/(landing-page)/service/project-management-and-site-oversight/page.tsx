@@ -4,6 +4,7 @@ import LetsStarAConversation from "@/components/services/LetsStarAConversation";
 import LetsTalk from "@/components/services/LetsTalk";
 import OurPeople from "@/components/services/OurPeople";
 import ShowcaseSection from "@/components/services/ShowcaseSection";
+import { projectManagementConversationStarters } from "@/constants/constants";
 import React from "react";
 
 const ProjectManagementPage = () => {
@@ -13,6 +14,8 @@ const ProjectManagementPage = () => {
         title="Project Management & Site Oversight"
         backgroundImage="/images/project-management.svg"
         description="Ensuring rigorous quality control and timeline adherence through dedicated on-site supervision, bridging the gap between design intent and physical execution for error-free results."
+        buttonText="Become a Landlord Today"
+        isServicePage={true}
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">
         <ShowcaseSection
@@ -38,13 +41,18 @@ const ProjectManagementPage = () => {
         />
       </div>
       <LetsTalk />
-      <LetsStarAConversation />
+      <LetsStarAConversation
+        conversationStarters={projectManagementConversationStarters}
+      />
       <OurPeople
-        role="Senior Engineer"
-        name="Engr Vincent Satowaku"
-        image="/images/vincent.png"
-        title="Executive Vice President, 
-CEO"
+        role="Senior Project Manager"
+        name="Ayodele Agbaje"
+        image="/images/ayodele-1.svg"
+        title="Project Manager, (APM)UK"
+        text={[
+          "From coordinating geotechnical subsurface analysis to commanding daily site workflows, we ensure that every engineering specification is executed with absolute structural precision. Our framework focuses on maintaining strict timeline control, material quality assurance, and zero-compromise safety protocols across the entire build lifecycle.",
+          "Every milestone is governed by rigorous data-driven oversight, translating complex construction phases into a transparent, predictable roadmap of project delivery.",
+        ]}
       />
     </main>
   );
