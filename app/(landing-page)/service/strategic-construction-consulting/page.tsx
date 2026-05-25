@@ -14,7 +14,8 @@ const StrategicConstructionDesignsPage = () => {
         title="Strategic Construction Consulting"
         backgroundImage="/images/strategic-consulting.svg"
         description="Providing expert technical advisory and feasibility studies that streamline project workflows, optimize resource allocation, and mitigate financial and engineering risks before ground is broken."
-      
+      buttonText="Become a Landlord Today"
+        isServicePage={true}
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">
         <ShowcaseSection

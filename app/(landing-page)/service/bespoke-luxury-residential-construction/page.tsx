@@ -14,6 +14,8 @@ const BespokeLuxuryResidentialConstructionPage = () => {
         title="Bespoke Luxury Residential Construction"
         backgroundImage="/images/bespoke-construction.svg"
         description="Crafting high-end, tailored living spaces from premium duplexes to smart homes where master craftsmanship meets modern technology to deliver move-in-ready excellence."
+        buttonText="Become a Landlord Today"
+        isServicePage={true}
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">
         <ShowcaseSection

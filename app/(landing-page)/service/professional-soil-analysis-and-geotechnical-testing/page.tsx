@@ -14,6 +14,8 @@ const ProfessionalSoilAnalysisDesignsPage = () => {
         title="Professional Soil Analysis & Geotechnical Testing"
         backgroundImage="/images/soil-analysis.svg"
         description="Offering precise geotechnical analysis and topographical surveys that ensure safe, stable construction, considering soil, groundwater, and environmental conditions for a solid foundation."
+      buttonText="Become a Landlord Today"
+        isServicePage={true}
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">
         <ShowcaseSection
