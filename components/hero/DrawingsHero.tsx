@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants/variant";
-import { DrawingsSpanIcon, RightArrowIcon } from "../../constants/images";
+import { DrawingsSpanIcon, HouseImage, RightArrowIcon } from "../../constants/images";
+import Link from "next/link";
 
 export default function DrawingsHero() {
   return (
@@ -18,7 +19,7 @@ export default function DrawingsHero() {
         <div className="w-full h-full text-white">
           <div className="container mx-auto px-4 md:px-0 w-full h-full">
             <div className="flex flex-col justify-evenly w-full h-full">
-              <div className="flex flex-col md:flex-row items-center w-full lg:w-1/2 justify-between">
+              <div className="flex flex-col md:flex-row items-center w-full lg:max-w-[780px] justify-between">
                 <div className="w-full mt-20">
                   <div
                     // variants={fadeIn("right", 0.2)}
@@ -60,24 +61,18 @@ export default function DrawingsHero() {
                     purchase full high-resolution plans Instantly.
                   </p>
 
-                  <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 h-fit md:h-11 w-full md:w-fit">
-                    <button
-                      // variants={fadeIn("right", 0.4)}
-                      // initial="hidden"
-                      // whileInView={"show"}
-                      // viewport={{ once: false, amount: 0.5 }}
-                      className="bg-red hover:bg-red/80 text-white font-nunito text-sm w-full md:w-[189px] h-11 md:h-full px-6 rounded-[6px] transition duration-300"
+                  <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 h-fit md:h-11 w-full">
+                    <Link
+                      href={"/"}
+                      className="bg-red text-white text-sm hover:bg-red/85 font-nunito font-medium min-w-[130px] max-w-[250px] w-full h-10 rounded-[4px] inline-flex items-center justify-center gap-2 border border-transparent"
                     >
-                      Browse Designs
-                    </button>
+                      <HouseImage />
+                      Become a Landlord Today
+                    </Link>
                     <button
-                      // variants={fadeIn("right", 0.4)}
-                      // initial="hidden"
-                      // whileInView={"show"}
-                      // viewport={{ once: false, amount: 0.5 }}
-                      className="bg-transparent border border-white hover:bg-red/10 text-white font-nunito text-sm w-full md:w-[189px] h-11 md:h-full px-6 rounded-[6px] transition duration-300 flex items-center justify-center gap-2"
+                      className="bg-transparent border border-white hover:bg-red/10 text-white font-nunito text-sm w-full md:max  -w-[189px] h-10 md:h-full px-6 rounded-[6px] transition duration-300 flex items-center justify-center gap-2"
                     >
-                      How It Works <RightArrowIcon/>
+                      How It Works <RightArrowIcon />
                     </button>
                   </div>
                 </div>

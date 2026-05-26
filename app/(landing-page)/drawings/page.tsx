@@ -79,11 +79,11 @@ const DrawingsPage = async ({ searchParams }: DrawingsPageProps) => {
       <div className="bg-white py-14">
         <div className="container mx-auto px-4 md:px-0">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-            <div className="flex flex-col gap-2 w-full md:w-1/2">
-              <h3 className="font-nunito font-bold text-2xl text-[#111827]">
+            <div className="flex flex-col gap-2 w-full md:max-w-[550px] ">
+              <h2 className="font-medium font-impact text-[40px] text-[#111827]">
                 Featured Structural Designs
-              </h3>
-              <p className="text-base text-[#999999] font-nunito font-medium max-w-[610px]">
+              </h2>
+              <p className="text-[15px] text-[#999999] font-nunito font-medium max-w-[610px]">
                 Browse our curated collection of certified structural drawings.
                 Each project includes complete foundation plans, framing
                 details, and material specifications.

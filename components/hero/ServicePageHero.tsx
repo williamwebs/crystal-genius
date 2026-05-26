@@ -49,6 +49,9 @@ export default function ServicePageHero() {
                   </p>
 
                   {/* button */}
+                  <a href={"#contact-form"} className="border border-red rounded-[4px] max-w-[230px] w-full flex items-center justify-center h-10 text-[14px] text-white font-nunito font-medium mt-10 ">
+                    Speak to a Consultant
+                  </a>
                 </div>
                 <div className="w-full md:w-1/3"></div>
               </div>

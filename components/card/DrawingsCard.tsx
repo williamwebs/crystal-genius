@@ -94,7 +94,7 @@ const DrawingsCard = ({ drawing }: DrawingsCardProps) => {
 
       <div className="flex-1 px-5 py-6">
         <div className="flex items-center justify-between gap-4">
-          <h3 className="text-[#333333] text-[17px] md:text-[19px] font-nunito font-extrabold line-clamp-1">
+          <h3 className="text-[#333333] text-[16px] md:text-[19px] font-nunito font-extrabold line-clamp-1">
             {drawing.title}
           </h3>
           <span className="bg-[#FFE5E5] h-10 min-w-[66px] flex items-center justify-center rounded px-2 font-extrabold font-nunito text-red text-[15px] md:text-[16px] whitespace-nowrap">
@@ -102,7 +102,7 @@ const DrawingsCard = ({ drawing }: DrawingsCardProps) => {
           </span>
         </div>
 
-        <p className="text-dark text-sm font-nunito font-bold my-3 h-[70px] line-clamp-4">
+        <p className="text-dark text-sm font-nunito font-normal font-bold my-2 h-[70px] line-clamp-4">
           {drawing.description}
         </p>
 
@@ -112,7 +112,7 @@ const DrawingsCard = ({ drawing }: DrawingsCardProps) => {
             <span className="text-paragraphGrey text-[11px] font-nunito font-bold mt-1">
               Area
             </span>
-            <span className="text-dark text-sm font-nunito font-extrabold">
+            <span className="text-dark text-[13px] font-nunito font-extrabold">
               {drawing.area || 'N/A'}
             </span>
           </div>
@@ -121,7 +121,7 @@ const DrawingsCard = ({ drawing }: DrawingsCardProps) => {
             <span className="text-paragraphGrey text-[11px] font-nunito font-bold mt-1">
               Floors
             </span>
-            <span className="text-dark text-sm font-nunito font-extrabold">
+            <span className="text-dark text-[13px] font-nunito font-extrabold">
               {drawing.number_of_floors ? `${drawing.number_of_floors} Stories` : 'N/A'}
             </span>
           </div>
@@ -130,7 +130,7 @@ const DrawingsCard = ({ drawing }: DrawingsCardProps) => {
             <span className="text-paragraphGrey text-[11px] font-nunito font-bold mt-1">
               Type
             </span>
-            <span className="text-dark text-sm font-nunito font-extrabold capitalize">
+            <span className="text-dark text-[13px] font-nunito font-extrabold capitalize">
               {drawing.type}
             </span>
           </div>

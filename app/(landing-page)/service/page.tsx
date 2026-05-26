@@ -11,7 +11,9 @@ const page = () => {
         <Services row="lg:grid-cols-2" />
       </div>
       <NeedOurService />
+      <div id="contact-form">
       <Contact />
+      </div>
     </main>
   );
 };

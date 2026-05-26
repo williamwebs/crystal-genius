@@ -16,17 +16,17 @@ const SOCIAL_MEDIA = [
   {
     name: "Facebook",
     icon: <FacebookIcon />,
-    link: "",
+    link: "https://www.facebook.com/share/1E6YL2m3F9/?mibextid=wwXIfr",
   },
   {
     name: "Instagram",
     icon: <InstagramIcon />,
-    link: "",
+    link: "https://www.instagram.com/_crystalgen",
   },
   {
     name: "LinkedIn",
     icon: <LinkedInIcon />,
-    link: "",
+    link: "https://www.linkedin.com/company/crystal-gen",
   },
 ];
 
@@ -154,7 +154,7 @@ const Footer = () => {
                   // viewport={{ once: false, amount: 0.2 }}
                   className="text-[15px] text-white italic font-bold"
                 >
-                  152, Akowonjo/Egbeda Road Ikeja, Akowonjo Rd, Lagos
+                  152, Akowonjo-Egbeda Road, by Sobo Bus-stop, Akowonjo-ikeja, Lagos
                 </p>
                 <span
                   // variants={fadeIn("right", 0.4)}
