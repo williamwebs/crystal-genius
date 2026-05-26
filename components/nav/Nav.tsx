@@ -202,7 +202,7 @@ const Nav = () => {
             {isLoggedIn ? (
               <Link
                 href="/cg-admin"
-                className="font-nunito font-medium text-sm uppercase shadow w-full py-2 px-3 hover:bg-red hover:text-white rounded"
+                className="font-nunito font-medium text-sm text-white uppercase shadow w-full py-2 px-3 hover:bg-red hover:text-white rounded"
                 onClick={() => toggleMenu()}
               >
                 Dashboard
