@@ -4,6 +4,7 @@ import Image from "next/image";
 import List from "../list/List";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants/variant";
+import { VideoPlayerDialog } from "../ui/VideoPlayerDialog";
 
 const AboutUs = () => {
   return (
@@ -88,14 +89,18 @@ const AboutUs = () => {
             // viewport={{ once: false, amount: 0.5 }}
             className="w-full mt-10"
           >
-            <Image
-              src={"/images/video-playback.svg"}
-              width={734}
-              height={429}
-              alt="video playback"
-              className="select-none pointer-events-none"
-              style={{ userSelect: "none" }}
-            />
+            <VideoPlayerDialog videoSrc="/video.mp4">
+              <button>
+                <Image
+                  src={"/images/video-playback.svg"}
+                  width={734}
+                  height={429}
+                  alt="video playback"
+                  className="select-none pointer-events-none"
+                  style={{ userSelect: "none" }}
+                />
+              </button>
+            </VideoPlayerDialog>
           </div>
         </div>
         <div className="w-full md:w-2/5">
@@ -249,7 +254,12 @@ const AboutUs = () => {
                   // viewport={{ once: false, amount: 0.5 }}
                   className="flex items-center gap-3 my-3 shadow rounded p-1"
                 >
-                  <Image src={"/vincent-small.svg"} width={44} height={44} alt="" />
+                  <Image
+                    src={"/vincent-small.svg"}
+                    width={44}
+                    height={44}
+                    alt=""
+                  />
                   <div className="flex flex-col items-start justify-between gap-1">
                     <p className="text-dark text-base font-bold">
                       Engr Vincent

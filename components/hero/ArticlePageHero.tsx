@@ -3,6 +3,7 @@
 import Image from "next/image";
 import {motion } from 'framer-motion'
 import {fadeIn} from '../../variants/variant'
+import { VideoPlayerDialog } from "../ui/VideoPlayerDialog";
 
 export default function ArticlePageHero() {
   return (
@@ -20,10 +21,10 @@ export default function ArticlePageHero() {
               <div className="flex flex-col md:flex-row items-center w-full justify-between">
                 <div className="w-full md:w-2/3 mt-20">
                   <span
-                    // variants={fadeIn("right", 0.2)}
-                    // initial="hidden"
-                    // whileInView={"show"}
-                    // viewport={{ once: false, amount: 0.5 }}
+                  // variants={fadeIn("right", 0.2)}
+                  // initial="hidden"
+                  // whileInView={"show"}
+                  // viewport={{ once: false, amount: 0.5 }}
                   >
                     News Article
                   </span>
@@ -60,16 +61,20 @@ export default function ArticlePageHero() {
                 // viewport={{ once: false, amount: 0.5 }}
                 className="w-full text-center"
               >
-                <Image
-                  src={"/play-icon.svg"}
-                  width={74}
-                  height={74}
-                  alt="play icon"
-                  className="mx-auto cursor-pointer"
-                />
-                <span className="font-nunito text-xs text-white font-bold text-center my-2 block">
-                  See Video reviews
-                </span>
+                <VideoPlayerDialog videoSrc="/video.mp4">
+                  <button>
+                    <Image
+                      src={"/play-icon.svg"}
+                      width={74}
+                      height={74}
+                      alt="play icon"
+                      className="mx-auto cursor-pointer"
+                    />
+                    <span className="font-nunito text-xs text-white font-bold text-center my-2 block">
+                      See Video reviews
+                    </span>
+                  </button>
+                </VideoPlayerDialog>
               </div>
             </div>
           </div>

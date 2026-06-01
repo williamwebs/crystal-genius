@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants/variant";
+import { VideoPlayerDialog } from "@/components/ui/VideoPlayerDialog";
 
 export default function AboutHero() {
   return (
@@ -59,16 +60,20 @@ export default function AboutHero() {
                 // viewport={{ once: false, amount: 0.5 }}
                 className="w-full text-center"
               >
-                <Image
-                  src={"/play-icon.svg"}
-                  width={74}
-                  height={74}
-                  alt="play icon"
-                  className="mx-auto cursor-pointer"
-                />
-                <span className="font-nunito text-xs text-white font-bold text-center my-2 block">
-                  See Video reviews
-                </span>
+                <VideoPlayerDialog videoSrc="/video.mp4">
+                  <button className="flex flex-col items-center justify-center mx-auto outline-none">
+                    <Image
+                      src={"/play-icon.svg"}
+                      width={74}
+                      height={74}
+                      alt="play icon"
+                      className="cursor-pointer"
+                    />
+                    <span className="font-nunito text-xs text-white font-bold text-center my-2 block">
+                      See Video reviews
+                    </span>
+                  </button>
+                </VideoPlayerDialog>
               </div>
             </div>
           </div>
