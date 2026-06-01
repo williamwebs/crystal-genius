@@ -626,3 +626,30 @@ export const projectExecutionStats = [
     borderColor: "border-t-[#ffd554]",
   },
 ];
+
+export const investmentOptions = [
+  {
+
+    title: "The Solo Buyer",
+    subtitle: null,
+    price: "₦40,000,000",
+    highlighted: false,
+    points: [
+      "Struggles to buy land in premium locations.",
+      "Bears 100% of legal, survey, and architectural costs.",
+      "Construction takes years due to cash flow issues.",
+    ],
+  },
+  {
+
+    title: "The Housing Cluster",
+    subtitle: "6-10 Investors",
+    price: "₦240M-₦400M",
+    highlighted: true,
+    points: [
+      "Acquires premium land instantly with bulk capital.",
+      "Shared costs drastically reduce individual burden.",
+      "Continuous construction ensures 6-12 month delivery.",
+    ],
+  },
+];

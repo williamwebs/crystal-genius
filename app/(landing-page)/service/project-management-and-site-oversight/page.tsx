@@ -15,6 +15,7 @@ const ProjectManagementPage = () => {
         backgroundImage="/images/project-management.svg"
         description="Ensuring rigorous quality control and timeline adherence through dedicated on-site supervision, bridging the gap between design intent and physical execution for error-free results."
         buttonText="Become a Landlord Today"
+        buttonHref="/housing-clusters"
         isServicePage={true}
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">

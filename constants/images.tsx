@@ -1435,6 +1435,53 @@ export const HouseImage = () => <svg width="24" height="24" viewBox="0 0 24 24" 
 <path d="M22.3334 22.3333C22.3334 22.5986 22.2281 22.8529 22.0405 23.0405C21.853 23.228 21.5986 23.3333 21.3334 23.3333H2.66675C2.40153 23.3333 2.14718 23.228 1.95964 23.0405C1.7721 22.8529 1.66675 22.5986 1.66675 22.3333C1.66675 22.0681 1.7721 21.8138 1.95964 21.6262C2.14718 21.4387 2.40153 21.3333 2.66675 21.3333H21.3334C21.5986 21.3333 21.853 21.4387 22.0405 21.6262C22.2281 21.8138 22.3334 22.0681 22.3334 22.3333Z" fill="#5C913B"/>
 </svg>
 
+export const TrendingDownIcon = () => <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.3301 14.17H18.3301V9.17004" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.3399 14.16L11.2552 7.07946L7.08767 11.2445L1.66992 5.82996" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+export const TrendingUpIcon = () => <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.3301 5.82996H18.3301V10.83" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.3399 5.82996L11.2552 12.9105L7.08767 8.74546L1.66992 14.16" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+export const SoloBuyerIcon = () => <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="47" height="47" rx="23.5" stroke="#EFEFEF"/>
+<path d="M28 33V31C28 28.7909 26.2091 27 24 27H18C15.7909 27 14 28.7909 14 31V33" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17 19C17 16.7909 18.7909 15 21 15C23.2091 15 25 16.7909 25 19C25 21.2091 23.2091 23 21 23C18.7909 23 17 21.2091 17 19Z" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M29 20L34 25" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34 20L29 25" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+export const ClusterBuyerIcon = () => <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="47" height="47" rx="23.5" stroke="#555555"/>
+<path d="M28 33V31C28 28.7909 26.2091 27 24 27H18C15.7909 27 14 28.7909 14 31V33" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 15.13C29.7664 15.5871 31 17.1784 31 19C31 20.8216 29.7664 22.4129 28 22.87" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34 33V31C33.9986 29.1771 32.765 27.5857 31 27.13" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17 19C17 16.7909 18.7909 15 21 15C23.2091 15 25 16.7909 25 19C25 21.2091 23.2091 23 21 23C18.7909 23 17 21.2091 17 19Z" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+export const BulkConstruction = () => <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.1031 2.66992C16.4003 2.3374 15.5929 2.3374 14.8901 2.66992L3.46519 8.06276C2.98184 8.28383 2.66992 8.78008 2.66992 9.32801C2.66992 9.87594 2.98184 10.3722 3.46519 10.5933L14.9034 15.9999C15.6063 16.3324 16.4136 16.3324 17.1164 15.9999L28.5546 10.6071C29.038 10.386 29.3499 9.88977 29.3499 9.34184C29.3499 8.7939 29.038 8.29766 28.5546 8.07659L17.1031 2.66992Z" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2.66992 16C2.66863 16.5397 2.97069 17.0307 3.44335 17.2574L14.9115 22.66C15.6107 22.9881 16.4125 22.9881 17.1117 22.66L28.5532 17.2712C29.0355 17.0466 29.3441 16.5479 29.3399 16" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2.66992 22.6699C2.66863 23.2096 2.97069 23.7006 3.44335 23.9273L14.9115 29.3299C15.6107 29.658 16.4125 29.658 17.1117 29.3299L28.5532 23.9411C29.0355 23.7165 29.3441 23.2178 29.3399 22.6699" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+export const SharedCost = () => <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M25.3305 9.33231V5.33308C25.3305 4.59684 24.7337 4 23.9974 4H6.66632C5.19375 4 4 5.19368 4 6.66615C4 8.13863 5.19375 9.33231 6.66632 9.33231H26.6637C27.4 9.33231 27.9968 9.92915 27.9968 10.6654V15.9977M27.9968 15.9977H23.9974C22.5248 15.9977 21.3311 17.1914 21.3311 18.6638C21.3311 20.1363 22.5248 21.33 23.9974 21.33H27.9968C28.7331 21.33 29.33 20.7332 29.33 19.9969V17.3308C29.33 16.5945 28.7331 15.9977 27.9968 15.9977Z" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 6.66992V25.3337C4 26.8062 5.19391 27.9999 6.66667 27.9999H26.6667C27.403 27.9999 28 27.4031 28 26.6668V21.3343" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+export const VerifiedPooling = () => <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26.6601 17.2049C26.6601 23.9842 21.9941 27.3739 16.4483 29.3399C16.1579 29.44 15.8425 29.4352 15.5551 29.3264C9.99602 27.3739 5.33008 23.9842 5.33008 17.2049V7.71377C5.33008 6.96494 5.92694 6.35789 6.6632 6.35789C9.32945 6.35789 12.6623 4.73085 14.9819 2.66992C15.5654 2.16292 16.4248 2.16292 17.0083 2.66992C19.3412 4.74441 22.6607 6.35789 25.327 6.35789C26.0632 6.35789 26.6601 6.96494 26.6601 7.71377V17.2049Z" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 15.9951L14.6667 18.6601L20 13.3301" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+// export const FirstEngineeringProcess = () => 
+
+
+
+
 
 
 

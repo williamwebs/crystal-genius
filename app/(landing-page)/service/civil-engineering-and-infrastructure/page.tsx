@@ -15,6 +15,7 @@ const CivilEngineeringPage = () => {
         backgroundImage="/images/civil-engineering.svg"
         description="Developing the vital framework of modern environments, including road management, advanced drainage systems, and structural fortifications that enhance site accessibility and security."
         buttonText="Become a Landlord Today"
+        buttonHref="/housing-clusters"
         isServicePage={true}
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">

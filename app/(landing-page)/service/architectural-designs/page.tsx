@@ -15,6 +15,7 @@ const ArchitecturalDesignsPage = () => {
         description="Delivering visionary 2D blueprints and 3D visualisations that blend aesthetic elegance with technical precision. Meticulously engineered to exceed safety codes and national guidelines."
         backgroundImage="/images/architectural-design.svg"
         buttonText="Become a Landlord Today"
+        buttonHref="/housing-clusters"
         isServicePage={true}
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">
