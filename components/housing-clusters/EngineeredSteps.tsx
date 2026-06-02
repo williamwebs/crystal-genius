@@ -1,5 +1,6 @@
 "use client";
 
+import { FirstEngineeringProcess, FourthEngineeringProcess, SecondEngineeringProcess, ThirdEngineeringProcess } from "@/constants/images";
 import Image from "next/image";
 
 export default function EngineeredSteps() {
@@ -10,7 +11,7 @@ export default function EngineeredSteps() {
           <span className="text-red font-bold text-sm uppercase mb-4">
             The Crystal Genius Process
           </span>
-          <h2 className="text-3xl md:text-[46px] text-dark font-impact font-normal leading-tight">
+          <h2 className="text-4xl md:text-[46px] text-dark font-impact font-normal leading-tight">
             Four Engineered steps from investor{" "}
             <br className="hidden md:block" />
             to Homeowner.
@@ -18,58 +19,47 @@ export default function EngineeredSteps() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="w-16 h-16 rounded-full bg-[#FCFAFA] shadow-md border border-[#E5E5E5] flex items-center justify-center mb-6">
-              <span className="font-impact text-dark text-2xl">1</span>
-            </div>
-            <h4 className="font-impact text-dark text-xl mb-3">
-              Join a cluster
+          <div className="space-y-1">
+            <FirstEngineeringProcess />
+            <h4 className="font-nunito font-bold text-dark text-[18px] uppercase">
+              Investor Pooling
             </h4>
-            <p className="text-grey font-nunito text-sm leading-relaxed">
-              Join a verified group of 4-6 members seeking property in your
-              target location and budget range.
+            <p className="text-grey font-nunito font-normal text-sm ">
+              6–10 verified investors join a cluster based on budget and
+              location preferences.
             </p>
           </div>
 
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="w-16 h-16 rounded-full bg-[#FCFAFA] shadow-md border border-[#E5E5E5] flex items-center justify-center mb-6">
-              <span className="font-impact text-dark text-2xl">2</span>
-            </div>
-            <h4 className="font-impact text-dark text-xl mb-3">
-              Pool funds securely
+          <div className="space-y-1">
+            <SecondEngineeringProcess />
+            <h4 className="font-nunito font-bold text-dark text-[18px] uppercase">
+              Land Acquisition
             </h4>
-            <p className="text-grey font-nunito text-sm leading-relaxed">
-              Contribute your agreed share into a transparent, legally protected
-              escrow account managed by experts.
+            <p className="text-grey font-nunito font-normal text-sm ">
+              Strategic Lagos locations with verified titles (C of O, Governor's
+              Consent).
             </p>
           </div>
 
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="w-16 h-16 rounded-full bg-[#FCFAFA] shadow-md border border-[#E5E5E5] flex items-center justify-center mb-6 relative">
-              <span className="font-impact text-dark text-2xl">3</span>
-              <div className="absolute -top-2 -right-2 bg-yellow text-dark text-[10px] font-bold px-2 py-0.5 rounded-sm">
-                CG builds
-              </div>
-            </div>
-            <h4 className="font-impact text-dark text-xl mb-3">
-              Crystal Genius builds
+          <div className="space-y-1">
+            <ThirdEngineeringProcess />
+            <h4 className="font-nunito font-bold text-dark text-[18px] uppercase">
+              Professional Development
             </h4>
-            <p className="text-grey font-nunito text-sm leading-relaxed">
-              We handle land acquisition, approvals, and construction with zero
-              developer markup.
+            <p className="text-grey font-nunito font-normal text-sm ">
+              Flats or Terraces built by Certified Contractors under Multi-site
+              Supervision.
             </p>
           </div>
 
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="w-16 h-16 rounded-full bg-[#FCFAFA] shadow-md border border-[#E5E5E5] flex items-center justify-center mb-6">
-              <span className="font-impact text-dark text-2xl">4</span>
-            </div>
-            <h4 className="font-impact text-dark text-xl mb-3">
-              Move in or earn returns
+          <div className="space-y-1">
+            <FourthEngineeringProcess />
+            <h4 className="font-nunito font-bold text-dark text-[18px] uppercase">
+              Allocation
             </h4>
-            <p className="text-grey font-nunito text-sm leading-relaxed">
-              Receive the keys to your apartment or sell your share for profit
-              in the open market.
+            <p className="text-grey font-nunito font-normal text-sm ">
+              Unit Handover with Legal Title transfer to each Individual
+              Investor.
             </p>
           </div>
         </div>
