@@ -36,12 +36,12 @@ export default function HousingClustersHero() {
                   </p>
 
                   {/* button */}
-                  <a
+                  <Link
                     href="#housing-clusters"
-                    className="bg-red text-white text-sm hover:bg-red/85 font-nunito font-medium min-w-[130px] max-w-[250px] w-full h-10 rounded-[4px] inline-flex items-center justify-center gap-2 mt-5"
+                    className="bg-red text-white text-sm hover:bg-red/85 font-nunito font-medium min-w-[130px] md:max-w-[250px] w-full h-10 rounded-[4px] inline-flex items-center justify-center gap-2 mt-5"
                   >
                     <HouseImage /> Become a Homeowner Today
-                  </a>
+                  </Link>
                 </div>
                 <div className="w-full md:w-1/3"></div>
               </div>

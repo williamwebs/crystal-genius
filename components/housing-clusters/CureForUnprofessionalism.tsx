@@ -3,28 +3,40 @@
 export default function CureForUnprofessionalism() {
   const guarantees = [
     {
-      title: "Verified Member Vetting",
-      description: "Every member undergoes strict KYC and financial verification to ensure funding commitments are met without default.",
+      icon: "/images/multi-site-icon.svg",
+      title: "Multi-Site Supervision System",
+      description:
+        "Dedicated site managers + central command oversight on every project ensuring quality and speed.",
     },
     {
-      title: "Strict Legal Protection",
-      description: "Robust legal frameworks, escrow accounts, and binding agreements protect your investment and ownership rights.",
+      icon: "/images/15-years-background-icon.svg",
+      title: "15+ Years Experience",
+      description:
+        "A proven track record in real estate development across Nigeria's most competitive markets.",
     },
     {
-      title: "Full Transparency",
-      description: "Access real-time project updates, financial reports, and construction milestones through our investor portal.",
+      icon: "/images/envisioned-icon.svg",
+      title: "120+ Envisioned Units",
+      description:
+        "We don't just sell plans, we deliver homes. Over 120 families envisioned to enjoy this developments.",
     },
     {
-      title: "Zero Hidden Costs",
-      description: "What you see is what you pay. We eliminate developer margins and provide a clear, itemized bill of quantities.",
+      icon: "/images/end-to-end-icon.svg",
+      title: "End-to-End Legal Docs",
+      description:
+        "In-house legal team handles all documentation from Deed of Assignment to final title transfer.",
     },
     {
-      title: "Managed by Experts",
-      description: "From land acquisition to final finishing, our seasoned engineers and project managers handle everything.",
+      icon: "/images/transparet-icon.svg",
+      title: "Transparent Reporting",
+      description:
+        "Monthly investor updates with photos, videos, and financial breakdowns of construction progress.",
     },
     {
-      title: "Guaranteed Completion",
-      description: "With our structured funding and professional oversight, we guarantee project completion within the agreed timeline.",
+      icon: "/images/strict-quality-icon.svg",
+      title: "Strict Quality Control",
+      description:
+        "Only certified materials and vetted contractors are used. No cutting corners on structural integrity.",
     },
   ];
 
@@ -40,7 +52,7 @@ export default function CureForUnprofessionalism() {
       />
 
       <div className="max-w-[900px] mx-auto px-4 relative z-10">
-        <div className="text-center mx-auto mb-10">
+        <div className="text-left md:text-center mx-auto mb-10">
           <span className="text-D6D6D6 font-bold text-sm uppercase block mb-2">
             Why Crystal Genius?
           </span>
@@ -50,7 +62,17 @@ export default function CureForUnprofessionalism() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-         
+          {guarantees.map((guarantee, index) => (
+            <div key={index} className="flex items-start gap-3">
+              <img src={guarantee.icon} alt={guarantee.title} />
+              <div className="space-y-1">
+                <h3 className="text-base font-nunito font-bold text-white uppercase">
+                  {guarantee.title}
+                </h3>
+                <p className="text-[#999999] text-[13px] font-nunito font-normal ">{guarantee.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -64,7 +64,7 @@ export default function DrawingsHero() {
                   <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 h-fit md:h-11 w-full">
                     <Link
                       href={"/"}
-                      className="bg-red text-white text-sm hover:bg-red/85 font-nunito font-medium min-w-[130px] max-w-[250px] w-full h-10 rounded-[4px] inline-flex items-center justify-center gap-2 border border-transparent"
+                      className="bg-red text-white text-sm hover:bg-red/85 font-nunito font-medium min-w-[130px] md:max-w-[250px] w-full h-10 rounded-[4px] inline-flex items-center justify-center gap-2 border border-transparent"
                     >
                       <HouseImage />
                       Become a Landlord Today
