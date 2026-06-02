@@ -15,6 +15,7 @@ const InfrastructureDesignsPage = () => {
         backgroundImage="/images/infrastructural-design.svg"
         description="Engineering the core integrity of your projects through advanced structural calculations and load-bearing analysis to guarantee maximum safety, durability, and compliance with global standards."
         buttonText="Become a Landlord Today"
+         buttonHref="/housing-clusters"
         isServicePage={true}
       />
       <div className="container mx-auto px-4 pt-[100px] pb-[80px] ">

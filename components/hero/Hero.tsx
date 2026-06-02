@@ -8,6 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants/variant";
+import { VideoPlayerDialog } from "@/components/ui/VideoPlayerDialog";
 
 export default function Hero() {
   const images = [
@@ -90,7 +91,7 @@ export default function Hero() {
                 className="flex flex-col md:flex-row items-center justify-between md:justify-normal gap-3 md:gap-1"
               >
                 <Link
-                  href={"/"}
+                  href={"/housing-clusters"}
                   className="bg-white border border-white rounded w-full md:w-fit h-10 px-12 flex items-center justify-center gap-3 mt-2 shadow text-blue text-xs sm:text-sm font-nunito font-medium btn-dark-shadow"
                 >
                   Join Our Verified Housing Cluster
@@ -107,22 +108,23 @@ export default function Hero() {
                     />
                   </svg>
                 </Link>
-                <Link
-                  href={"/"}
-                  className="bg-transparent rounded h-10 px-5 flex items-center justify-center mt-2 shadow text-lightGrey text-sm font-nunito font-normal"
-                >
-                  <Image
-                    src={"/play-icon.svg"}
-                    width={60}
-                    height={60}
-                    alt="play icon"
-                    className="mr-3"
-                  />
-                  <span className="text-white hidden md:inline-block">
-                    {" "}
-                    See video reviews
-                  </span>
-                </Link>
+                <VideoPlayerDialog videoSrc="/video.mp4">
+                  <button
+                    className="bg-transparent rounded h-10 px-5 flex items-center justify-center mt-2 shadow text-lightGrey text-sm font-nunito font-normal"
+                  >
+                    <Image
+                      src={"/play-icon.svg"}
+                      width={60}
+                      height={60}
+                      alt="play icon"
+                      className="mr-3"
+                    />
+                    <span className="text-white hidden md:inline-block">
+                      {" "}
+                      See video reviews
+                    </span>
+                  </button>
+                </VideoPlayerDialog>
               </div>
             </div>
             <div className="w-full md:w-1/3"></div>

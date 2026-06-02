@@ -3,6 +3,7 @@
 import Image from "next/image";
 import {motion } from 'framer-motion'
 import {fadeIn} from '../../variants/variant'
+import { VideoPlayerDialog } from "../ui/VideoPlayerDialog";
 
 export default function ServicePageHero() {
   return (
@@ -20,10 +21,10 @@ export default function ServicePageHero() {
               <div className="flex flex-col md:flex-row items-center w-full justify-between">
                 <div className="w-full md:w-2/3 mt-20">
                   <span
-                    // variants={fadeIn("right", 0.2)}
-                    // initial="hidden"
-                    // whileInView={"show"}
-                    // viewport={{ once: true, amount: 0.5 }}
+                  // variants={fadeIn("right", 0.2)}
+                  // initial="hidden"
+                  // whileInView={"show"}
+                  // viewport={{ once: true, amount: 0.5 }}
                   >
                     Service
                   </span>
@@ -49,7 +50,10 @@ export default function ServicePageHero() {
                   </p>
 
                   {/* button */}
-                  <a href={"#contact-form"} className="border border-red rounded-[4px] max-w-[230px] w-full flex items-center justify-center h-10 text-[14px] text-white font-nunito font-medium mt-10 ">
+                  <a
+                    href={"#contact-form"}
+                    className="border border-red rounded-[4px] md:max-w-[230px] w-full flex items-center justify-center h-10 text-[14px] text-white font-nunito font-medium mt-10 "
+                  >
                     Speak to a Consultant
                   </a>
                 </div>
@@ -63,16 +67,20 @@ export default function ServicePageHero() {
                 // viewport={{ once: true, amount: 0.5 }}
                 className="w-full text-center"
               >
-                <Image
-                  src={"/play-icon.svg"}
-                  width={74}
-                  height={74}
-                  alt="play icon"
-                  className="mx-auto cursor-pointer"
-                />
-                <span className="font-nunito text-xs text-white font-bold text-center my-2 block">
-                  See Video reviews
-                </span>
+                <VideoPlayerDialog videoSrc="/video.mp4">
+                  <button>
+                    <Image
+                      src={"/play-icon.svg"}
+                      width={74}
+                      height={74}
+                      alt="play icon"
+                      className="mx-auto cursor-pointer"
+                    />
+                    <span className="font-nunito text-xs text-white font-bold text-center my-2 block">
+                      See Video reviews
+                    </span>
+                  </button>
+                </VideoPlayerDialog>
               </div>
             </div>
           </div>
