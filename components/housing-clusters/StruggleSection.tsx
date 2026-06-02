@@ -8,11 +8,11 @@ export default function StruggleSection() {
   return (
     <section className="bg-white py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <span className="text-red font-bold uppercase block mb-4">
+        <div className="text-left md:text-center max-w-4xl mx-auto mb-16">
+          <span className="text-red text-sm md:text-base font-bold uppercase block mb-2 md:mb-4">
             The Co-Ownership Concept
           </span>
-          <h2 className="text-3xl md:text-5xl text-dark font-impact font-normal leading-tight mb-6 max-w-[645px] mx-auto px-2.5 ">
+          <h2 className="text-4xl md:text-5xl text-dark font-impact font-normal leading-tight mb-6 max-w-[645px] mx-auto px-2.5 ">
             ₦200M is a struggle for one. For a group, it builds blocks of flats.
           </h2>
           <p className="text-grey font-nunito text-[15px] leading-relaxed max-w-2xl mx-auto">

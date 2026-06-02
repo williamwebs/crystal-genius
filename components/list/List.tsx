@@ -15,7 +15,7 @@ const List = ({ description }: Props) => {
       // initial="hidden"
       // whileInView={"show"}
       // viewport={{ once: false, amount: 0.7 }}
-      className="flex items-center gap-2 my-1"
+      className="flex items-start md:items-center gap-2 my-1"
     >
       {/* icon */}
       <Image src={"/lets-icons_check-fill.svg"} width={24} height={24} alt="" />

@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 interface ConversationProps {
@@ -34,12 +35,12 @@ const LetsStarAConversation = ({ conversationStarters }: ConversationProps) => {
               <p className="text-[#777777] font-nunito font-medium">
                 {starter.description}
               </p>
-              <a
+              <Link
                 href={starter.href}
                 className="inline-block text-[#0077CC] hover:text-[#0077CC]/50 font-nunito font-medium underline transition-colors duration-300"
               >
                 {starter.cta}
-              </a>
+              </Link>
             </div>
           ))}
         </div>

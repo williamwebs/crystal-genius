@@ -38,7 +38,7 @@ const ServiceCard = ({ image, heading, paragraph, lists, href }: Props) => {
       <div className="w-[97%] mx-auto h-full flex flex-col gap-4 -mt-4 font-nunito">
         <div
          
-          className="py-2 bg-accentBlue rounded-tr-3xl rounded-bl-3xl text-md text-white text-center font-medium"
+          className="py-2 bg-accentBlue rounded-tr-3xl rounded-bl-3xl text-md text-white text-center text-[15px] md:text-base font-medium px-2"
         >
           {heading}
         </div>
