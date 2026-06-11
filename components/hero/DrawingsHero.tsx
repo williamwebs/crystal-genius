@@ -63,17 +63,18 @@ export default function DrawingsHero() {
 
                   <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 h-fit md:h-11 w-full">
                     <Link
-                      href={"/"}
+                      href={"/housing-clusters"}
                       className="bg-red text-white text-sm hover:bg-red/85 font-nunito font-medium min-w-[130px] md:max-w-[250px] w-full h-10 rounded-[4px] inline-flex items-center justify-center gap-2 border border-transparent"
                     >
                       <HouseImage />
                       Become a Landlord Today
                     </Link>
-                    <button
+                    <Link
+                      href={"#how-it-works"}
                       className="bg-transparent border border-white hover:bg-red/10 text-white font-nunito text-sm w-full md:max  -w-[189px] h-10 md:h-full px-6 rounded-[6px] transition duration-300 flex items-center justify-center gap-2"
                     >
                       How It Works <RightArrowIcon />
-                    </button>
+                    </Link>
                   </div>
                 </div>
                 <div className="w-full md:w-1/3"></div>

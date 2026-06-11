@@ -15,6 +15,7 @@ type DrawingLightboxProps = {
   actionHref?: string;
   actionLabel?: string;
   showActionOnLastSlide?: boolean;
+  cover?: boolean;
 };
 
 function wrapIndex(index: number, length: number) {
@@ -34,6 +35,7 @@ const DrawingLightbox = ({
   actionHref,
   actionLabel = "Unlock Full Design",
   showActionOnLastSlide = false,
+  cover = true,
 }: DrawingLightboxProps) => {
   const [currentIndex, setCurrentIndex] = useState(startIndex);
 
@@ -129,7 +131,7 @@ const DrawingLightbox = ({
               src={currentImage}
               alt={`${title} preview ${currentIndex + 1}`}
               fill
-              className="object-cover"
+              className={` ${cover ? "object-cover" : "object-contain"}`}
             />
 
             {images.length > 1 && (
