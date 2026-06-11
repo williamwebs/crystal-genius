@@ -20,6 +20,8 @@ const CheckoutForm = ({ drawingId }: CheckoutFormProps) => {
       return;
     }
 
+    return;
+
     setLoading(true);
     try {
       const res = await fetch("/api/paystack/initialize", {

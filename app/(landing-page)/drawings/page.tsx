@@ -116,7 +116,7 @@ const DrawingsPage = async ({ searchParams }: DrawingsPageProps) => {
             />
           )}
 
-          <div className="max-w-[1108px] w-full mx-auto py-40 text-center">
+          <div id="how-it-works" className="max-w-[1108px] w-full mx-auto py-40 text-center">
             <h3 className="font-nunito font-bold text-2xl text-[#111827]">
               How It Works
             </h3>

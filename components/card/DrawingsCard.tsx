@@ -152,6 +152,7 @@ const DrawingsCard = ({ drawing }: DrawingsCardProps) => {
         onOpenChange={setViewerOpen}
         actionHref={`/drawings/${drawing.id}`}
         showActionOnLastSlide
+        cover={false}
       />
     </>
   );
