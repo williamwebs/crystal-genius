@@ -267,7 +267,8 @@ const ContactUsPage = () => {
                   Our Address
                 </h4>
                 <p className="font-nunito font-medium text-[#777777] ">
-                  25, Malad Crescent, Ejigbo
+                  152, Akowonjo-Egbeda Road, by Sobo Bus stop, Akowonjo-Ikeja,
+                  Lagos
                 </p>
               </div>
             </div>
@@ -291,10 +292,10 @@ const ContactUsPage = () => {
                   Our Email
                 </h4>
                 <a
-                  href="mailto:vincentsatowaku@gmail.com"
+                  href="mailto:crystalgeniusinternational@gmail.com"
                   className="font-nunito font-medium text-[#777777] "
                 >
-                  E :vincentsatowaku@gmail.com
+                  crystalgeniusinternational@gmail.com
                 </a>
               </div>
             </div>
@@ -324,9 +325,7 @@ const ContactUsPage = () => {
                 <h4 className="font-nunito font-medium text-[22px] text-[#0077CC] ">
                   Opening Hours
                 </h4>
-                <p
-                  className="font-nunito font-medium text-[#777777] "
-                >
+                <p className="font-nunito font-medium text-[#777777] ">
                   Mon – Fri 9 am to 5 pm GMT
                 </p>
               </div>

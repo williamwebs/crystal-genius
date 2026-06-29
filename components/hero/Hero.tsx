@@ -20,7 +20,7 @@ export default function Hero() {
   ];
 
   return (
-    <header className="relative h-[700px] md:h-[700px] -mt-20 sm:-mt-20">
+    <header className="relative h-[800px] md:h-[700px] -mt-20 sm:-mt-20">
       {/* Background Slider */}
       <Swiper
         modules={[Autoplay, Pagination]}

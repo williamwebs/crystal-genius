@@ -581,25 +581,25 @@ export const architecturalDesignsConversationStarters = [
 
 export const teams = [
   {
-    image: "/images/vincent-2.svg", // abimbola
+    image: "/images/vincent-2.svg",
     name: "Engr Vincent Satowaku",
     qualification: "M.NSE., M.COREN., M.NICE",
     role: "Snr Engr, President / CEO",
   },
   {
-    image: "/images/ayodele-1.svg", // lateef
+    image: "/images/ayodele-1.svg",
     name: "Ayodele Agbaje",
     qualification: "(APM)UK",
     role: "Snr Project Manager / Planner",
   },
   {
-    image: "/images/lateef-1.svg", // vincent
-    name: "Oyebiyi Lateef Abefe",
+    image: "/images/gbemisola-1.svg",
+    name: "Gbemisola Adelani",
     qualification: "B.sc",
     role: "Content & Social Media Manager",
   },
   {
-    image: "/images/abimbola-1.svg", // ayodele
+    image: "/images/abimbola-1.svg",
     name: "Abimbola T.A. ESQ",
     qualification: "LL.B / BL",
     role: "Barrister and Solicitor",
