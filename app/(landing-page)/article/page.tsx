@@ -141,7 +141,7 @@ const ArticlePage = async () => {
           </section>
 
           {/* articles */}
-          <section className="w-full bg-cover bg-center pb-20 px-3 md:px-0">
+          {/* <section className="w-full bg-cover bg-center pb-20 px-3 md:px-0">
             <div className="container mx-auto">
               <h2 className="text-3xl md:text-5xl text-dark text-left md:text-center font-impact font-normal">
                 Latest Articles
@@ -170,7 +170,7 @@ const ArticlePage = async () => {
                 </div>
               )}
             </div>
-          </section>
+          </section> */}
         </>
       )}
     </main>

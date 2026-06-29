@@ -57,9 +57,9 @@ const AboutUsPage = async () => {
                 />
 
                 <h5 className="font-extrabold text-3xl text-red">Vision</h5>
-                <p className="text-[#777777] text-base">
-                  Increased access to digital opportunities for improved
-                  livelihood.
+                <p className="text-[#777777] text-base font-nunito font-medium">
+                  To Set the Absolute Standard for Consultancy & Construction
+                  Excellence.
                 </p>
               </div>
             </CardContent>
@@ -86,8 +86,9 @@ const AboutUsPage = async () => {
                 <h5 className="font-extrabold text-3xl text-accentBlue">
                   Mission
                 </h5>
-                <p className="text-[#777777] text-base">
-                  Helping people leverage technology for improved livelihood.
+                <p className="text-[#777777] text-base font-nunito font-medium">
+                  Engineering Structural certainty through absolute Professional
+                  Accountability.
                 </p>
               </div>
             </CardContent>
@@ -112,8 +113,9 @@ const AboutUsPage = async () => {
                 />
 
                 <h5 className="font-extrabold text-3xl text-yellow">Values</h5>
-                <p className="text-[#777777] text-base">
-                  People - Productivity - Teamwork - Innovation- Quality
+                <p className="text-[#777777] text-base font-nunito font-medium">
+                  Eliminating mediocrity through rigorous, Data-driven
+                  Execution.
                 </p>
               </div>
             </CardContent>

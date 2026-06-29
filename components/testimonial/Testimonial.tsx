@@ -10,20 +10,20 @@ import Link from "next/link";
 const Testimonial = () => {
   const testimonials = [
     {
+      name: "Mr. Omoraka Oluwafemi",
+      text: "I wanted a home that could see the city. Nestled on a subtle hilltop in Abeokuta the chosen Crystal Genius delivered just that unobstructed views of the Governor’s residence,",
+    },
+    {
+      name: "Mr. David Ikhuoshio",
+      text: "With a plot of land, I Awarded the project to Crystal genius to pull-off an 8-unit block of 2-bedroom flats for rent and the result was Exceptional",
+    },
+    {
+      name: "Mr. Ifeayi Percy",
+      text: "Crystal Gen. presented a 3D Drawing of a 7 units semi-detached duplexes with a BQ which i just loved at first glance and I wanted the outcome result to look exactly as what was in the drawing, which I got",
+    },
+    {
       name: "Mr and Mrs Adekola",
-      text: "Crystal Genius International Limited exceeded my expectations. They turned my dream home into a reality with precision and professionalism. The entire attention to detail was outstanding.",
-    },
-    {
-      name: "David Ola Daniel",
-      text: "Working with Crystal Genius was a game-changer. Their commitment to sustainable practices and innovative solutions ensured that our commercial project was completed on time and within budget. Highly recommend!",
-    },
-    {
-      name: "Grace T",
-      text: "Their expertise in both design and construction is unmatched. From groundbreaking to completion, they were with us every step of the way, delivering excellent results.",
-    },
-    {
-      name: "Mr and Mrs Adekola",
-      text: "The team at Crystal Genius built our office with such care and efficiency. They listened to our needs and created a space that perfectly fits our brand and operational requirements.",
+      text: "At the area were my property is located had a serious drainage issue which needed a smart re-channeling to protect any structure on it from flooding & crystal Genius was my first of choice",
     },
   ];
 
@@ -52,41 +52,17 @@ const Testimonial = () => {
 
               {/* ratings */}
               <div className="flex items-center justify-center gap-1 -mt-2 mb-1">
-                <Image
-                  src={"/ic_round-star.svg"}
-                  width={20}
-                  height={20}
-                  alt="star rating"
-                  className=""
-                />
-                <Image
-                  src={"/ic_round-star.svg"}
-                  width={20}
-                  height={20}
-                  alt="star rating"
-                  className=""
-                />
-                <Image
-                  src={"/ic_round-star.svg"}
-                  width={20}
-                  height={20}
-                  alt="star rating"
-                  className=""
-                />
-                <Image
-                  src={"/ic_round-star.svg"}
-                  width={20}
-                  height={20}
-                  alt="star rating"
-                  className=""
-                />
-                <Image
-                  src={"/ic_round-star.svg"}
-                  width={20}
-                  height={20}
-                  alt="star rating"
-                  className=""
-                />
+                {[1, 2, 3, 4, 5].map((_, index) => (
+                  <Image
+                    key={index}
+                    src={"/ic_round-star.svg"}
+                    width={20}
+                    height={20}
+                    alt="star rating"
+                    className=""
+                  />
+                ))}
+               
               </div>
               <h6 className="text-dark">
                 {testimonial.name}{" "}

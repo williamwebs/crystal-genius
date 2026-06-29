@@ -40,9 +40,14 @@ const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
+  const isDarkBg =
+    (pathname.startsWith("/article/") && pathname !== "/article") ||
+    pathname === "/contact-us";
+
   useEffect(() => {
     const changeBg = () => {
-      if (window.scrollY >= 90) {
+      if (window.scrollY >= 30) {
+        // >=90
         setBg(true);
       } else {
         setBg(false);
@@ -86,7 +91,11 @@ const Nav = () => {
   return (
     <nav
       className={`w-full mt-0 md:mt-1 sticky__navbar relative z-50 transition-colors duration-300 ${
-        bg ? "bg-black/20 backdrop-blur-md" : "bg-transparent"
+        bg
+          ? "bg-black/20 backdrop-blur-md"
+          : isDarkBg
+            ? "bg-dark"
+            : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 md:px-0 flex items-center justify-between py-2 text-sm font-nunito">
@@ -233,6 +242,6 @@ const Nav = () => {
       </div>
     </nav>
   );
-};
+};;
 
 export default Nav;

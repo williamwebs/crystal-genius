@@ -41,19 +41,23 @@ const PortfolioPage = async () => {
         </h3>
 
         <div className="space-y-2 mt-[30px] max-w-[720px] mx-auto">
-          <p className="text-grey font-nunito font-medium text-left md:text-center">
-            Since 1898, Bechtel has helped customers complete more than 25,000
-            projects in 160 countries on all seven continents
-          </p>
-          <p className="text-grey font-nunito font-medium">
+          <p className="text-grey font-nunito font-medium ">
             We have worked across a diverse set of markets delivering pragmatic
             solutions to tackle some of the world&apos;s most complex
-            challenges. Whether revitalizing chipmaking with advanced
-            semiconductor manufacturing facilities, expanding transit systems
-            and connecting communities, advancing renewable and nuclear energy,
-            or securing critical mineral supply chains, our teams draw on our
-            generations of knowledge to design and build resilient, sustainable
-            infrastructure.
+            challenges.
+          </p>
+          <p className="text-grey font-nunito font-medium">
+            Whether we are pioneering affordable homeownership through our
+            structured Co-Ownership Housing Packages, executing complex Civil
+            Infrastructure projects, or providing data-driven Geotechnical
+            Intelligence to eliminate building collapse risk, our teams draw on
+            a deep well of technical mastery.
+          </p>
+          <p className="text-grey font-nunito font-medium">
+            With over 15 years of precision engineering and trusted project
+            delivery, Crystal Genius International has successfully executed
+            premier residential, civil, and industrial developments across
+            Nigeria's most strategic economic corridors
           </p>
         </div>
       </div>
