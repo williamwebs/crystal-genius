@@ -23,6 +23,9 @@ const remotePatterns: RemotePattern[] = [
 ];
 
 const nextConfig: NextConfig = {
+  experimental: {
+    proxyClientMaxBodySize: "50mb",
+  },
   images: {
     remotePatterns,
   },

@@ -41,3 +41,6 @@ next-env.d.ts
 
 # SECURITY_AUDIT
 SECURITY_AUDIT.md
+
+# SQL files
+*.sql

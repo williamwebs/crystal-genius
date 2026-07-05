@@ -5,9 +5,7 @@ import {
 import { createServerSupabaseClient } from "../../../lib/server-supabase";
 import { unstable_noStore as noStore } from "next/cache";
 import InnerServicesHero from "@/components/hero/InnerServices";
-import ProjectsTabContent, {
-  type ProjectWithCategory,
-} from "@/components/projects/ProjectsTabContent";
+import { type ProjectWithCategory } from "@/components/projects/ProjectsTabContent";
 import ProjectsPageTabs from "@/components/projects/ProjectsPageTabs";
 // import ProjectsPageTabs from "@/components/projects/ProjectsPageTabs";
 

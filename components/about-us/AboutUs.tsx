@@ -276,14 +276,18 @@ const AboutUs = () => {
             // whileInView={"show"}
             // viewport={{ once: false, amount: 0.5 }}
             >
-              <Image
-                src={"/images/video-playback.svg"}
-                width={734}
-                height={429}
-                alt="video playback"
-                className="select-none pointer-events-none"
-                style={{ userSelect: "none" }}
-              />
+              <VideoPlayerDialog videoSrc="/video.mp4">
+                <button>
+                  <Image
+                    src={"/images/video-playback.svg"}
+                    width={734}
+                    height={429}
+                    alt="video playback"
+                    className="select-none pointer-events-none"
+                    style={{ userSelect: "none" }}
+                  />
+                </button>
+              </VideoPlayerDialog>
             </div>
           </div>
         </div>

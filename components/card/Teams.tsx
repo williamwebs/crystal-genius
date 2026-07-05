@@ -26,7 +26,7 @@ const Teams = ({ image, name, qualification, role }: Props) => {
           alt={name}
           fill
           quality={100}
-          className="object-cover select-none pointer-events-none"
+          className="object-cover object-[center_top] lg:object-contain select-none pointer-events-none"
           style={{ userSelect: "none" }}
         />
       </div>

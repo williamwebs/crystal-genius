@@ -123,7 +123,7 @@ const ProjectLightbox = ({
               src={currentImage}
               alt={`${title} preview ${currentIndex + 1}`}
               fill
-              className="object-cover"
+              className="object-contain"
             />
 
             {images.length > 1 && (

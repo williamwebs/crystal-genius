@@ -9,12 +9,11 @@ import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
 import FormTextarea from "./FormTextarea";
 import { ProjectCategory } from "../../types/database";
+import toast from "react-hot-toast";
 
 export type ProjectFormData = {
   title: string;
   location: string;
-  area: string;
-  year: string;
   category: string;
   type: string;
   description: string;
@@ -57,17 +56,10 @@ type ProjectFormProps = {
 const defaultFormData: ProjectFormData = {
   title: "",
   location: "",
-  area: "",
-  year: "",
   category: "",
-  type: "building",
+  type: "",
   description: "",
 };
-
-const typeOptions = [
-  { value: "building", label: "Building" },
-  { value: "land", label: "Land" },
-];
 
 function getFileNameFromUrl(url: string) {
   try {
@@ -109,7 +101,7 @@ const ProjectForm = ({
     ...initialData,
   });
   const [imageItems, setImageItems] = useState<ProjectImageItem[]>(
-    createImageItems(initialAssets?.images ?? [])
+    createImageItems(initialAssets?.images ?? []),
   );
   const [categories, setCategories] = useState<ProjectCategory[]>([]);
   const [loadingCategories, setLoadingCategories] = useState(true);
@@ -171,7 +163,7 @@ const ProjectForm = ({
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -181,7 +173,24 @@ const ProjectForm = ({
       return;
     }
 
-    const nextItems = Array.from(e.target.files).map((file, index) => ({
+    const files = Array.from(e.target.files);
+    const validFiles: File[] = [];
+
+    for (const file of files) {
+      if (file.size > 4 * 1024 * 1024) {
+        toast.error(`Image ${file.name} exceeds the 4MB limit.`);
+      } else {
+        const safeName = file.name.replace(/[^a-zA-Z0-9.-]/g, "_");
+        validFiles.push(new File([file], safeName, { type: file.type }));
+      }
+    }
+
+    if (validFiles.length === 0) {
+      e.target.value = "";
+      return;
+    }
+
+    const nextItems = validFiles.map((file, index) => ({
       id: `new-project-image-${file.name}-${file.size}-${file.lastModified}-${index}`,
       source: "new" as const,
       file,
@@ -211,18 +220,14 @@ const ProjectForm = ({
       data: formData,
       existingImages: imageItems
         .filter(
-          (
-            item
-          ): item is Extract<ProjectImageItem, { source: "existing" }> =>
-            item.source === "existing"
+          (item): item is Extract<ProjectImageItem, { source: "existing" }> =>
+            item.source === "existing",
         )
         .map((item) => item.url),
       newImageFiles: imageItems
         .filter(
-          (
-            item
-          ): item is Extract<ProjectImageItem, { source: "new" }> =>
-            item.source === "new"
+          (item): item is Extract<ProjectImageItem, { source: "new" }> =>
+            item.source === "new",
         )
         .map((item) => item.file),
     });
@@ -243,7 +248,7 @@ const ProjectForm = ({
         </div>
 
         <form onSubmit={handleSubmit} className="px-4 py-8 space-y-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormInput
               label="Project Title"
               name="title"
@@ -261,27 +266,8 @@ const ProjectForm = ({
               type="text"
               required
             />
-
-            <FormInput
-              label="Area (e.g., 3,200 sq.ft)"
-              name="area"
-              value={formData.area}
-              onChange={handleChange}
-              type="text"
-              required
-            />
-
-            <FormInput
-              label="Completion Year"
-              name="year"
-              value={formData.year}
-              onChange={handleChange}
-              type="number"
-              required
-            />
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormSelect
               label="Category"
               name="category"
@@ -291,29 +277,35 @@ const ProjectForm = ({
                 loadingCategories
                   ? [{ value: "", label: "Loading categories..." }]
                   : categoryOptions.length > 0
-                    ? [{ value: "", label: "Select a category" }, ...categoryOptions]
+                    ? [
+                        { value: "", label: "Select a category" },
+                        ...categoryOptions,
+                      ]
                     : [{ value: "", label: "No categories available" }]
               }
             />
-
             <FormSelect
               label="Type"
               name="type"
               value={formData.type}
               onChange={handleChange}
-              options={typeOptions}
+              options={[
+                { value: "", label: "Select project type" },
+                { value: "building", label: "Building" },
+                { value: "land", label: "Land" },
+              ]}
+              // required
+            />{" "}
+          </div>
+          <div className="md:col-span-2">
+            <FormTextarea
+              label="Description"
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              rows={4}
+              required
             />
-
-            <div className="col-span-2">
-              <FormTextarea
-                label="Description"
-                name="description"
-                value={formData.description}
-                onChange={handleChange}
-                rows={4}
-                required
-              />
-            </div>
           </div>
 
           <div className="space-y-2">
