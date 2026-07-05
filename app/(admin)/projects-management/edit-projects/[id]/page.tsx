@@ -13,10 +13,8 @@ function toFormData(project: Project): ProjectFormData {
   return {
     title: project.title,
     location: project.location ?? "",
-    area: project.area ?? "",
-    year: project.completion_year ? String(project.completion_year) : "",
     category: project.category ?? "",
-    type: project.type,
+    type: project.type ?? "",
     description: project.description ?? "",
   };
 }
@@ -80,8 +78,6 @@ const EditProject = () => {
       const payload = new FormData();
       payload.set("title", data.title);
       payload.set("location", data.location);
-      payload.set("area", data.area);
-      payload.set("year", data.year);
       payload.set("category", data.category);
       payload.set("type", data.type);
       payload.set("description", data.description);

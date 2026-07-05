@@ -20,8 +20,6 @@ const AddNewProject = () => {
       const payload = new FormData();
       payload.set("title", data.title);
       payload.set("location", data.location);
-      payload.set("area", data.area);
-      payload.set("year", data.year);
       payload.set("category", data.category);
       payload.set("type", data.type);
       payload.set("description", data.description);

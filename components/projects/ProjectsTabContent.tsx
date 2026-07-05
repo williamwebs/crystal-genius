@@ -12,10 +12,7 @@ export type ProjectWithCategory = {
   id: string;
   title: string;
   location: string | null;
-  area: string | null;
-  completion_year: number | null;
   category: string | null;
-  type: "building" | "land";
   description: string | null;
   images: string[] | null;
   created_at: string;
@@ -30,7 +27,6 @@ type CategoryGroup = {
 
 type ProjectsTabContentProps = {
   projects: ProjectWithCategory[];
-  filterType?: "building" | "land" | null;
 };
 
 function groupByCategory(projects: ProjectWithCategory[]): CategoryGroup[] {
@@ -113,7 +109,6 @@ function ProjectImageCard({
           )}
           <p className="font-nunito font-semibold text-white text-sm line-clamp-1">
             {project.location ?? ""}
-            {project.completion_year ? ` • ${project.completion_year}` : ""}
           </p>
         </div>
 
@@ -195,16 +190,8 @@ function CategorySection({
 }
 
 /* ─── Main Tab Content Component ─── */
-const ProjectsTabContent = ({
-  projects,
-  filterType = null,
-}: ProjectsTabContentProps) => {
-  const filtered = useMemo(() => {
-    if (!filterType) return projects;
-    return projects.filter((p) => p.type === filterType);
-  }, [projects, filterType]);
-
-  const groups = useMemo(() => groupByCategory(filtered), [filtered]);
+const ProjectsTabContent = ({ projects }: ProjectsTabContentProps) => {
+  const groups = useMemo(() => groupByCategory(projects), [projects]);
 
   // Active category tracking via intersection observer
   const [activeCategoryId, setActiveCategoryId] = useState<string | null>(
@@ -258,7 +245,7 @@ const ProjectsTabContent = ({
     }
   };
 
-  if (filtered.length === 0) {
+  if (projects.length === 0) {
     return (
       <div className="bg-white px-6 py-20 text-center font-nunito text-[#555555] shadow-sm my-10 max-h-[400px] h-full flex flex-col md:flex-row items-center justify-center gap-[20px] ">
         <NoPropertyImage />

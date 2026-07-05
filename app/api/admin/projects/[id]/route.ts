@@ -103,11 +103,20 @@ export async function PATCH(
     return NextResponse.json({ error: "Project not found" }, { status: 404 });
   }
 
-  const formData = await req.formData();
+  let formData: FormData;
+  try {
+    formData = await req.formData();
+  } catch {
+    return NextResponse.json(
+      {
+        error:
+          "Upload too large or request malformed. Please reduce image sizes (max 4MB each) and try again.",
+      },
+      { status: 413 }
+    );
+  }
   const title = formData.get("title");
   const location = formData.get("location");
-  const area = formData.get("area");
-  const year = formData.get("year");
   const category = formData.get("category");
   const type = formData.get("type");
   const description = formData.get("description");
@@ -115,8 +124,6 @@ export async function PATCH(
   if (
     typeof title !== "string" ||
     typeof location !== "string" ||
-    typeof area !== "string" ||
-    typeof year !== "string" ||
     typeof category !== "string" ||
     typeof type !== "string" ||
     typeof description !== "string"
@@ -172,10 +179,8 @@ export async function PATCH(
       .update({
         title,
         location,
-        area,
-        completion_year: Number(year),
         category: category || null,
-        type,
+        type: type || null,
         description,
         images: nextImages,
       })

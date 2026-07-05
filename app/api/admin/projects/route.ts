@@ -44,37 +44,44 @@ export async function POST(req: Request) {
     ? createAdminSupabaseClient()
     : scopedSupabase;
 
-  const formData = await req.formData();
-  const title = formData.get("title");
-  const location = formData.get("location");
-  const area = formData.get("area");
-  const year = formData.get("year");
-  const category = formData.get("category");
-  const type = formData.get("type");
-  const description = formData.get("description");
-
-  if (
-    typeof title !== "string" ||
-    typeof location !== "string" ||
-    typeof area !== "string" ||
-    typeof year !== "string" ||
-    typeof category !== "string" ||
-    typeof type !== "string" ||
-    typeof description !== "string"
-  ) {
-    return NextResponse.json(
-      { error: "Missing required project fields." },
-      { status: 400 }
-    );
-  }
-
-  const imageFiles = formData
-    .getAll("imageFiles")
-    .filter((file): file is File => file instanceof File && file.size > 0);
-
   const uploadedImagePaths: string[] = [];
 
   try {
+    let formData: FormData;
+    try {
+      formData = await req.formData();
+    } catch {
+      return NextResponse.json(
+        {
+          error:
+            "Upload too large or request malformed. Please reduce image sizes (max 4MB each) and try again.",
+        },
+        { status: 413 }
+      );
+    }
+    const title = formData.get("title");
+    const location = formData.get("location");
+    const category = formData.get("category");
+    const type = formData.get("type");
+    const description = formData.get("description");
+
+    if (
+      typeof title !== "string" ||
+      typeof location !== "string" ||
+      typeof category !== "string" ||
+      typeof type !== "string" ||
+      typeof description !== "string"
+    ) {
+      return NextResponse.json(
+        { error: "Missing required project fields." },
+        { status: 400 }
+      );
+    }
+
+    const imageFiles = formData
+      .getAll("imageFiles")
+      .filter((file): file is File => file instanceof File && file.size > 0);
+
     const imageUrls: string[] = [];
 
     for (const file of imageFiles) {
@@ -103,10 +110,8 @@ export async function POST(req: Request) {
     const { error: insertError } = await supabase.from("projects").insert({
       title,
       location,
-      area,
-      completion_year: Number(year),
       category: category || null,
-      type,
+      type: type || null,
       description,
       images: imageUrls,
     });

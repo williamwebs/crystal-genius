@@ -281,7 +281,6 @@ const ProjectsManagement = () => {
                 }
                 title={project.title}
                 location={project.location ?? "Location unavailable"}
-                area={project.area ?? undefined}
                 onEdit={() =>
                   router.push(
                     `/projects-management/edit-projects/${project.id}`,

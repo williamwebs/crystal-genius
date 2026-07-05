@@ -16,7 +16,6 @@ interface Props {
   images: string[];
   title: string;
   location: string;
-  area?: string;
   onEdit?: () => void;
   onDelete?: () => void;
 }
@@ -25,7 +24,6 @@ export const AdminThumbSlider = ({
   images,
   title,
   location,
-  area,
   onEdit,
   onDelete,
   id,
@@ -154,11 +152,6 @@ export const AdminThumbSlider = ({
           <h3 className="text-[#333333] font-semibold text-[15px] line-clamp-1">
             {title}
           </h3>
-          {area && (
-            <span className="text-[#999999] font-medium text-sm">
-              {area} sq ft
-            </span>
-          )}
         </div>
          <div className="bg-yellow rounded h-10 min-w-28 flex items-center justify-center gap-1 shadow text-[#555555] text-sm font-nunito font-normal ml-auto mr-2 px-2">
                      <Image
