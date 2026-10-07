@@ -18,8 +18,8 @@ export default function EngineeredSteps() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          <div className="space-y-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+          <div className="space-y-1 shadow rounded-[8px] p-4">
             <FirstEngineeringProcess />
             <h4 className="font-nunito font-bold text-dark text-[18px] uppercase">
               Investor Pooling
@@ -30,7 +30,7 @@ export default function EngineeredSteps() {
             </p>
           </div>
 
-          <div className="space-y-1">
+          <div className="space-y-1 shadow rounded-[8px] p-4" >
             <SecondEngineeringProcess />
             <h4 className="font-nunito font-bold text-dark text-[18px] uppercase">
               Land Acquisition
@@ -41,7 +41,7 @@ export default function EngineeredSteps() {
             </p>
           </div>
 
-          <div className="space-y-1">
+          <div className="space-y-1 shadow rounded-[8px] p-4">
             <ThirdEngineeringProcess />
             <h4 className="font-nunito font-bold text-dark text-[18px] uppercase">
               Professional Development
@@ -52,7 +52,7 @@ export default function EngineeredSteps() {
             </p>
           </div>
 
-          <div className="space-y-1">
+          <div className="space-y-1 shadow rounded-[8px] p-4">
             <FourthEngineeringProcess />
             <h4 className="font-nunito font-bold text-dark text-[18px] uppercase">
               Allocation

@@ -82,7 +82,7 @@ export default function StruggleSection() {
                     </div>
                   </div>
 
-                  <h4 className="mb-3 text-[30px] font-normal text-yellow">
+                  <h4 className="mb-3 text-xl md:text-[30px] font-normal text-[#F59E0B]">
                     {option.price}
                   </h4>
 

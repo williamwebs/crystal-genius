@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   AreaIcon,
   FloorIcon,
@@ -30,6 +30,22 @@ const DrawingsCard = ({ drawing }: DrawingsCardProps) => {
   );
   const [viewerOpen, setViewerOpen] = useState(false);
   const [viewerIndex, setViewerIndex] = useState(0);
+
+  const descRef = useRef<HTMLParagraphElement>(null);
+const [expanded, setExpanded] = useState(false);
+const [isTruncated, setIsTruncated] = useState(false);
+
+useEffect(() => {
+  const el = descRef.current;
+  if (!el || expanded) return;
+
+  const check = () => setIsTruncated(el.scrollHeight > el.clientHeight + 1);
+  check();
+
+  const observer = new ResizeObserver(check);
+  observer.observe(el);
+  return () => observer.disconnect();
+}, [drawing.description, expanded]);
 
   const openViewer = (index: number) => {
     setViewerIndex(index);
@@ -102,9 +118,35 @@ const DrawingsCard = ({ drawing }: DrawingsCardProps) => {
           </span>
         </div>
 
-        <p className="text-dark text-sm font-nunito font-normal font-bold my-2 h-[70px] line-clamp-4">
-          {drawing.description}
-        </p>
+        <div className="relative my-2 min-h-[50px]">
+  <p
+    ref={descRef}
+    className={`text-dark text-sm font-nunito font-normal ${
+      expanded ? "" : "line-clamp-3"
+    }`}
+  >
+    {drawing.description}
+    {expanded && isTruncated && (
+      <button
+        type="button"
+        onClick={() => setExpanded(false)}
+        className="ml-1 text-red text-sm font-nunito font-normal hover:underline"
+      >
+        See less
+      </button>
+    )}
+  </p>
+
+  {!expanded && isTruncated && (
+    <button
+      type="button"
+      onClick={() => setExpanded(true)}
+      className="absolute bottom-0 right-0 bg-white pl-1 text-red text-sm font-nunito font-normal hover:underline"
+    >
+      ... See more
+    </button>
+  )}
+</div>
 
         <div className="my-10 h-[64px] grid grid-cols-3">
           <div className="h-full flex flex-col items-center">

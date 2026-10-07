@@ -13,10 +13,10 @@ import { VideoPlayerDialog } from "@/components/ui/VideoPlayerDialog";
 export default function Hero() {
   const images = [
     "/images/hero-1.svg",
-    // "/images/hero-2.png",
-    // "/images/hero-3.png",
-    // "/images/hero-4.png",
-    // "/images/hero-5.png",
+    "/images/hero-2.png",
+    "/images/hero-3.png",
+    "/images/hero-4.png",
+    "/images/hero-5.png",
   ];
 
   return (
