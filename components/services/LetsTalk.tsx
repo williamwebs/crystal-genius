@@ -19,10 +19,10 @@ const LetsTalk = () => {
           href="/contact-us"
           className="bg-[#F3F6F8] w-full md:w-[168px] h-[47px] rounded-[30px] flex items-center justify-center gap-4 mt-5 md:mt-0 "
         >
-          <span className="font-nunito font-medium text-[15px] text-yellow uppercase">
+          <span className="font-nunito font-semibold text-[15px] text-[#F59E0B] uppercase">
             Let's Talk
           </span>
-          <div className="bg-yellow w-8 h-8 rounded-full flex items-center justify-center">
+          <div className="bg-[#F59E0B] w-8 h-8 rounded-full flex items-center justify-center">
             <svg
               width="16"
               height="16"

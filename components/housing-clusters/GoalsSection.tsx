@@ -14,7 +14,7 @@ export default function GoalsSection() {
           <h2 className="text-4xl md:text-[46px] text-dark text-left md:text-center font-impact font-normal capitalize mb-1.5 leading-tight">
             Engineered for your specific goals.
           </h2>
-          <p className="text-[#555555] font-nunito text-sm text-left md:text-md max-w-2xl mx-auto">
+          <p className="text-[#555555] font-nunito text-sm text-left md:text-center md:text-md max-w-2xl mx-auto">
             We break down the barriers to premium real estate by pooling
             resources. Stop waiting years to save for a single plot. Start
             building immediately with a verified cluster.
@@ -36,8 +36,8 @@ export default function GoalsSection() {
                 Package A: Block of Flats
               </h3>
 
-              <div className="max-w-[161px] ">
-                <h4 className="font-bold font-nunito text-[#F59E0B] text-[28px]">
+              <div className="md:max-w-[161px] ">
+                <h4 className="font-bold font-nunito text-[#F59E0B] text-[20px] md:text-[28px]">
                   ₦30M-₦50M
                 </h4>
                 <p className="font-nunito font-normal text-[13px] text-[#94A3B8]">
@@ -99,8 +99,8 @@ export default function GoalsSection() {
                 Package B: Terrace / Duplex
               </h3>
 
-              <div className="max-w-[161px] ">
-                <h4 className="font-bold font-nunito text-[#F59E0B] text-[28px]">
+              <div className="md:max-w-[161px] ">
+                <h4 className="font-bold font-nunito text-[#F59E0B] text-[20px] md:text-[28px]">
                   ₦50M-₦60M
                 </h4>
                 <p className="font-nunito font-normal text-[13px] text-[#94A3B8]">

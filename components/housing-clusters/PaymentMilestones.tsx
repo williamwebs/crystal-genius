@@ -43,7 +43,7 @@ export default function PaymentMilestones() {
           </h2>
         </div>
 
-        <div className="max-w-5xl mx-auto relative">
+        <div className=" mx-auto relative">
           {/* Horizontal Line for Desktop */}
           <div className="hidden md:block absolute top-[45px] left-0 right-0 h-1 bg-[#E5E5E5] z-0" />
 

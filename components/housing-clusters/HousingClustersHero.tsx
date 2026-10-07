@@ -23,7 +23,7 @@ export default function HousingClustersHero() {
                   </span>
                   <h2 className="text-4xl md:text-5xl text-white font-impact font-normal capitalize mt-2 max-w-2xl leading-tight">
                     Own A Home In{" "}
-                    <span className="text-yellow text-4xl md:text-5xl font-impact font-normal">
+                    <span className="text-[#f59e0b] text-4xl md:text-5xl font-impact font-normal">
                       Lagos
                     </span>{" "}
                     <br />
