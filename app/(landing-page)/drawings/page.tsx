@@ -35,7 +35,7 @@ const HOW_IT_WORKS = [
   },
 ];
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 12;
 
 type DrawingsPageProps = {
   searchParams?: Promise<{
