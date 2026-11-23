@@ -30,7 +30,7 @@ export default function DrawingsHero() {
                   >
                     <DrawingsSpanIcon />
                     <span className="text-white text-xs font-normal">
-                      Professional Structural Drawings
+                      Professional Architectural Drawings
                     </span>
                   </div>
 
@@ -56,7 +56,7 @@ export default function DrawingsHero() {
                     // viewport={{ once: false, amount: 0.5 }}
                     className="text-base text-white font-nunito mt-8 mb-5"
                   >
-                    Access a library of professionally engineered structural
+                    Access a library of professionally engineered architectural
                     design drawings. Preview layouts for free, and securely
                     purchase full high-resolution plans Instantly.
                   </p>

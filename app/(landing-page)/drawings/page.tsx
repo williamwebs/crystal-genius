@@ -81,10 +81,10 @@ const DrawingsPage = async ({ searchParams }: DrawingsPageProps) => {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <div className="flex flex-col gap-2 w-full md:max-w-[550px] ">
               <h2 className="font-medium font-impact text-[40px] text-[#111827]">
-                Featured Structural Designs
+                Featured Architectural Designs
               </h2>
               <p className="text-[15px] text-[#999999] font-nunito font-medium max-w-[610px]">
-                Browse our curated collection of certified structural drawings.
+                Browse our curated collection of certified architectural drawings.
                 Each project includes complete foundation plans, framing
                 details, and material specifications.
               </p>

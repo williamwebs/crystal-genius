@@ -7,7 +7,7 @@ import { CloseXIcon, InfoIcon, UploadIcon } from "../../constants/images";
 import { useRouter } from "next/navigation";
 import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
-import FormTextarea from "./FormTextarea";
+import RichTextEditor from "./RichTextEditor";
 
 export type DrawingFormData = {
   title: string;
@@ -327,13 +327,13 @@ const DrawingForm = ({
               options={statusOptions}
             />
 
-            <div className="col-span-2">
-              <FormTextarea
+            <div className="col-span-1 md:col-span-2 lg:col-span-4">
+              <RichTextEditor
                 label="Description"
-                name="description"
                 value={formData.description}
-                onChange={handleChange}
-                rows={4}
+                onChange={(html) =>
+                  setFormData((prev) => ({ ...prev, description: html }))
+                }
                 required
               />
             </div>
