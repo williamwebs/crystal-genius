@@ -142,8 +142,8 @@ const DrawingsCard = ({ drawing }: DrawingsCardProps) => {
             <div
               className={`transition-all duration-200 ${
                 expanded
-                  ? "max-h-[95px] overflow-y-auto pr-1.5 rounded bg-gray-50/70 p-2 border border-gray-100"
-                  : "max-h-[48px] overflow-hidden"
+                  ? "max-h-[145px] overflow-y-auto"
+                  : "max-h-[80px] overflow-hidden line-clamp-4"
               }`}
             >
               <div
