@@ -16,6 +16,18 @@ interface DrawingsCardProps {
   drawing: Drawing;
 }
 
+function formatDrawingDescription(desc: string | null | undefined): string {
+  if (!desc) return "";
+  const trimmed = desc.trim();
+  if (/<[a-z][\s\S]*>/i.test(trimmed)) {
+    return trimmed;
+  }
+  return trimmed
+    .split(/\n\s*\n/)
+    .map((paragraph) => `<p>${paragraph.replace(/\n/g, "<br/>")}</p>`)
+    .join("");
+}
+
 const DrawingsCard = ({ drawing }: DrawingsCardProps) => {
   const galleryImages = useMemo(
     () =>
@@ -31,21 +43,28 @@ const DrawingsCard = ({ drawing }: DrawingsCardProps) => {
   const [viewerOpen, setViewerOpen] = useState(false);
   const [viewerIndex, setViewerIndex] = useState(0);
 
-  const descRef = useRef<HTMLParagraphElement>(null);
-const [expanded, setExpanded] = useState(false);
-const [isTruncated, setIsTruncated] = useState(false);
+  const descContentRef = useRef<HTMLDivElement>(null);
+  const [expanded, setExpanded] = useState(false);
+  const [isTruncated, setIsTruncated] = useState(false);
 
-useEffect(() => {
-  const el = descRef.current;
-  if (!el || expanded) return;
+  const formattedDescription = useMemo(
+    () => formatDrawingDescription(drawing.description),
+    [drawing.description]
+  );
 
-  const check = () => setIsTruncated(el.scrollHeight > el.clientHeight + 1);
-  check();
+  useEffect(() => {
+    const el = descContentRef.current;
+    if (!el) return;
 
-  const observer = new ResizeObserver(check);
-  observer.observe(el);
-  return () => observer.disconnect();
-}, [drawing.description, expanded]);
+    const check = () => {
+      setIsTruncated(el.scrollHeight > 48);
+    };
+    check();
+
+    const observer = new ResizeObserver(check);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [formattedDescription]);
 
   const openViewer = (index: number) => {
     setViewerIndex(index);
@@ -58,7 +77,7 @@ useEffect(() => {
 
   return (
     <>
-    <div className="flex flex-col h-[640px] rounded-[12px] overflow-hidden shadow">
+    <div className="flex flex-col h-[640px] rounded-[12px] overflow-hidden shadow bg-white">
       <div className="h-[281px] w-full relative flex gap-1">
         {/* absolute text */}
         <div className="absolute top-3 left-3 bg-red dark-shadow w-[80px] h-[24px] rounded flex items-center justify-center text-white text-[11px] uppercase z-10">
@@ -108,82 +127,94 @@ useEffect(() => {
         </div>
       </div>
 
-      <div className="flex-1 px-5 py-6">
-        <div className="flex items-center justify-between gap-4">
-          <h3 className="text-[#333333] text-[16px] md:text-[19px] font-nunito font-extrabold line-clamp-1">
-            {drawing.title}
-          </h3>
-          <span className="bg-[#FFE5E5] h-10 min-w-[66px] flex items-center justify-center rounded px-2 font-extrabold font-nunito text-red text-[15px] md:text-[16px] whitespace-nowrap">
-            {koboToNaira(drawing.price)}
-          </span>
-        </div>
-
-        <div className="relative my-2 min-h-[50px]">
-  <p
-    ref={descRef}
-    className={`text-dark text-sm font-nunito font-normal ${
-      expanded ? "" : "line-clamp-3"
-    }`}
-  >
-    {drawing.description}
-    {expanded && isTruncated && (
-      <button
-        type="button"
-        onClick={() => setExpanded(false)}
-        className="ml-1 text-red text-sm font-nunito font-normal hover:underline"
-      >
-        See less
-      </button>
-    )}
-  </p>
-
-  {!expanded && isTruncated && (
-    <button
-      type="button"
-      onClick={() => setExpanded(true)}
-      className="absolute bottom-0 right-0 bg-white pl-1 text-red text-sm font-nunito font-normal hover:underline"
-    >
-      ... See more
-    </button>
-  )}
-</div>
-
-        <div className="my-10 h-[64px] grid grid-cols-3">
-          <div className="h-full flex flex-col items-center">
-            <AreaIcon />
-            <span className="text-paragraphGrey text-[11px] font-nunito font-bold mt-1">
-              Area
-            </span>
-            <span className="text-dark text-[13px] font-nunito font-extrabold">
-              {drawing.area || 'N/A'}
+      <div className="flex-1 px-5 py-5 flex flex-col justify-between">
+        <div>
+          <div className="flex items-center justify-between gap-4">
+            <h3 className="text-[#333333] text-[16px]  font-nunito font-extrabold line-clamp-1">
+              {drawing.title}
+            </h3>
+            <span className="bg-[#FFE5E5] h-10 min-w-fit flex items-center justify-center rounded px-4 py-2 font-extrabold font-nunito text-red text-[15px] md:text-[16px] whitespace-nowrap shadow-xs">
+              {koboToNaira(drawing.price)}
             </span>
           </div>
-          <div className="h-full flex flex-col items-center">
-            <FloorIcon />
-            <span className="text-paragraphGrey text-[11px] font-nunito font-bold mt-1">
-              Floors
-            </span>
-            <span className="text-dark text-[13px] font-nunito font-extrabold">
-              {drawing.number_of_floors ? `${drawing.number_of_floors} Stories` : 'N/A'}
-            </span>
-          </div>
-          <div className="h-full flex flex-col items-center">
-            <TypeIcon />
-            <span className="text-paragraphGrey text-[11px] font-nunito font-bold mt-1">
-              Type
-            </span>
-            <span className="text-dark text-[13px] font-nunito font-extrabold capitalize">
-              {drawing.type}
-            </span>
+
+          <div className="relative my-2.5">
+            <div
+              className={`transition-all duration-200 ${
+                expanded
+                  ? "max-h-[95px] overflow-y-auto pr-1.5 rounded bg-gray-50/70 p-2 border border-gray-100"
+                  : "max-h-[48px] overflow-hidden"
+              }`}
+            >
+              <div
+                ref={descContentRef}
+                className="text-[#333333] text-xs md:text-sm font-nunito font-normal prose prose-sm max-w-none [&_*]:!text-[#333333] [&_p]:!text-[#333333] [&_li]:!text-[#333333] [&_span]:!text-[#333333] [&_strong]:!text-[#111827] [&_strong]:!font-bold [&_em]:italic [&_p]:my-0.5 [&_ul]:list-disc [&_ul]:pl-4 [&_ul]:my-0.5 [&_ol]:list-decimal [&_ol]:pl-4 [&_ol]:my-0.5 [&_h2]:text-sm [&_h2]:!font-bold [&_h3]:text-xs [&_h3]:!font-bold leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: formattedDescription }}
+              />
+
+              {expanded && isTruncated && (
+                <button
+                  type="button"
+                  onClick={() => setExpanded(false)}
+                  className="mt-1.5 inline-block text-red text-xs font-nunito font-bold hover:underline"
+                >
+                  See less
+                </button>
+              )}
+            </div>
+
+            {!expanded && isTruncated && (
+              <div className="absolute bottom-0 right-0 pl-6 bg-gradient-to-l from-white via-white/95 to-transparent flex items-end">
+                <button
+                  type="button"
+                  onClick={() => setExpanded(true)}
+                  className="text-red text-xs md:text-sm font-nunito font-bold hover:underline"
+                >
+                  ... See more
+                </button>
+              </div>
+            )}
           </div>
         </div>
 
-        <Link href={`/drawings/${drawing.id}`} className="bg-red hover:bg-red/80 rounded h-10 flex items-center justify-center gap-2 w-full transition-colors duration-150">
-          <LockIcon />
-          <span className="text-white text-sm font-nunito font-normal">
-            Unlock Full Design
-          </span>
-        </Link>
+        <div className="flex flex-col gap-4 mt-auto">
+          <div className="h-[64px] grid grid-cols-3">
+            <div className="h-full flex flex-col items-center">
+              <AreaIcon />
+              <span className="text-paragraphGrey text-[11px] font-nunito font-bold mt-1">
+                Area
+              </span>
+              <span className="text-dark text-[13px] font-nunito font-extrabold">
+                {drawing.area || 'N/A'}
+              </span>
+            </div>
+            <div className="h-full flex flex-col items-center">
+              <FloorIcon />
+              <span className="text-paragraphGrey text-[11px] font-nunito font-bold mt-1">
+                Floors
+              </span>
+              <span className="text-dark text-[13px] font-nunito font-extrabold">
+                {drawing.number_of_floors ? `${drawing.number_of_floors} Stories` : 'N/A'}
+              </span>
+            </div>
+            <div className="h-full flex flex-col items-center">
+              <TypeIcon />
+              <span className="text-paragraphGrey text-[11px] font-nunito font-bold mt-1">
+                Type
+              </span>
+              <span className="text-dark text-[13px] font-nunito font-extrabold capitalize">
+                {drawing.type}
+              </span>
+            </div>
+          </div>
+
+          <Link href={`/drawings/${drawing.id}`} className="bg-red hover:bg-red/80 rounded h-10 flex items-center justify-center gap-2 w-full transition-colors duration-150">
+            <LockIcon />
+            <span className="text-white text-sm font-nunito font-normal">
+              Unlock Full Design
+            </span>
+          </Link>
+        </div>
       </div>
     </div>
       <DrawingLightbox

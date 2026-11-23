@@ -18,6 +18,18 @@ interface DrawingDetailPageProps {
 
 export const revalidate = 60; // revalidate every 60 seconds
 
+function formatDrawingDescription(desc: string | null | undefined): string {
+  if (!desc) return "";
+  const trimmed = desc.trim();
+  if (/<[a-z][\s\S]*>/i.test(trimmed)) {
+    return trimmed;
+  }
+  return trimmed
+    .split(/\n\s*\n/)
+    .map((paragraph) => `<p>${paragraph.replace(/\n/g, "<br/>")}</p>`)
+    .join("");
+}
+
 export default async function DrawingDetailPage({
   params,
 }: DrawingDetailPageProps) {
@@ -71,6 +83,20 @@ export default async function DrawingDetailPage({
                     </span>
                   </p>
                 </div>
+
+                {drawing.description && (
+                  <div className="flex flex-col gap-2 font-nunito border-t border-b border-gray-150 py-3 max-w-[400px]">
+                    <h5 className="font-bold text-[15px] text-dark">
+                      Description & Details
+                    </h5>
+                    <div
+                      className="text-[#333333] text-sm leading-relaxed prose prose-sm max-w-none [&_*]:!text-[#333333] [&_p]:!text-[#333333] [&_li]:!text-[#333333] [&_span]:!text-[#333333] [&_strong]:!text-[#111827] [&_strong]:!font-bold [&_em]:italic [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_p]:my-1"
+                      dangerouslySetInnerHTML={{
+                        __html: formatDrawingDescription(drawing.description),
+                      }}
+                    />
+                  </div>
+                )}
                 <div className="flex flex-col gap-[5px] font-nunito ">
                   <div className="min-w-[340px] ">
                     <p className="font-bold text-dark text-[20px]">
